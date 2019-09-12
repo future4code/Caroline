@@ -1,28 +1,62 @@
+* {margin-top: 0;
+
+}
+a: link {
+	color: blue;
+} 
+p ul: last-child {
+	color: brown;
+
+}
+
+p : first-child {
+	color: green;
+	font-style: bold;
+}
+
 body {
 	background: wheat;
 
+
 }
-/* cabeçalho 
-#cabeçalho li {
-	display: inline;
-	text-align: center;
-	align-content: center;
-}*/
+/* cabeçalho */
+#cabeçalho {
+background-image: url("img/imgcss/wood.jpeg");
+position: sticky;
+color: white;
+background-repeat: no-repeat;
+height: 10em;
 
 
 
-/* imagens */
+}
+
+
+#ocultar {
+	 display:none;
+}
+
+
+
+/* imagens pagInicial */
 
 .img {
 	display: inline;
 	width: 49.8%;
 	height: 300px;
+
+	margin-top: 4em;
+
 }
 
 
 /* menu */
 #menu {
 	margin-bottom: 3em;
+	position: absolute;
+	margin-top: 2em;
+
+
 }
 
 #menu li {
@@ -45,7 +79,11 @@ body {
 .rod{
 	display: inline;
 	height: 4em;
-	
+
+}
+
+
+	{ position: fixed; bottom: 0; 
 }
 
 #end {
@@ -53,3 +91,27 @@ body {
 }
 
 /* estoque tabelas */
+
+
+/* formulário */
+#form {
+	
+	position: relative;
+	margin-top: 10em;
+	margin-bottom: 12em;
+	margin-left: 30em;
+	color: white;
+	
+}
+
+.form {
+	padding: -1em;
+}
+
+#backgroundForm {
+	background-image: url("img/imgcss/wood.jpeg");
+	height: 100%;
+	background-position: cover;
+
+}
+
