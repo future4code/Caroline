@@ -1,34 +1,20 @@
-* {margin-top: 0;
-
-}
-a: link {
-	color: blue;
-} 
-p ul: last-child {
-	color: brown;
-
-}
-
-p : first-child {
-	color: green;
-	font-style: bold;
+*{
+	padding: 0;
+	margin: 0;
 }
 
 body {
 	background: wheat;
-
-
 }
+
+
 /* cabeçalho */
 #cabeçalho {
 background-image: url("img/imgcss/wood.jpeg");
 position: sticky;
 color: white;
 background-repeat: no-repeat;
-height: 10em;
-
-
-
+height: 180px;
 }
 
 
@@ -45,19 +31,17 @@ height: 10em;
 	width: 49.8%;
 	height: 300px;
 
-	margin-top: 4em;
-
+	margin-top: 50px;
 }
 
 
 /* menu */
 #menu {
-	margin-bottom: 3em;
+	margin-bottom: 4px;
 	position: absolute;
-	margin-top: 2em;
-
-
+	margin-top: 2%;
 }
+
 
 #menu li {
 	display: inline;
@@ -65,11 +49,12 @@ height: 10em;
 	align-content: center;
 }
 
+
 #menu a {
 	color: white;
 	font-size: 1em;
-	margin-left: 8em;
-	margin-right: 6em;
+	margin-left: 150px;
+	margin-right: 60px;
 	padding: 0px;
 }
 
@@ -78,19 +63,13 @@ height: 10em;
 
 .rod{
 	display: inline;
-	height: 4em;
-
+	height: 50px;
 }
 
 
-	{ position: fixed; bottom: 0; 
+{ position: fixed; 
+	bottom: 0; 
 }
-
-#end {
-	margin-bottom: 10em;
-}
-
-/* estoque tabelas */
 
 
 /* formulário */
@@ -98,14 +77,14 @@ height: 10em;
 	
 	position: relative;
 	margin-top: 10em;
-	margin-bottom: 12em;
+	margin-bottom: 6em;
 	margin-left: 30em;
 	color: white;
 	
 }
 
 .form {
-	padding: -1em;
+	padding: -2px;
 }
 
 #backgroundForm {
@@ -115,3 +94,47 @@ height: 10em;
 
 }
 
+/* estoque tabelas */
+.verd {
+	padding-left: 150px;
+	padding-right: 20px;
+
+}
+
+#categoriaVerdura {
+	margin-top: 8%;
+
+}
+
+.categorias {
+	text-align: center;
+	margin-top: 3%;
+	margin-bottom: 2%;
+}
+
+
+/*funcionarios*/
+#backGroundFuncio {
+	background-image: url("img/imgcss/cabeçalho.jpeg");
+	background-position: cover;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+
+
+#funcionarios {
+	text-align: center;  
+	list-style-type: none;
+	margin-bottom: 10%;
+	color: white;
+	font-size: 20px;
+}
+
+
+#funcionariosh1{
+	text-align: center;
+	margin-top: 6%;
+	margin-bottom: 2%;
+	color: white;
+	font-size: 30px;
+}
