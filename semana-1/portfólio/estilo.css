@@ -59,22 +59,31 @@ p {
     height: 400px;
 }
 .imagemTeste{
+    padding-top: 60px;
     padding-left: 100px;
-    padding-right: 70px;    
+    padding-right: 70px;  
+    padding-bottom: 60px;  
 }
 
 /*habilidades*/
 
 #Habilidades {
     height:400px; 
+    background-color: #F4FA58;
 }
 
 h2 {
     color: #8258FA;
-    padding-top: 130px;
+    padding-top: 90px;
     letter-spacing: 0.4cm;
     font-family: Arial, Helvetica, sans-serif;
     font-size:32px;
     text-align: center;
 
 }
+
+ul li {
+    text-align: right;
+}
+
+/*formulário*/
