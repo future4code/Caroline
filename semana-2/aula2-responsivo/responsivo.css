@@ -147,6 +147,52 @@
 
 
 @media screen and (max-width: 500px) {
+    #container  {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
 
+    
 
+    /*.b0 {
+       height: 55px;
+    }
+   .b1{
+    height: 55px;
+   }
+   .b2 {
+    height: 55px;
+   }
+   .b3 {
+    height: 55px;
+   }
+   .b4 {
+    height: 55px;
+   }
+   .b5 {
+    height: 55px;
+   }
+
+   .b6{
+    height: 55px;
+   }
+
+   .b7{
+    height: 55px;
+   }
+   .b8{
+    height: 55px;
+   }
+   .b9 {
+    height: 55px;
+   }
+   .b10 {
+    height: 55px;
+   }
+   .b11 {
+    height: 55px;
+   }
+*/
 }

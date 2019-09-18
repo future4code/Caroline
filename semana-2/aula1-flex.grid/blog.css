@@ -1,0 +1,40 @@
+#container {
+height:100vh;
+display:grid;
+grid-template-rows: 50px 40px 500px;
+grid-template-columns: 1fr 2fr 1fr;
+
+}
+
+
+.header {
+    background-color: royalblue;
+    grid-column-start: 1;
+    grid-column-end: -1;
+   
+}
+.menu{
+    background-color:  #F012BE;
+    grid-column-start:2;
+    grid-column-end: 3;
+    
+}
+
+.posts {
+    background-color: aquamarine;
+    grid-column-start:2;
+    grid-column-end: 3;
+    
+    
+    
+}
+
+.lista {
+    background-color: blue;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.join {
+    background-color: blueviolet;
+}
