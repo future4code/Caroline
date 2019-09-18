@@ -6,15 +6,18 @@
 header {
     background-color: #FF7F50;
     height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     
 }
 #busca { 
-    text-align: right;   
-    padding-bottom: 15px;
-  
+    margin-right: 20px;
 }
+
 h1{
-    padding-top: 15px;
+    padding: 15px;
 }
 
 #videos {
@@ -25,7 +28,6 @@ h1{
     text-align: center;
     margin-bottom: 40vh;
 }
-
 
 .video {
     border-color: green;
@@ -81,5 +83,7 @@ h2 {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        margin-bottom: 5vh;
     }
+
 }
