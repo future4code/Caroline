@@ -3,14 +3,16 @@
     padding: 0;
 }
 
+
 header {
     background-color: #FF7F50;
     height: 60px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
-    
+    align-items: center;   
+}
+a {
+    color: black;
 }
 #busca { 
     margin-right: 20px;
@@ -27,15 +29,18 @@ h1{
     margin:  15px;
     text-align: center;
     margin-bottom: 40vh;
+    margin-left: 180px;
+    
 }
 
 .video {
     border-color: green;
     border-width:3px;
     border-style: solid;
+    margin: 10px;
 }
 
-.video1 {
+/*.video1 {
     margin:10px;
 }
 .video2 {
@@ -58,7 +63,8 @@ h1{
 }
 .video8 {
     margin:10px;
-}
+}*/
+
 
 footer {
     color:white;
@@ -66,17 +72,49 @@ footer {
     height: 60px;
 }
 
-#video1 {
+/*#video1 {
     margin-bottom: 40vh;
     padding: 20px;
 }
 #video2 {
     margin-bottom: 40vh;
     padding: 20px;
-}
+}*/
 h2 {
     padding: 20px;
+    margin-left: 140px;
 }
+.paginas_de_video {
+    margin-bottom: 40vh;
+    padding: 20px;
+    margin-left: 140px;
+
+}
+
+#menu_lateral {
+    width: 140px;
+    background-color:white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    border-right-color: grey;
+    border-right-width:2px;
+    border-right-style: solid;
+}
+
+aside ul li {
+    padding: 15px;
+}
+ 
+.menu_lateral_videos {
+    background-color:white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    list-style-type: none;
+}
+
 
 @media screen and (max-width: 500px) {
     #videos  {
@@ -87,3 +125,4 @@ h2 {
     }
 
 }
+

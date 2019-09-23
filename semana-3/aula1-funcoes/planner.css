@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding: 0;
+}
+header {
+    height: 60px;
+    background-color:#66CDAA;
+    color:white;
+}
+
+#Semana{
+    /*background-color: #E0FFFF;*/
+    color:#4F4F4F;
+    display: flex;
+    flex-direction: column;
+}
+.DiasDaSemana{
+    height: 80vh;
+    width: 20%;
+    display: flex;
+    /*background: white;*/
+    flex-direction: column;
+}
+
+#agendamento {
+    display:flex;
+    justify-content: space-around;
+    justify-content: center;
+    
+}
+
