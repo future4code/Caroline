@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FORM</title>
+    <script>
+        function inscricoes () {
+          const salvarInfos = { 
+           salvarNome : document.getElementById("nome").value,
+           salvarIdade : document.getElementById("idade").value,
+           salvarEmail : document.getElementById("email").value
+          }
+          console.log(salvarInfos.salvarNome);
+          console.log(salvarInfos.salvarNome);
+          console.log(salvarInfos.salvarNome);
+        }
+      
+
+    </script>
+
+</head>
+<body>
+    
+<h1>Formulário de inscrição F4</h1>
+
+<p>Nome</p>
+<input type="text" id="nome" placeholder="nome">
+<p>Idade</p>
+<input type="text" id="idade" placeholder="idade">
+<p>Email</p>
+<input type="text" id="email" placeholder="email">
+
+<button onclick="inscricoes()">Cadastrar</button>
+<button>Inscritos</button>
+
+
+
+</body>
+</html>
