@@ -7,31 +7,12 @@
     <link rel="stylesheet" href="planner.css">
     <title>Planner Semanal</title>
 
-    <script type="text/javascript">
-        function criarTarefa(){
-            let valorDoInput = document.querySelector ("input").value;
-            /*let MinhasTarefas = document.querySelector("ul");
-            valorDoInput.innerHTML += "<li>" + valorDoInput + "</li>";*/
-            let DiaSelecionado = document.getElementById("DiaDaTarefa");
-            let DiaEscolhido = options[DiaSelecionado.selectedIndex].value;
-            let segunda = document.getElementById("Segunda");
-
-                if (DiaEscolhido === Seg) {
-                   valorDoInput.innerHTML += "<li>" + valorDoInput + "</li>";
-                }
-
-        }
-
-
-    </script>
-
-
 </head>
 <body>
     <header><h1>Minha semana</h1></header>
     <section id="agendamento">
         <p>Nova Tarefa:</p>
-        <input type="text">
+        <input type="text" id="valores" name="">
         <select id="DiaDaTarefa"> 
                 <option value="Seg">Segunda</option>
                 <option value="Ter">Terça</option>
@@ -41,7 +22,7 @@
                 <option value="Sab">Sábado</option>
                 <option value="Dom">Domingo</option>
         </select>
-        <button onclick="criarTarefa()">Criar Tarefa!</button>
+        <button onclick="criarTarefa();">Criar Tarefa!</button>
         <ul>
 
         </ul>
@@ -49,21 +30,48 @@
     </section>
 
     <section id="Semana">
-        <div class="DiasDaSemana" id="Segunda"><h2>Segunda</h2>
-            <ul>
+        <div id="Segunda" class="DiasDaSemana" ><h2>Segunda</h2>
+            <ul class="dias">
+<li></li>
             </ul>
         </div>
         <div class="DiasDaSemana"  id="Terça"><h2>Terça</h2>
-            <ul>
+            <ul class="dias">
             </ul>
         </div>
-        <div class="DiasDaSemana"  id="Quarta" ><h2>Quarta</h2></div>
-        <div class="DiasDaSemana"  id="Quinta"><h2>Quinta</h2></div>
-        <div class="DiasDaSemana"  id="Sexta"><h2>Sexta</h2></div>
-        <div class="DiasDaSemana"  id="Sábado"><h2>Sábado</h2></div>
-        <div class="DiasDaSemana"  id="Domingo"><h2>Domingo</h2></div>
+        <div class="DiasDaSemana"  id="Quarta" ><h2>Quarta</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Quinta"><h2>Quinta</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Sexta"><h2>Sexta</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Sábado"><h2>Sábado</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Domingo"><h2>Domingo</h2>
+            <ul class="dias">
+            </ul>
+        </div>
 
     </section>
 
 </body>
+<script type="text/javascript">
+    function criarTarefa(){
+        const tarefaNova = document.getElementById("valores").value;
+        const diaSelecionado = document.getElementById("DiaDaTarefa").value;
+        const tarefasSelecionadas = document.querySelector("#" + diaSelecionado + " .dias")
+
+        tarefasSelecionadas.innerHTML += "<li>" + tarefaNova + "</li>";
+    } 
+
+
+</script>
 </html>

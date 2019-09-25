@@ -9,23 +9,26 @@ header {
 }
 
 #Semana{
-    /*background-color: #E0FFFF;*/
+    background-color: #E0FFFF;
     color:#4F4F4F;
     display: flex;
-    flex-direction: column;
+   
 }
 .DiasDaSemana{
     height: 80vh;
     width: 20%;
     display: flex;
-    /*background: white;*/
+    border-right-color:black;
+    border-right-width: 2px;
+    border-right-style: solid;
+    margin-right: 5px;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 #agendamento {
     display:flex;
     justify-content: space-around;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
