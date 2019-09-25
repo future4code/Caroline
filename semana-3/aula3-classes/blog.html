@@ -15,23 +15,22 @@
                     }
         
                     novoPost(){
-                     return this.titulo + "-" + this.autor + "-" + this.conteudo;
-                   //return novoPost;const novoPost =
-                }   
+                     const newPost = this.titulo + "-" + this.autor + "-" + this.conteudo;
+                    return newPost
+                } 
             }  
 
-            function criarConteudo(){
+                function criarConteudo(){
                 const tituloID= document.getElementById ("titulo").value;
                 const autorID = document.getElementById ("autor").value;
                 const conteudoID = document.getElementById ("conteudo").value;
-            }  
+                const novosPosts = new Posts (titulo, autor, conteudo);
+                
+                console.log(novosPosts)
 
-            const titulo = new Posts ();
-            const autor = new Posts
-            const mconteudo = new Posts
-
-                console.log(titulo);
-
+                 } 
+                 
+                 
 
     </script>
 
