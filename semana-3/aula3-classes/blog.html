@@ -5,15 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Posts</title>
+
+    <script>
+            class Posts {
+                    constructor (titulo, autor, conteudo){
+                        this.titulo = titulo
+                        this.autor = autor
+                        this.conteudo = conteudo
+                    }
+        
+                    novoPost(){
+                     return this.titulo + "-" + this.autor + "-" + this.conteudo;
+                   //return novoPost;const novoPost =
+                }   
+            }  
+
+            function criarConteudo(){
+                const tituloID= document.getElementById ("titulo").value;
+                const autorID = document.getElementById ("autor").value;
+                const conteudoID = document.getElementById ("conteudo").value;
+            }  
+
+            const titulo = new Posts ();
+            const autor = new Posts
+            const mconteudo = new Posts
+
+                console.log(titulo);
+
+
+    </script>
+
+
 </head>
 <body>
     <h2>Novos Posts</h2>
     <label>Título</label>
-    <input>
+    <input id="titulo">
     <label>Autor</label>
-    <input>
+    <input id="autor">
     <label>Conteúdo</label>
-    <textarea> </textarea>
-    <button>Criar!</button>
+    <textarea id="conteudo"> </textarea>
+    <button onclick="criarConteudo()">Criar!</button>
 </body>
 </html>
