@@ -5,59 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FORM</title>
-    <script>
-        function inscricoes () {
-          const salvarInfos = { 
-           salvarNome : document.getElementById("nome").value,
-           salvarIdade : document.getElementById("idade").value,
-           salvarEmail : document.getElementById("email").value
-          }
-          console.log(salvarInfos.salvarNome);
-          console.log(salvarInfos.salvarIdade);
-          console.log(salvarInfos.salvarEmail);
-        }
-
-        /*function limpezaInput(){
-            const zerarCampo = document.querySelectorAll(".input")
-            for(let limpar of zerarCampo){
-                    limpar.innerHTML = "";
-                }*/
-
-        }
-      
-        function buscaItem(chave) {
-            const valor = window.localStorage.getItem(chave);
-            if (valor) {
-                return JSON.parse(valor);
-            }
-                return [];
-        }
-
-        function salvaItem(chave, item) {
-            if(item && chave) {
-            window.localStorage.setItem(chave, JSON.stringify(item));
-            }
-        }
-        
-
-    </script>
+    
 
 </head>
 <body>
-    
-<h1>Formulário de inscrição F4</h1>
 
-<p>Nome</p>
-<input type="text" id="nome" placeholder="nome" class="input">
-<p>Idade</p>
-<input type="text" id="idade" placeholder="idade" class="input">
-<p>Email</p>
-<input type="text" id="email" placeholder="email" class="input">
+  <div class="dados"> 
+    <h1>Formulário de inscrição F4</h1>
 
-<button onclick="inscricoes()">Cadastrar</button>
-<button><a href="registro.html">Inscritos</a></button>
+    <p>Nome</p>
+    <input type="text" id="nome" placeholder="nome" class="input">
+    <p>Idade</p>
+    <input type="text" id="idade" placeholder="idade" class="input">
+    <p>Email</p>
+    <input type="text" id="email" placeholder="email" class="input">
 
+    <button onclick="inscricoes()">Cadastrar</button>
+    <button><a href="registros.html">Inscritos</a></button>
+</div>
 
 
 </body>
+<script>
+        const listaDeInscritos = buscaItem('registro')
+ 
+         function inscricoes() {
+            const salvarNome = document.getElementById("nome");
+            const salvarIdade = document.getElementById("idade");
+            const salvarEmail = document.getElementById("email");
+          
+            const registro = {
+                nome: salvarNome.value,
+                idade: salvarIdade.value,
+                email: salvarEmail.value
+            }
+            
+           listaDeInscritos.push(registro)
+ 
+           salvaItem('registro', listaDeInscritos)
+ 
+         } 
+ 
+         function buscaItem(chave) {
+         const valor = window.localStorage.getItem(chave);
+         if (valor) {
+         return JSON.parse(valor);
+         }
+         return [];
+        }     
+         function salvaItem(chave, item) {
+         if(item && chave) {
+         window.localStorage.setItem(chave, JSON.stringify(item));
+   }
+ }
+ 
+        
+         
+           /*const inscrito {
+           Nome:salvarNome.value,
+           Idade:salvarIdade.value,
+           Email:salvarEmail.value
+           }
+           
+           listaDeInscritos.push(inscrito)
+           //console.log (listaDeInscritos)
+           salvaItem ('listaDeInscritos', listaDeInscritos)
+         }
+         function limpezaInput(){
+             const zerarCampo = document.querySelectorAll(".input")
+             for(let limpar of zerarCampo){
+                     limpar.innerHTML = "";
+                 }*/
+       
+        
+     </script>
 </html>

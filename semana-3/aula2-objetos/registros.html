@@ -7,6 +7,33 @@
     <title>Registros</title>
 </head>
 <body>
-    
+    <div class="container">
+
+    </div>
+   <a href="objetos.html"> <button>Voltar</button></a>
 </body>
+<script>
+        const listaDeInscritos = buscaItem('registro')
+        const container = document.querySelector('.container')
+
+        for(let inscrito of listaDeInscritos) {
+            container.innerHTML += '<div>' +
+                                        '<p>Nome:' + inscrito.nome + '</p>' +
+                                        '<p> Idade:' + inscrito.idade + '</p>' +
+                                        '<p> Email:' + inscrito.email + '</p>' +
+                                    '</div>'
+        }
+
+        function buscaItem(chave) {
+        const valor = window.localStorage.getItem(chave);
+        if (valor) {
+        return JSON.parse(valor);
+        }
+        return [];
+        }  
+
+        console.log(listaDeInscritos) 
+
+    </script>
 </html>
+
