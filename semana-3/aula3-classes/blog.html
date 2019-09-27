@@ -5,37 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Posts</title>
-
-    <script>
-            class Posts {
-                    constructor (titulo, autor, conteudo){
-                        this.titulo = titulo
-                        this.autor = autor
-                        this.conteudo = conteudo
-                    }
-        
-                    novoPost(){
-                     const newPost = this.titulo + "-" + this.autor + "-" + this.conteudo;
-                    return newPost
-                } 
-            }  
-
-                function criarConteudo(){
-                const tituloID= document.getElementById ("titulo").value;
-                const autorID = document.getElementById ("autor").value;
-                const conteudoID = document.getElementById ("conteudo").value;
-                const novosPosts = new Posts (titulo, autor, conteudo);
-                
-                console.log(novosPosts)
-
-                 } 
-                 
-                 
-
-    </script>
-
-
-</head>
 <body>
     <h2>Novos Posts</h2>
     <label>Título</label>
@@ -45,5 +14,68 @@
     <label>Conteúdo</label>
     <textarea id="conteudo"> </textarea>
     <button onclick="criarConteudo()">Criar!</button>
+
+    <section id="testando">
+
+    </section>
 </body>
+
+<script>
+    class Posts {
+        constructor (titulo, autor, conteudo){
+                    this.titulo = titulo
+                    this.autor = autor
+                    this.conteudo = conteudo
+                    }
+    
+                    novoPost(){
+                    const newPost = this.titulo + "-" + this.autor + "-" + this.conteudo;
+                    return newPost
+                    } 
+            }  
+  
+    let conjuntoDePosts = [];
+  
+    function criarConteudo(){
+            const tituloID= document.getElementById ("titulo").value;
+            const autorID = document.getElementById ("autor").value;
+            const conteudoID = document.getElementById ("conteudo").value;
+
+            const novosPosts = new Posts (titulo.value, autor.value, conteudo.value);  
+
+            conjuntoDePosts.push(novosPosts);
+
+            salvaItem("salvosNoLocal", conjuntoDePosts); 
+
+            //console.log("POSTS: ", conjuntoDePosts);
+            Limpeza()
+            organizaPosts();
+        } 
+
+    function organizaPosts(){
+             const mostrarPosts = document.getElementById("testando");
+
+             mostrarPosts.innerHTML = "";
+
+            for(let post of conjuntoDePosts){
+            const Instancia = new Posts(post.titulo, post.autor, post.conteudo);
+            mostrarPosts.innerHTML += Instancia.novoPost();
+            }
+        }   
+
+    function Limpeza(){
+        document.getElementById("titulo").value = " ";
+        document.getElementById("autor").value = " ";
+        document.getElementById("conteudo").value = " ";
+        }
+    
+    function salvaItem(chave, item) {
+        if(item && chave) {
+            window.localStorage.setItem(chave, JSON.stringify(item));
+        }
+    }
+</script>
+
+
+</head>
 </html>
