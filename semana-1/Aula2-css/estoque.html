@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,13 @@
 
     <title>Estoque</title>
 </head>
+
 <body>
-		<h1>Real Food 🌱</h1><br><br>
-		
-	<div id="cabeçalho"></div>
+	   <div id="cabeçalho">
+			<h1>Real Food 🌱</h1>
+			<h2>Alimentos saborosos!</h2>
+		</div>
+
 	<div id="menu">
 		<ul>
 			<li><a href="páginainicial.html"> INÍCIO</a></li> 
@@ -21,117 +25,83 @@
 		</ul>			
     </div>
 
-    <h1>Verduras</h1> 
-    <table class="verd">
-	<th>Repolho</th>
-	<th>Brócolis</th>
-	<tr>
-		<td><img src="img/repolhoRoxo.jpg" alt="repolho roxo"></td>	
-	</tr>
-	<tr>
-		<td>Preço:R$ 3,00</td>
+    <h1 id="categoriaVerdura" class="categorias">Verduras</h1> 
 
-	</tr>
-	<tr>
-		<td>Quantidade disponível:30</td>
-	</tr>		
-	
+    <table  class="verdTop">
+		<th>Repolho</th>
+		<th>Brócolis</th>
+		<th>Espinafre</th>
+
+		<tr>
+			<td class="verd"><img src="img/imgcss/repolhoRoxo.jpg" alt="repolho roxo"></td>	
+			<td class="verd"><img src="img/imgcss/broco.jpg" alt="brócolis"></td>
+			<td class="verd"><img src="img/imgcss/espin.jpg" alt="espinafre"></td>		
+		</tr>
+
+		<tr>
+			<td class="verd">Preço:R$ 3,00</td>
+			<td class="verd">Preço:R$ 3,00</td>
+			<td class="verd">Preço:R$ 3,00</td>
+		</tr>
+		<tr>
+			<td class="verd">Quantidade disponível:30</td>
+			<td class="verd">Quantidade disponível:30</td>
+			<td class="verd">Quantidade disponível:30</td>
+		</tr>		
   </table>
 
-  
-	<!--<tr>
-		<th>Foto</th>
-		<th>Nome</th>
-		<th>Preço</th>
-		<th>Quantidade disponível</th>
-	</tr>
-	<tr>
-		<td><img src="img/repolhoRoxo.jpg" alt="repolho roxo"></td>
-       
-
-		<td>Repolho Roxo</td>
-		<td> R$ 3,00</td>
-		<td> 30 </td>
-	</tr>
-	<tr>
-		<td><img src="img/broco.jpg" alt="brócolis"> </td>
-		<td>Brócolis</td>
-		<td> R$ 3,20</td>
-		<td> 40 </td>
-	</tr>
-
-	<tr>
-		<td><img src="img/espin.jpg" alt="espinafre"> </td>
-		<td>Espinafre</td>
-		<td> R$ 2,80</td>
-		<td> 30 </td>
-	</tr>
-
-
-</table>
-
-
-    <h1>Frutas</h1>
+  <h1 class="categorias">Frutas</h1> 
     <table>
-    	<tr>
-		<th>Foto</th>
-		<th>Nome</th>
-		<th>Preço</th>
-		<th>Quantidade disponível</th>
+		<th>Uva</th>
+		<th>Kiwi</th>
+		<th>Maçã</th>
+		
+	<tr>
+		<td class="verd"><img src="img/imgcss/uva.jpg" alt="uva"></td>	
+		<td class="verd"><img src="img/imgcss/kiwi.jpg" alt="kiwi"></td>
+		<td class="verd"><img src="img/imgcss/maça.jpg" alt="maçã"></td>	
 	</tr>
-    <tr>
-		<td><img src="img/uva.jpg" alt="uva"></td>
-       
+	
+	<tr>
+		<td class="verd">Preço:R$ 3,00</td>
+		<td class="verd">Preço:R$ 3,00</td>
+		<td class="verd">Preço:R$ 3,00</td>
 
-		<td>Uva</td>
-		<td> R$ 4,00</td>
-		<td>20 </td>
 	</tr>
 	<tr>
-		<td><img src="img/kiwi.jpg" alt="kiwi"> </td>
-		<td>kiwi</td>
-		<td> R$ 4,10</td>
-		<td> 50 </td>
-	</tr>
+			<td class="verd">Quantidade disponível:30</td>
+			<td class="verd">Quantidade disponível:30</td>
+			<td class="verd">Quantidade disponível:30</td>
+	</tr>		
+
+  </table>
+
+
+ <h1 class="categorias">Legumes</h1> 
+    <table>
+	<th>Cenoura</th>
+	<th>Pimentão</th>
+	<th>Cebola</th>
 
 	<tr>
-		<td><img src="img/maça.jpg" alt="maçã"> </td>
-		<td>Maçã</td>
-		<td> R$ 3,00</td>
-		<td> 100 </td>
-	</tr>
-</table>
-
-    <h1>Legumes</h1>
-      <table>
-    <tr>
-    	<tr>
-		<th>Foto</th>
-		<th>Nome</th>
-		<th>Preço</th>
-		<th>Quantidade disponível</th>
-	</tr>
-		<td><img src="img/cenoura.jpg" alt="cenoura"></td>
-       
-
-		<td>Cenoura</td>
-		<td> R$ 2,20</td>
-		<td> 70 </td>
+		<td class="verd"><img src="img/imgcss/cenoura.jpg" alt="cenoura"></td>	
+		<td class="verd"><img src="img/imgcss/pime.jpg" alt="pimentão"></td>
+		<td class="verd"><img src="img/imgcss/cebola.jpg" alt="cebola"></td>
 	</tr>
 	<tr>
-		<td><img src="img/pime.jpg" alt="pimentão"> </td>
-		<td>Pimentão</td>
-		<td>R$ 3,00</td>
-		<td> 77 </td>
-	</tr>
+		<td class="verd">Preço:R$ 3,00</td>
+		<td class="verd">Preço:R$ 3,00</td>
+		<td class="verd">Preço:R$ 3,00</td>
 
-	<tr>
-		<td><img src="img/cebola.jpg" alt="Cebola"> </td>
-		<td>Cebola</td>
-		<td>R$ 2,00</td>
-		<td> 110 </td>
 	</tr>
-</table> -->
+	<tr>
+			<td class="verd" >Quantidade disponível:30</td>
+			<td class="verd">Quantidade disponível:30</td>
+			<td class="verd" id="final">Quantidade disponível:30</td>
+	</tr>		
+	
+
+  </table>
 
  <div id="rodape">
         <img class="rod"  src="img/imgcss/cartao.png">
@@ -140,13 +110,11 @@
         
         <p class="rod" id="end" > Endereço: Av. JK, 1010 - CCAAPP, UBATUBA - SP </p>
 
-
         <img class="rod" class="tam"  src="img/imgcss/insta.png">
         <img class="rod"  class="tam" src="img/imgcss/whats.png">
         <img class="rod" class="tam"  src="img/imgcss/fb.png">
         <img class="rod"  class="tam" src="img/imgcss/youtube.png">
 
-
-    </div>  
+   </div>  
 </body>
 </html>

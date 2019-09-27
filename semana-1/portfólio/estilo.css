@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #D8D8D8;
+}
+
+/*INICIO*/
+
+#cabeçalho {
+    background-color:#8258FA;
+    height: 0px;
+}
+
+#menu li {
+    display: inline;
+    
+}
+
+#menu {
+    text-align: right;
+    color: #D8D8D8;
+    
+}
+
+#icone {
+    margin: 0;
+}
+
+#inicio {
+        background-color:#8258FA;
+        height: 400px;
+}
+
+h1,p {
+    text-align: center;
+    padding-top: 130px;
+    color: white;
+    letter-spacing: 0.4cm;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:32px;
+  
+}
+p {
+    font-size:15px;
+    letter-spacing: 0;
+    padding-top: 50px;
+}
+
+#tri {
+    position: absolute;
+    margin-left: 625px;
+}
+
+/*PORTFÓLIO*/
+
+#portfolio{
+    height: 400px;
+}
+.imagemTeste{
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 70px;  
+    padding-bottom: 60px;  
+}
+
+/*habilidades*/
+
+#Habilidades {
+    height:400px; 
+    background-color: #F4FA58;
+}
+
+h2 {
+    color: #8258FA;
+    padding-top: 90px;
+    letter-spacing: 0.4cm;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:32px;
+    text-align: center;
+
+}
+
+ul li {
+    text-align: right;
+}
+
+/*formulário*/

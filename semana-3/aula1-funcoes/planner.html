@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="planner.css">
+    <title>Planner Semanal</title>
+
+</head>
+<body>
+    <header><h1>Minha semana</h1></header>
+    <section id="agendamento">
+        <p>Nova Tarefa:</p>
+        <input type="text" id="valores" name="">
+        <select id="DiaDaTarefa"> 
+                <option value="Seg">Segunda</option>
+                <option value="Ter">Terça</option>
+                <option value="Qua">Quarta</option>
+                <option value="Qui">Quinta</option>
+                <option value="Sex">Sexta</option>
+                <option value="Sab">Sábado</option>
+                <option value="Dom">Domingo</option>
+        </select>
+        <button onclick="criarTarefa();">Criar Tarefa!</button>
+        <ul>
+
+        </ul>
+
+    </section>
+
+    <section id="Semana">
+        <div id="Segunda" class="DiasDaSemana" ><h2>Segunda</h2>
+            <ul class="dias">
+<li></li>
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Terça"><h2>Terça</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Quarta" ><h2>Quarta</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Quinta"><h2>Quinta</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Sexta"><h2>Sexta</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Sábado"><h2>Sábado</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+        <div class="DiasDaSemana"  id="Domingo"><h2>Domingo</h2>
+            <ul class="dias">
+            </ul>
+        </div>
+
+    </section>
+
+</body>
+<script type="text/javascript">
+    function criarTarefa(){
+        const tarefaNova = document.getElementById("valores").value;
+        const diaSelecionado = document.getElementById("DiaDaTarefa").value;
+        const tarefasSelecionadas = document.querySelector("#" + diaSelecionado + " .dias")
+
+        tarefasSelecionadas.innerHTML += "<li>" + tarefaNova + "</li>";
+    } 
+
+
+</script>
+</html>
