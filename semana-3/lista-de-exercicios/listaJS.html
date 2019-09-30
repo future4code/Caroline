@@ -9,7 +9,7 @@
 <body>
 </body>
 <script>  
-        //Exercícios de interpretação de código    
+                /////////////////////////Exercícios de interpretação de código //////////////////////////////  
 
 /* 1.A função conversorDeMoeda vai receber um valor em dolar e retornar em reais.
 
@@ -49,15 +49,62 @@ se determinado item da const numeros for maior que  0 (let numero2=0), o item se
 
 Os dois console.log vão imprimir todos os números.*/
 
-            //Exercícios de lógica de programação
-
-//1.
 
 
-/*2.
+            //////////////////////////////Exercícios de lógica de programação //////////////////////////////
+
+//1.Ao invés de lista (li), vou utilizar arrays (com lista ul/li não sei)
+//MAP
+function map(){
+    const animais = [
+    {nome: "gato", tipo: "felino", idade: 5},
+    {nome: "irara", tipo: "mustelídeo", idade: 1},
+    {nome: "muriqui", tipo: "atelídeo", idade: 3}
+    ]
+
+    const nomeDosAnimais = animais.map((animal,index,arr) => {
+        return animal.nome
+    })
+console.log(nomeDosAnimais);
+}
+
+//FILTER
+function filter(){
+    const animais = [
+    {nome: "gato", tipo: "felino", idade: 5},
+    {nome: "irara", tipo: "mustelídeo", idade: 1},
+    {nome: "onça", tipo: "felino", idade: 6},
+    {nome: "muriqui", tipo: "atelídeo", idade: 3},
+    {nome: "leão", tipo: "felino", idade: 8}
+    ]
+
+    const tipoFelino = animais.filter((felinos) => {
+        if(felinos.tipo === "felino"){
+            return true
+        }
+    })
+console.log (tipoFelino)
+}
+
+ // ForEach
+ function ForEach(){
+    const animais = [
+        {nome: "gato", tipo: "felino", idade: 5},
+        {nome: "irara", tipo: "mustelídeo", idade: 1},
+        {nome: "muriqui", tipo: "atelídeo", idade: 3}
+        ]
+
+        animais.forEach( (mesmaIdade) => {
+            animais.idade = 7
+        })
+    console.log (animais)
+}
+// não tá alterando a idade...ForEach ()
+
+/*2. 
 a) False
 b) False
-c) False
+c) True
 d) True
 e) True */
 
@@ -89,9 +136,9 @@ function exercício4Triângulo () {
 }
 
 //5.
-const numero1 = 20;
-const numero2 = 2;
 function  exercicio5 () {
+    const numero1 = 20;
+    const numero2 = 2;
 
     //é maior que?
     if (numero1 > numero2) {
@@ -100,7 +147,7 @@ function  exercicio5 () {
     else {
         console.log ("O maior é", numero2);
     }
-    //é divísivel?
+    //é divisível?
 
     if (numero1 % numero2 === 0){
         console.log (numero1, "é divisível por", numero2);
@@ -117,27 +164,92 @@ function  exercicio5 () {
     else {
         console.log (numero2, "não é divisível por", numero1);
     }
-
-    }
-//exercicio5();
-
-function direfenca(){
+}
+/*function direfenca(){
     const direfenca = numero1 - numero2;
     console.log (diferenca);
-}
+}*/
 
-
-            //Exercícios de funções
-
-let insiraUmNumero 
-
-let maisNumeros = Number(confirm("Deseja inserir um número?"));
-
-while (maisNumeros === true) {
+            ///////////////////////////////Exercícios de Funções //////////////////////////////
+            
+ function exerciciosFuncao1 (){
     let insiraUmNumero = Number(prompt("Insira um número"));
 
+    let maisNumeros = Number(confirm("Deseja inserir um número?"));
+
+    while (maisNumeros === true) {
+        insiraUmNumero = Number(prompt("Insira um número"));
+    }
 }
 
+//exercicioFuncao2
+
+    let naoNomeada = (function(){
+    return alert("Hello Future4");}
+)
+
+             ////////////////////////////////Exercícios de  Objetos //////////////////////////////
+
+/* 1.  Arrays e Objetos guardam vários valores de uma vez só, os valores na array são "numerados" e nos objetos "nomeados"*/
+//2.
+function criaRetangulo () {
+    let lado1 = Number(prompt("Digite o lado 1"));
+    let lado2 = Number(prompt("Digite o lado 2"));
+
+    let perimetro = 2* (lado1 + lado2);
+    let area = lado1 * lado2;
+
+    let retangulo = {
+        largura: lado1,
+        altura: lado2,
+        perímetro: perimetro,
+        área: area
+    }
+    console.log (retangulo);
+}
+//3.
+function filmeFavorito () {
+    const infosDoFilme = {
+    título: "Tainá - Uma Aventura na Amazônia",
+    ano: "2000",
+    direção: "Tânia Lamarca ",
+    atoresAtrizes: ["Eunice Baía","Luciana Rigueira"]
+    }
+    console.log("Venha assistir ao filme " + infosDoFilme.título + ", de " + infosDoFilme.ano + ", dirigido por " + infosDoFilme.direção + "e estrelado por " + infosDoFilme.atoresAtrizes)  
+}
+
+//4.
+function anonimizarPessoa(){
+    const pessoa = [{
+    nome:"Taina",
+    idade: "29",
+    email: "taina@taina.br",
+    endereco: "Manaus-AM"}]
+    
+    pessoa.forEach( (anonimizar) => {
+    pessoa.nome = "ANONIMO"
+     })
+        console.log (pessoa)
+}
+
+                    ////////////////////////////////Exercícios de Funções de array////////////////////////////////
+ //1.                   
+    const pessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+    ]
+ //a
+        function adultos() {
+        const somenteAdultos= pessoas.filter((adulto) => {
+        if(adulto.idade >= 20 ){
+            return true
+        }
+    })
+console.log (somenteAdultos)
+}    
+//b
 
 </script>  
 </html>
