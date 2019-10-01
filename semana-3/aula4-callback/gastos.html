@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Análise financeira</title>
+    <script>
+            // <!-- PRIMEIRA SECTION Controlador de Despesas -->
+            function cadastrarDespesas (){
+              const valorGasto = document.getElementById ("valor-da-despesa").value;
+              const tipoDeGasto = document.getElementById("tipo-da-despesa").value;
+              const descricaoDoGasto = document.getElementById ("descrição-da-despesa").value;
+
+              console.log (valorGasto);
+              console.log (tipoDeGasto);
+              console.log (descricaoDoGasto);
+          }
+           // <!-- SEGUNDA SECTION Despesas Detalhadas -->
+
+
+           /*
+            function filtrar (){
+              const detalhes = [ 
+                  {valor: valorGasto},
+                  {tipo: tipoDeGasto},
+                  {descricao: descricaoDoGasto}
+              ]
+
+              const gastosDetalhados = detalhes.filter ()
+          }  */
+
+
+
+    </script>
+</head>
+<body>
+    <div class="main-container">
+                                      <!-- PRIMEIRA SECTION Controlador de Despesas -->
+
+    <section class="custom-container" id="section-1">
+      <h2>Controlador de Despesas</h2>
+      <h3>Cadastrar despesa</h3>
+      <div>
+        <div class="input-container">
+          <p class="label-texto">Valor</p>
+          <input id="valor-da-despesa">
+        </div>
+        <div class="input-container">
+          <p class="label-texto">Tipo (Casa, Viagem, Rolês, Outros)</p>
+          <select id="tipo-da-despesa">
+            <option value="Casa">Casa</option>
+            <option value="Rolê">Rolê</option>
+            <option value="Viagem">Viagem</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <p class="label-texto">Descrição</p>
+          <input id="descrição-da-despesa">
+        </div>
+      </div>
+      <button class="botao-comum" id="cadastrar-despesa-btn" onclick="cadastrarDespesas ()">Cadastrar Despesa</button>
+    </section>
+
+                                      <!-- SEGUNDA SECTION Despesas Detalhadas -->
+
+    <section class="custom-container" id="section-2">
+      <h2>Despesas Detalhadas</h2>
+
+      <div>
+        <div class="input-container">
+          <p class="label-texto">Tipo (Casa, Viagem, Rolês, Outros)</p>
+          <select id="filtro-tipo">
+            <option value="Casa">Casa</option>
+            <option value="Rolê">Rolê</option>
+            <option value="Viagem">Viagem</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <p class="label-texto">Valor Mínimo</p>
+          <input id="filtro-valor-minimo">
+        </div>
+
+        <div class="input-container">
+          <p class="label-texto">Valor Máximo</p>
+          <input id="filtro-valor-maximo">
+        </div>
+
+        <button class="botao-comum" id="filtrar-btn"  onclick="filtrar()">Filtrar</button>
+        <button class="botao-comum" id="limpar-filtros-btn">Limpar Filtros</button>
+        
+      </div>
+
+      <div id="despesas-list-container">
+        <div class="despesa-item-container"> 
+          <p class="despesa-item-info"> R$10 </p>
+          <p class="despesa-item-info"> Tipo: </p>
+          <p class="despesa-item-info"> Descrição:</p> 
+        </div>
+    </div>
+    </section>
+
+                   <!-- TERCEIRA SECTION EXTRATO --> 
+    <section class="custom-container" id="section-3">
+      <h2>Extrato</h2>
+      <div>
+        <h3 id="valor-total">R$10</h3>
+      </div>
+
+      <div id="lista-do-estrato">
+        <div class="extrato-item-container"> 
+          <p class="extrato-item-info"> Rolê - </p>
+          <p class="extrato-item-info"> R$10 </p>
+        </div>
+      </div>
+
+    </section>
+</body>
+</html>
+
+
+
+
