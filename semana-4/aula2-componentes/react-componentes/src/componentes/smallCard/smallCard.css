@@ -1,0 +1,32 @@
+.SmallCard{
+    border-color: black;
+    border-width:1px;
+    border-style: solid;
+    height: 8vh;
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 60vh;
+    width: 60vh;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.SmallCard2 {
+    border-color: black;
+    border-width:1px;
+    border-style: solid;
+    height: 8vh;
+    margin-top: 5px;
+    margin-left: 60vh;
+    width: 60vh;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+label {
+    font-weight: bold;
+}
