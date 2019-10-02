@@ -2,6 +2,21 @@ import React from 'react';
 import './card.css';
 import PropTypes from 'prop-types';
 
+class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+        likeIcon:true
+        }
+    }  
+    
+    
+botaoCurtido = () =>{
+
+}
+
+}
+
 export function InstaF4(props){
 return (
         <div className="feed">
@@ -14,7 +29,7 @@ return (
                 <img src = {props.fotoPrincipal} alt="" className="fotoPrincipal"/>
             </div>
             <div className="likes">
-                <img src = {props.likeIcon} alt="" className="likewhite"/>
+                <img src = {props.likeIcon} alt="" className="likewhite" onClick="" />
                 <img src = {props.commentIcon} alt="" className="iconeComentario"/>
 
             </div>
