@@ -18,31 +18,14 @@ botaoCurtido = () =>{
 };
 
 render() {
-  
-let curtido;
-let iconeCurtido = require ('./componentes/icones/favorite.svg')
+  let curtido;
+  let iconeCurtido = require ('./componentes/icones/favorite.svg')
 
-if(this.state.likeIcon === false){
-  likeIcon = iconeCurtido
- }
-
-  return (
-    <div className="App">
-      <InstaF4
-      imagemUser={usuario.imagemUser}
-      userName = {usuario.userName}
-
-      fotoPrincipal={fotoPrincipal.fotoPrincipal}
-
-      likeIcon = {likes.like1}
-      commentIcon = {likes.comment}
-      />
-    </div>
-  )
-  
-  
+  if(this.state.likeIcon === false){
+    likeIcon = iconeCurtido
+    }
+  return (console.log("oi") ) 
 }
-
 
 }
 
@@ -60,6 +43,18 @@ const likes = {
   comment: require ('./componentes/icones/comment_icon.svg')
 }
 
- 
+return (
+  <div className="App">
+    <InstaF4
+    imagemUser={usuario.imagemUser}
+    userName = {usuario.userName}
+
+    fotoPrincipal={fotoPrincipal.fotoPrincipal}
+
+    likeIcon = {likes.like1}
+    commentIcon = {likes.comment}
+    />
+  </div>
+)
 
 export default App;
