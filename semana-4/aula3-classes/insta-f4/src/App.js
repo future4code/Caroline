@@ -8,17 +8,21 @@ class App extends React.Component{
   constructor(props){
       super(props);
       this.state = {
-      likeIcon: true
+      likeIcon: require ('./componentes/icones/favorite-white.svg')
       };
   }  
   
-botaoCurtido = () =>{
+/*botaoCurtido = () =>{
   const semLike = this.state.likeIcon;
   this.setState ({likeIcon : !this.state.likeIcon})
+};*/
+
+botaoCurtido = () =>{
+  const curtida = require ('./componentes/icones/favorite.svg')
+  this.setState ({likeIcon : curtida})
 };
 
 render() {
-  let curtido;
   let likeIcon;
   let iconeCurtido = require ('./componentes/icones/favorite.svg')
 
