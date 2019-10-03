@@ -13,18 +13,34 @@ class App extends React.Component{
   }  
   
 botaoCurtido = () =>{
-const semLike = this.state.likeIcon;
-this.setState ({likeIcon : !likeIcon})
+  const semLike = this.state.likeIcon;
+  this.setState ({likeIcon : !this.state.likeIcon})
 };
 
 render() {
+  
 let curtido;
-let iconeCurtido = require ('./componentes/icones/favorite.svg'),
+let iconeCurtido = require ('./componentes/icones/favorite.svg')
 
-if (this.state.likeIcon === false){
+if(this.state.likeIcon === false){
   likeIcon = iconeCurtido
-}
+ }
 
+  return (
+    <div className="App">
+      <InstaF4
+      imagemUser={usuario.imagemUser}
+      userName = {usuario.userName}
+
+      fotoPrincipal={fotoPrincipal.fotoPrincipal}
+
+      likeIcon = {likes.like1}
+      commentIcon = {likes.comment}
+      />
+    </div>
+  )
+  
+  
 }
 
 
@@ -44,19 +60,6 @@ const likes = {
   comment: require ('./componentes/icones/comment_icon.svg')
 }
 
-  return (
-    <div className="App">
-      <InstaF4
-      imagemUser={usuario.imagemUser}
-      userName = {usuario.userName}
-
-      fotoPrincipal={fotoPrincipal.fotoPrincipal}
-
-      likeIcon = {likes.like1}
-      commentIcon = {likes.comment}
-      />
-    </div>
-  )
-  }
+ 
 
 export default App;

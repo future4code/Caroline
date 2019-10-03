@@ -15,7 +15,7 @@ return (
                 <img src = {props.fotoPrincipal} alt="" className="fotoPrincipal"/>
             </div>
             <div className="likes">
-                <img src = {props.likeIcon} alt="" className="likewhite" onClick="" />
+                <img src = {props.likeIcon} alt="" className="likewhite" onClick="{this.botaoCurtido}" />
                 <img src = {props.commentIcon} alt="" className="iconeComentario"/>
 
             </div>
