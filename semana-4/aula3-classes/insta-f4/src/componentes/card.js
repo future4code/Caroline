@@ -2,20 +2,6 @@ import React from 'react';
 import './card.css';
 import PropTypes from 'prop-types';
 
-class App extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-        likeIcon:true
-        }
-    }  
-    
-    
-botaoCurtido = () =>{
-
-}
-
-}
 
 export function InstaF4(props){
 return (

@@ -3,6 +3,33 @@ import logo from './logo.svg';
 import './App.css'
 import { InstaF4 } from './componentes/card.js';
 
+
+class App extends React.Component{
+  constructor(props){
+      super(props);
+      this.state = {
+      likeIcon: true
+      };
+  }  
+  
+botaoCurtido = () =>{
+const semLike = this.state.likeIcon;
+this.setState ({likeIcon : !likeIcon})
+};
+
+render() {
+let curtido;
+let iconeCurtido = require ('./componentes/icones/favorite.svg'),
+
+if (this.state.likeIcon === false){
+  likeIcon = iconeCurtido
+}
+
+}
+
+
+}
+
 const usuario = {
   imagemUser: require ('./componentes/img1.jpg'),
   userName: "Caroline"
@@ -17,8 +44,6 @@ const likes = {
   comment: require ('./componentes/icones/comment_icon.svg')
 }
 
-
-function App() {
   return (
     <div className="App">
       <InstaF4
@@ -31,7 +56,7 @@ function App() {
       commentIcon = {likes.comment}
       />
     </div>
-  );
-}
+  )
+  }
 
 export default App;
