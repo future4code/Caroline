@@ -25,16 +25,18 @@ render() {
   if(this.state.likeIcon === false){
     likeIcon = iconeCurtido
     }
-  return (<div className="dados">
-  <InstaF4
-  imagemUser={usuario.imagemUser}
-  userName = {usuario.userName}
-  
-  fotoPrincipal={fotoPrincipal.fotoPrincipal}
-  
-  likeIcon = {likes.like1}
-  commentIcon = {likes.comment}
-  />
+  return (
+  <div className="dados">
+    <InstaF4
+    imagemUser={usuario.imagemUser}
+    userName = {usuario.userName}
+    
+    fotoPrincipal={fotoPrincipal.fotoPrincipal}
+    
+    likeIcon = {likes.like1}
+    commentIcon = {likes.comment}
+    Curtida = {this.botaoCurtido}
+    />
   </div>
    ) 
 }
