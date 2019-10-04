@@ -17,6 +17,7 @@ return (
             <div className="likes">
                 <img src = {props.likeIcon} alt="" className="likewhite" onClick={props.curtida} />
                 <img src = {props.commentIcon} alt="" className="iconeComentario"/>
+                
 
             </div>
         </div>
@@ -29,5 +30,5 @@ InstaF4.propTypes = {
     fotoPrincipal: PropTypes.string.isRequired,
     likeIcon: PropTypes.string.isRequired,
     commentIcon: PropTypes.string.isRequired,
-    Curtida:PropTypes.func.isRequired,
+    curtida:PropTypes.func.isRequired,
   }
