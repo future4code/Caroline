@@ -1,0 +1,14 @@
+.botao{
+    margin-left:80vh;
+    margin-top: 5px;
+    width: 20vh;
+}
+
+button {
+border-radius: 25px;
+width: 140px;
+height: 50px;
+display: flex;
+justify-content: space-around;
+align-items: center; 
+}
