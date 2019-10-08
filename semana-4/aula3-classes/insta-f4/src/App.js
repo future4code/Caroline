@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css'
 import { InstaF4 } from './componentes/card.js';
+import PropTypes from 'prop-types';
 
 const usuario = {
   imagemUser: require ('./componentes/img1.jpg'),
@@ -15,15 +16,17 @@ const fotoPrincipal= {
 const likes = {
   like1: require ('./componentes/icones/favorite-white.svg'),
   like2:require ('./componentes/icones/favorite.svg'),
-  comment: require ('./componentes/icones/comment_icon.svg'),
+  comment: require  ('./componentes/icones/comment_icon.svg')
 }
-
 
 class App extends React.Component{
   constructor(props){
       super(props);
       this.state = {
       likeIcon: false,
+      inputComentario: false,
+      numeracaoComentarios: 0,
+
       };
   }  
   
@@ -32,21 +35,25 @@ botaoCurtido = () =>{
   this.setState ({likeIcon : !this.state.likeIcon})
 };
 
-/*botaoCurtido = () =>{
-  const curtida = likes.like2
-  this.setState ({likeIcon : curtida})
-  //console.log ("testei")
-};*/
+botaoComentario = () => {
+  const esconderComentario = this.state.inputComentario;
+  this.setState ({ inputComentario : !this.state.inputComentario})
+}
+
+numeradorComentario = () => {
+  const numeador = this.state.numeracaoComentarios;
+  this.setState ({numeracaoComentarios: this.state.numeracaoComentario + 1})
+  console.log ("numerar")
+}
+
 
 render() {
-  let likeIcon="";
-  const curtida = likes.like2
-  //let iconeCurtido = require ('./componentes/icones/favorite.svg');
+  let likeIcon
 
-  if(this.state.likeIcon === true){
-    likeIcon = curtida
-    console.log ("testeiiii")
-    }
+  if(this.state.inputComentario === true){
+   likeIcon = <div className ="inputDeComentarios"> <input onChange={this.numeradorComentario} ></input> <button>Enviar</button> </div>
+
+  }
 
   return (
   <div className="dados">
@@ -56,22 +63,27 @@ render() {
     
     fotoPrincipal={fotoPrincipal.fotoPrincipal}
     
-    likeIcon = {likes.like1}
+    likeIcon={this.state.likeIcon ? likes.like2 : likes.like1}
     likeIconLiked = {likes.like2}
-    commentIcon = {likes.comment}
     curtida = {this.botaoCurtido}
-    
-    />
 
+    commentIcon = {likes.comment}
+ 
+    mostrarComentario ={this.botaoComentario}
+    numeradorComentario ={this.numeradorComentario}
+
+    />
+  
 {likeIcon}
+ 
   </div>
+  
    ) 
 }
 
 }
-
-
-
-
-
+/*
+App.propTypes = {
+numeradorComentario:PropTypes.func.isRequired,
+}*/
 export default App;

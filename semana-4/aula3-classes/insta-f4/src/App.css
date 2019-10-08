@@ -20,3 +20,18 @@
 .App-link {
   color: #09d3ac;
 }
+
+.inputDeComentarios {
+  display:flex;
+  flex-direction: column;
+  width: 50vh;
+  margin-left: 75vh;
+}
+
+button {
+  width: 30%;
+  display: flex;
+  text-align: center;
+  margin-left: 15vh;
+  
+}

@@ -16,10 +16,10 @@ return (
             </div>
             <div className="likes">
                 <img src = {props.likeIcon} alt="" className="likewhite" onClick={props.curtida} />
-                <img src = {props.commentIcon} alt="" className="iconeComentario"/>
-                
-
+                <img src = {props.commentIcon} alt="" className="iconeComentario" onClick={props.mostrarComentario}/>
+                <p>{props.numerador}</p>
             </div>
+        
         </div>
     )
 }
@@ -31,4 +31,9 @@ InstaF4.propTypes = {
     likeIcon: PropTypes.string.isRequired,
     commentIcon: PropTypes.string.isRequired,
     curtida:PropTypes.func.isRequired,
+    mostrarComentario:PropTypes.func.isRequired,
+    numerador:PropTypes.string.isRequired,
+ 
+
   }
+     
