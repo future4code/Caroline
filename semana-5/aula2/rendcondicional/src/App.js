@@ -11,15 +11,12 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-         escolhasDeEscolaridadeEMC : "Ensino Médio Completo",
-         escolhasDeEscolaridadeEMI : "Ensino Médio Incompleto",
-           
+         escolhasDeEscolaridade : "Ensino Médio Completo",           
     }
-
   }
+
     escolhasDeEscolaridade= (event) => {
       this.setState({ escolhasDeEscolaridade: event.target.value });
-
     }
 
 
@@ -33,7 +30,7 @@ class App extends React.Component{
           <p> Qual seu email?</p>
           <input type="text"/>
           <p> Qual sua escolaridade?</p>
-          <select>
+          <select value={this.state.value} onChange={this.escolhasDeEscolaridade}>
             <option id=" EMC" value="Ensino Médio Completo">Ensino Médio Completo</option>
             <option id=" EMI" value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
             <option id=" ESC" value="Ensino Superior Completo">Ensino Superio Completo</option>
