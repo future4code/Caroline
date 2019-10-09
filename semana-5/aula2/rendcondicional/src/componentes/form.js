@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 
-
-class App extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
- 
-  
-        };
-    }
+export function etapa1(props){
+return (
+        <div>
+           <p>OIEEE TESTE IMPORT</p> 
+        </div>
+    )
 }
+
+etapa1.propTypes = {
+
+ 
+
+  }
