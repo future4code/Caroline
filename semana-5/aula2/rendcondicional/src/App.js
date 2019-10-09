@@ -52,27 +52,14 @@ class App extends React.Component{
     }
 
     botaoContinuar = () => {
-      function continuar() {
-        return (
-          <div>
-            <p> Por que você não terminou um curso de graduação?</p>
-               <input type="text"/>
-               <p> Você fez algum curso complementar? </p>
-            <select>
-              <option>Curso Técnico</option>
-              <option>Curso de Inglês</option>
-              <option>Não fiz curso complementar</option>
-            </select>
-            <button>Finalizar</button>
-        </div>
-        )
-      } 
+      this.setState({finalizarET1 : !this.stste.finalizarET1})
+  } 
       console.log ("me chamaram")
     }
-
     botaoFinalizar = ()=> {
-    this.setState({finalizarET1 : !this.stste.finalizarET1})
+    
     }
+
 
     render() {
       let escolha;     
