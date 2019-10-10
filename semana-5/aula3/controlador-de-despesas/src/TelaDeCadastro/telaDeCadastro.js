@@ -4,6 +4,8 @@ import styled from "styled-components";
 import {Tipo} from './tipo.js';
 import {Valor } from './valor';
 import {Descricao } from './descricao';
+import { Botoes } from './botoes';
+import {TituloCadastro} from './titulo.js'
 
 
 const TelaDeCadastroPrincipal = styled.div `
@@ -18,15 +20,19 @@ padding: 8px;
 
 `;
 
+
 export function TelaDeCadastro(){
     return (
+          <div>
+          <TituloCadastro/>
+          <TelaDeCadastroPrincipal>
+            
+            <Valor/>
+            <Tipo />
+            <Descricao />
+            <Botoes/>
 
-        <TelaDeCadastroPrincipal>
-      
-          <Valor/>
-          <Tipo />
-          <Descricao />
-          
-        </TelaDeCadastroPrincipal>
+          </TelaDeCadastroPrincipal>
+          </div>
     )
 }

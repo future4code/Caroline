@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import PropTypes from 'prop-types';
 import { TelaDeCadastro } from './TelaDeCadastro/telaDeCadastro.js';
+import {TelaDeExtrato} from './TelaDeExtrato/telaDeExtrato.js'
 
 
 
@@ -14,8 +15,16 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TelaDeCadastro /> 
-      </div>
+
+        <div>
+          <TelaDeCadastro /> 
+        </div>
+
+        <div>
+        <TelaDeExtrato />
+        </div>
+
+       </div>
     );
   }
 }
