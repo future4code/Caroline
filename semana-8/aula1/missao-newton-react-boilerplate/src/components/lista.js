@@ -17,7 +17,7 @@ const DeleteIconRed = styled(DeleteIcon)({
     color: '#d32f2f',
 });  
 
-
+  
   function generate(element) {
 	return [0, 1, 2].map(value =>
 	  React.cloneElement(element, {
@@ -26,10 +26,15 @@ const DeleteIconRed = styled(DeleteIcon)({
 	);
   }
   
-  export default function InteractiveList() {
-
-	const [dense, setDense] = React.useState(false);
-	const [secondary, setSecondary] = React.useState(false);
+  export default class InteractiveList extends React.Component {
+	state = {
+	  dense: false,
+	  secondary: false,
+	};
+  
+	render() {
+	  const { classes } = this.props;
+	  const { dense, secondary } = this.state;
   
 	return (
 	    <Grid item xs={12} md={7}>
@@ -53,4 +58,4 @@ const DeleteIconRed = styled(DeleteIcon)({
           </div>
         </Grid>
 		);
-}
+}}
