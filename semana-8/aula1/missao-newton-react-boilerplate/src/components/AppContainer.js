@@ -1,9 +1,14 @@
 import React from 'react'
-//import Inputs from './input';
 import CustomizedInputBase from './input'
-import InteractiveList from './lista';
+import InteractiveList from './lista'
 import ContainedButtons from './botoes.js'
+import styled from "styled-components";
+//import meuContainerTasks from './cardTasks'
 
+const StyledDiv = styled.div `
+	margin-left: 55vh;
+	margin-top: 10vh;
+`
 
 export class AppContainer extends React.Component {
 	constructor(props) {
@@ -12,12 +17,11 @@ export class AppContainer extends React.Component {
 
 	render() {
 		return (
-			<div>
-			<CustomizedInputBase/>
-			<InteractiveList />
-			<ContainedButtons />
-			</div>
+			<StyledDiv>
+				<CustomizedInputBase/>
+				<InteractiveList />
+				<ContainedButtons />
+			</StyledDiv>
 		)
 	}
 }
-//<Inputs />

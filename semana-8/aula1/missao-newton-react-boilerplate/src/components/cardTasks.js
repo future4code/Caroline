@@ -1,7 +1,10 @@
-import React from 'react'
-import {BotoesFooter} from './BotoesFooter.js';
+/*import React from 'react'
+import CustomizedInputBase from './input'
+import InteractiveList from './lista';
+import ContainedButtons from './botoes.js'
 
-export class AppContainer extends React.Component {
+
+export class meuContainerTasks extends React.Component {
 	constructor(props) {
 		super(props)
 	}
@@ -9,8 +12,10 @@ export class AppContainer extends React.Component {
 	render() {
 		return (
 			<div>
-				<BotoesFooter/>
+				<CustomizedInputBase/>
+				<InteractiveList />
+				<ContainedButtons />
 			</div>
 		)
 	}
-}
+}*/

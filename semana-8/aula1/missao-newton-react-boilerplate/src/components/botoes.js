@@ -4,22 +4,26 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 
 
+const StyledButton = styled(Button) `
+	margin: 5px;
+`
+
 export default function ContainedButtons() {
   
 	return (
 	  <div>
-		<Button variant="contained" color="primary">
+		<StyledButton variant="contained" color="primary">
 		Marcar todas completas
-		</Button>
-		<Button variant="contained" color="primary">
+		</StyledButton >
+		<StyledButton variant="contained" color="primary">
 		Todas
-		</Button>
-		<Button variant="contained" color="primary">
+		</StyledButton >
+		<StyledButton  variant="contained" color="primary">
 		Pendentes
-		</Button>
-		<Button variant="contained" color="primary">
+		</StyledButton >
+		<StyledButton  variant="contained" color="primary">
 		Completas
-		</Button>
+		</StyledButton>
 	  </div>
 	);
   }
