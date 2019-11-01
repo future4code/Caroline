@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import DeleteIcon from '@material-ui/icons/Delete';
 import DoneIcon from '@material-ui/icons/Done';
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 const DoneIconGreen = styled(DoneIcon)({
     color: '#4caf50',
@@ -18,46 +19,36 @@ const DeleteIconRed = styled(DeleteIcon)({
 });  
 
   
-  function generate(element) {
-	return [0, 1, 2].map(value =>
-	  React.cloneElement(element, {
-		key: value,
-	  }),
-	);
-  }
-  
-  export default class InteractiveList extends React.Component {
-	state = {
-	  dense: false,
-	  secondary: false,
-	};
-  
-	render() {
-	  const { classes } = this.props;
-	  const { dense, secondary } = this.state;
+  const InteractiveList= props => {
+	
   
 	return (
 	    <Grid item xs={12} md={7}>
           <div >
             <List >
-              {generate(
+              {props.todos.map(todo => (
                 <ListItem>
 					<IconButton>
                    		<DoneIconGreen />
 				   </IconButton>
                   <ListItemText
-                    primary="Tarefa"
-                    secondary={secondary ? 'Secondary text' : null}
+                    primary={todo.task}
                   />
                   <ListItemSecondaryAction>
                     <IconButton edge="end" aria-label="delete">
                       <DeleteIconRed />
                     </IconButton>
                   </ListItemSecondaryAction>
-                </ListItem>,
-              )}
+                </ListItem>
+              ))}
             </List>
           </div>
         </Grid>
 		);
-}}
+}
+
+const mapStateToProps = state => ({
+	todos: state.todos.AllTodos
+	});
+
+	export default connect (mapStateToProps) (InteractiveList);

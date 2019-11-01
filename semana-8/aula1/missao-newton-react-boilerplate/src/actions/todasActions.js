@@ -6,13 +6,19 @@ export const createTodo = (id, task) => {
 	   type: "CREATE_TODO",
 	   payload:{
          id:id,	
-	     task:task,
 	   }
     }
 }
 
+export const updateTodoTask = (newTask) => ({
+	type: "UPDATE_TODO_TASK",
+	payload: {
+	   newTask: newTask
+    }
+})
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const newTask = () => {
+/*const newTask = () => {
 	return {
 	  type: "NEW_TASK"
 	};
@@ -108,4 +114,4 @@ const removeAll= () => {
 	const dispatch = useDispatch();
   
 	return <button onClick={() => dispatch(removeAll ())}>Remova</button>;
-  }
+  }*/
