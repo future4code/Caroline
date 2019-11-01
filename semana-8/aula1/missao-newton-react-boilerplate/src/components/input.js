@@ -3,12 +3,38 @@ import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 import styled from "styled-components";
 import TextField from '@material-ui/core/TextField';
+import { connect } from "react-redux";
 
 const PaperStyle = styled(Paper) `
 	width: 90vh;
 `
+const CustomizedInputBase = props => {
+	return <PaperStyle >
+				<TextField
+				value={props.currentTodoTask }
+				id="outlined-full-width"
+				style={{ margin: 2 }}
+				placeholder="Digite sua tarefa"
+				fullWidth
+				variant="outlined"
+				InputLabelProps={{
+					shrink: true,
+				}}
+				/>
+		 </PaperStyle>
+   } 
+   
+   const mapStateToProps =(state) => ({
+	currentTodoTask: state.todos.currentTodoTask,
+   })
+   
+   const mapDispatchToProps =(Dispatch) => ({
+	OI:"TCHAU"
+   })
+   
+   export default connect(mapStateToProps, mapDispatchToProps) (CustomizedInputBase)
 
-export default class CustomizedInputBase extends React.Component {
+/* export default class CustomizedInputBase extends React.Component {
 	state = {
 
 	};
@@ -18,6 +44,7 @@ render() {
   return (
     <PaperStyle >
 		<TextField
+		  value={props.currentTodoTask }
           id="outlined-full-width"
           style={{ margin: 2 }}
           placeholder="Digite sua tarefa"
@@ -33,7 +60,7 @@ render() {
 }
 }
 
-/* export default function CustomizedInputBase() {
+export default function CustomizedInputBase() {
 <InputBase
         className
         placeholder="Digite sua tarefa"

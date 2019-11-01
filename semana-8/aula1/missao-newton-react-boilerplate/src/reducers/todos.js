@@ -1,6 +1,6 @@
 const initialState = {
 	todos:[],
-	currentTodoTask: "",
+	currentTodoTask: " ",
 }
 
 export const todos = (state = initialState, action) => {
