@@ -1,6 +1,17 @@
 import React from "react";
 import { useDispatch } from "../redux/react-redux-f4";
 
+export const createTodo = (id, task) => {
+	return{
+	   type: "CREATE_TODO",
+	   payload:{
+         id:id,	
+	     task:task,
+	   }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 const newTask = () => {
 	return {
 	  type: "NEW_TASK"

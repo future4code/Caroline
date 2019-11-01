@@ -5,6 +5,10 @@ import { MuiThemeProvider, createGenerateClassName, jssPreset } from '@material-
 import { createMuiTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { AppContainer } from './components/AppContainer'
+import {Provider} from "react-redux";
+import store from './store';
+
+
 
 const generateClassName = createGenerateClassName()
 const jss = create({
@@ -17,12 +21,14 @@ const theme = createMuiTheme()
 
 function App() {
 	return (
-		<JssProvider jss={jss} generateClassName={generateClassName}>
-			<MuiThemeProvider theme={theme}>
-				<CssBaseline />
-				<AppContainer />
-			</MuiThemeProvider>
-		</JssProvider>
+		<Provider store={store}>
+			<JssProvider jss={jss} generateClassName={generateClassName}>
+				<MuiThemeProvider theme={theme}>
+					<CssBaseline />
+					<AppContainer />
+				</MuiThemeProvider>
+			</JssProvider>
+		</Provider>
 	)
 }
 

@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 const StyledButton = styled(Button) `
 	margin: 5px;
 `
-const StyledButton  = theme => ({
+const styles = theme => ({
 	button: {
 	  margin: theme.spacing.unit,
 	},
@@ -16,7 +16,7 @@ const StyledButton  = theme => ({
 	},
   });
 
-	export default 	function ContainedButtons(props) {
+		function ContainedButtons(props) {
 		const { classes } = props;
   
 	return (
@@ -41,4 +41,4 @@ const StyledButton  = theme => ({
 	classes: PropTypes.object.isRequired,
   };
   
-  //export default withStyles(styles)(ContainedButtons);
+  export default withStyles(styles)(ContainedButtons);

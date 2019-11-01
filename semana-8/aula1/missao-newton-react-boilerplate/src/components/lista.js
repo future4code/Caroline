@@ -42,7 +42,9 @@ const DeleteIconRed = styled(DeleteIcon)({
             <List >
               {generate(
                 <ListItem>
-                   <DoneIconGreen />
+					<IconButton>
+                   		<DoneIconGreen />
+				   </IconButton>
                   <ListItemText
                     primary="Tarefa"
                     secondary={secondary ? 'Secondary text' : null}
