@@ -10,6 +10,7 @@ import {
   UserName,
 } from './styled'
 import {getProfile} from '../../actions/profiles'
+import { connect } from 'react-redux';
 
 
 class UserSwipeCard extends Component {
@@ -27,9 +28,10 @@ class UserSwipeCard extends Component {
 
 
     return (
+    
       <UserCardWrapper animation={animation}>
-        <BlurredBackground photo={userToSwipe.photo}/>
-        <ProfilePicture src={userToSwipe.photo} onClick={props.getProfile} />
+        <BlurredBackground photo={userToSwipe.photo}  onClick={props.getProfile}/>
+        <ProfilePicture src={userToSwipe.photo}  />
         <InfoWrapper>
           <TitleWrapper>
             <UserName>{userToSwipe.name},</UserName>
@@ -40,10 +42,22 @@ class UserSwipeCard extends Component {
   }
 }
 
-export default UserSwipeCard
+const mapStateToProps = (state) => ({
+})
+
+
+
+function mapDispatchToProps(dispatch) {
+	return {
+		getProfile: () => dispatch(getProfile()),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserSwipeCard)
 
 UserSwipeCard.propTypes = {
   userToSwipe: PropTypes.object,
   getProfile: PropTypes.func.isRequired,
 }
+
 
