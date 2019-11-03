@@ -32,6 +32,9 @@ export const todos = (state = initialState, action) => {
 			newTodosWithoutRemoved.splice(indexToRemove, 1);
 
 			return {...state, AllTodos: newTodosWithoutRemoved}	
+
+		case "SET_TODOS":
+			return {...state, AllTodos: action.payload.AllTodos};	
 		
 		default:
 		return state;

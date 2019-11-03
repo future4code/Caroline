@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch } from "../redux/react-redux-f4";
+import axios from "axios";
 
-export const createTodo = (id, task) => {
+const createTodoAction = (id, task) => {
 	return{
 	   type: "CREATE_TODO",
 	   payload:{
@@ -30,6 +31,39 @@ export const deleteTodo = (id) => ({
 		id:id,	
     }
 })
+
+export const   setTodos = AllTodos => ({
+	type: "SET_TODOS",
+	payload:{
+	AllTodos:AllTodos
+   }
+})
+
+export const fetchTodos = () => async (dispatch, getState) => {
+	const response = await axios.get(
+	  "https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/caroline/todos"
+	);
+  
+	dispatch(setTodos(response.data.todos));
+  };
+
+export const createTodo = () => async (dispatch, getState) => {
+	const newTodoTask = getState().todos.currentTodoTask;
+		
+	const response = await axios.post(
+		  "https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/caroline/todos",
+		  {
+			text: newTodoTask
+		  }
+		);
+	  
+	const { id } = response.data.todo
+	  
+	dispatch(createTodoAction(id, newTodoTask));
+};
+	  
+
+  
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*const newTask = () => {
 	return {

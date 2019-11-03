@@ -1,30 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import {TodoList} from './todoList.js';
-import {completeTodo, deleteTodo } from '../actions/todasActions';
+import {completeTodo, deleteTodo, fetchTodos  } from '../actions/todasActions';
+import styled from "styled-components";
+import Button from '@material-ui/core/Button';
 
+const StyledButton = styled(Button) `
+	margin: 5px;
+`
 
-  const InteractiveList= props => {
-  
+	class  InteractiveList extends Component {
+		componentDidMount() {
+		  this.props.fetchAllTodos();
+		}	  
+    render () {
+	
 	return (
 	    <Grid item xs={12} md={7}>
           <div >
             <List >
-              {props.todos.map(todo => (
+              {this.props.todos.map(todo => (
 				<TodoList 
 					todo={todo}
 					task={todo.task}
-					onDelete={props.deleteTodo}
-					onComplete={props.completeTodo}
-					
+					onDelete={this.props.deleteTodo}
+					onComplete={this.props.completeTodo}
 				/>
 				))}
+				<StyledButton variant="contained" color="primary">
+					Marcar todas completas
+				</StyledButton >
+				<StyledButton variant="contained" color="primary" > 
+					Todas
+				</StyledButton >
+				<StyledButton  variant="contained" color="primary">
+					Pendentes
+				</StyledButton >
+				<StyledButton  variant="contained" color="primary">
+					Completas
+		       </StyledButton>
+					
             </List>
           </div>
         </Grid>
 		);
+	}	
 }
 
 const mapStateToProps = state => ({
@@ -33,7 +55,18 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => ({
 	deleteTodo: (id) => dispatch (deleteTodo(id)),
-	completeTodo: (id) => dispatch (completeTodo(id))	
+	completeTodo: (id) => dispatch (completeTodo(id)),
+	fetchAllTodos: () => dispatch(fetchTodos()),
 })
 
 	export default connect (mapStateToProps, mapDispatchToProps) (InteractiveList);
+
+	/*<StyledButton variant="contained" color="primary" > 
+					Todas
+					</StyledButton >
+					<StyledButton  variant="contained" color="primary">
+					Pendentes
+					</StyledButton >
+					<StyledButton  variant="contained" color="primary">
+					Completas
+		       </StyledButton>*/

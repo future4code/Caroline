@@ -44,7 +44,7 @@ const CustomizedInputBase = props => {
    
    const mapDispatchToProps =(dispatch) => ({
 	updateTodoTask:(newTask) => dispatch(updateTodoTask(newTask)),
-	createNewTodo: (id, task) => dispatch(createTodo(id, task)),
+	createNewTodo: () => dispatch(createTodo()),
    })
 
    export default connect(mapStateToProps, mapDispatchToProps) (CustomizedInputBase)

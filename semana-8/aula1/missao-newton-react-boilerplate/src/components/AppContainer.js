@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomizedInputBase from './input'
 import InteractiveList from './lista'
-import ContainedButtons from './botoes.js'
+//import ContainedButtons from './botoes.js'
 import styled from "styled-components";
 //import meuContainerTasks from './cardTasks'
 
@@ -20,8 +20,9 @@ export class AppContainer extends React.Component {
 			<StyledDiv>
 				<CustomizedInputBase/>
 				<InteractiveList />
-				<ContainedButtons />
+				
 			</StyledDiv>
 		)
 	}
 }
+/*<ContainedButtons />*/
