@@ -18,14 +18,14 @@ export const updateTodoTask = (newTask) => ({
     }
 })
 
-export const completeTodo = (id) => ({
+ const completeTodoAction = (id) => ({
 	type: "COMPLETE_TODO",
 	payload: {
 		id:id,	
     }
 })
 
-export const deleteTodo = (id) => ({
+ const deleteTodoAction = (id) => ({
 	type: "DELETE_TODO",
 	payload: {
 		id:id,	
@@ -62,103 +62,20 @@ export const createTodo = () => async (dispatch, getState) => {
 	dispatch(createTodoAction(id, newTodoTask));
 };
 	  
-
+export const completeTodo = (id) => async (dispatch, getState) => {
+	await axios.put(`https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/caroline/todos/${id}/toggle`)
   
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*const newTask = () => {
-	return {
-	  type: "NEW_TASK"
-	};
-  };
-  
-  export function newTaskInput(props) {
-	const dispatch = useDispatch();
-  
-	return <input onChange={() => dispatch(newTask())}></input>;
-  }
-  
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const AddTask = () => {
-  return {
-    type: "ADD_TASK"
-  };
-};
-
-export function AddTaskButton(props) {
-  const dispatch = useDispatch();
-
-  return <button onClick={() => dispatch(AddTask())}>Cadastre Tarefa</button>;
-}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const AllTasks = () => {
-	return {
-	  type: "ALL_TASKS"
-	};
-  };
-  
-  export function AllTasksButton(props) {
-	const dispatch = useDispatch();
-  
-	return <button onClick={() => dispatch(AllTasks())}>Todas Tarefa</button>;
+	dispatch(completeTodoAction(id));
   }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const UnfinishedTasks = () => {
-	return {
-	  type: "UNFINISHED_TASKS"
-	};
-  };
+  export const deleteTodo = (id) => async (dispatch, getState) => {
+	await axios.delete(`https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/caroline/todos/${id}`)
   
-  export function UnfinishedTaskButton(props) {
-	const dispatch = useDispatch();
-  
-	return <button onClick={() => dispatch(UnfinishedTasks())}>Tarefa Inacabadas</button>;
+	dispatch(deleteTodoAction(id));
   }
 
-  
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  export const markAllTodosAsDone = () => async (dispatch, getState) => {
+	const AllTodos = getState().todos.AllTodos;
+	const undoneTodos = AllTodos.filter(todo => !todo.done).map(todo => todo.id);
 
-const FinishedTasks = () => {
-	return {
-	  type: "FINISHED_TASKs"
-	};
-  };
-  
-  export function FinishedTaskButton(props) {
-	const dispatch = useDispatch();
-  
-	return <button onClick={() => dispatch(FinishedTasks ())}>Tarefa Completas</button>;
   }
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const removeTask = () => {
-	return {
-	  type: "REMOVE_TASK"
-	};
-  };
-  
-  export function removeTaskButton(props) {
-	const dispatch = useDispatch();
-  
-	return <button onClick={() => dispatch(removeTask ())}>Remova</button>;
-  }
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const removeAll= () => {
-	return {
-	  type: "REMOVE_ALL"
-	};
-  };
-  
-  export function removeAllButton(props) {
-	const dispatch = useDispatch();
-  
-	return <button onClick={() => dispatch(removeAll ())}>Remova</button>;
-  }*/
