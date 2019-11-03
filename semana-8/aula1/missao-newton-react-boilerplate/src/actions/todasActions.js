@@ -17,6 +17,19 @@ export const updateTodoTask = (newTask) => ({
     }
 })
 
+export const completeTodo = (id) => ({
+	type: "COMPLETE_TODO",
+	payload: {
+		id:id,	
+    }
+})
+
+export const deleteTodo = (id) => ({
+	type: "DELETE_TODO",
+	payload: {
+		id:id,	
+    }
+})
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*const newTask = () => {
 	return {

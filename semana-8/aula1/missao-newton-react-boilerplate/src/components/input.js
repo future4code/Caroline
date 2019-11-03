@@ -9,8 +9,6 @@ import {updateTodoTask, createTodo} from "../actions/todasActions"
 const PaperStyle = styled(Paper) `
 	width: 90vh;
 `
-
-
 	
 const CustomizedInputBase = props => {
 	const onUpdateTodoTask = (event) => {
@@ -29,7 +27,6 @@ const CustomizedInputBase = props => {
 				value={props.currentTodoTask }
 				onChange={onUpdateTodoTask}
 				onKeyPress={onEnterPress}
-				id="outlined-full-width"
 				style={{ margin: 2 }}
 				placeholder="Digite sua tarefa"
 				fullWidth

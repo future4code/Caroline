@@ -1,29 +1,12 @@
 import React from 'react';
 import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
-import DeleteIcon from '@material-ui/icons/Delete';
-import DoneIcon from '@material-ui/icons/Done';
-import styled from "styled-components";
 import { connect } from 'react-redux';
-import {TodoList} from './todoList.js'
+import {TodoList} from './todoList.js';
+import {completeTodo, deleteTodo } from '../actions/todasActions';
 
-const DoneIconGreen = styled(DoneIcon)({
-    color: '#4caf50',
-});  
 
-const DeleteIconRed = styled(DeleteIcon)({
-    color: '#d32f2f',
-});  
-
-  
   const InteractiveList= props => {
-	const onDelete =() => {
-		console.log("apaga!");
-		}
-		
-		const onComplete =() => {
-		console.log("completa!");
-		}
   
 	return (
 	    <Grid item xs={12} md={7}>
@@ -31,8 +14,11 @@ const DeleteIconRed = styled(DeleteIcon)({
             <List >
               {props.todos.map(todo => (
 				<TodoList 
-					key={todo.id}
-					task={todo.task}	
+					todo={todo}
+					task={todo.task}
+					onDelete={props.deleteTodo}
+					onComplete={props.completeTodo}
+					
 				/>
 				))}
             </List>
@@ -45,4 +31,9 @@ const mapStateToProps = state => ({
 	todos: state.todos.AllTodos
 	});
 
-	export default connect (mapStateToProps) (InteractiveList);
+const mapDispatchToProps = (dispatch) => ({
+	deleteTodo: (id) => dispatch (deleteTodo(id)),
+	completeTodo: (id) => dispatch (completeTodo(id))	
+})
+
+	export default connect (mapStateToProps, mapDispatchToProps) (InteractiveList);

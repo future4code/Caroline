@@ -17,21 +17,38 @@ const DeleteIconRed = styled(DeleteIcon)({
 });  
 
 
-export const TodoList = props => (
-	const handleComplete = () => {};
-    const handleDelete = () => {};
-<ListItem >
-	<IconButton onClick = {props.onComplete}>
-		<DoneIconGreen />
-	</IconButton>
+export const TodoList = props => {
+
+	const handleComplete = () => {
+		props.onComplete(props.todo.id);
+	  };
+	
+	  const handleDelete = () => {
+		props.onDelete(props.todo.id);
+	  };
+
+	const completionIcon = props.todo.done ? (
+		<IconButton >
+			<DoneIconGreen />
+		</IconButton>
+	) : ("  ")
+
+	return(
+<ListItem button onClick={handleComplete} >
+		{completionIcon}
 	<ListItemText
 		primary={props.task}
 	/>
 	<ListItemSecondaryAction>
-		<IconButton edge="end" aria-label="delete" onClick = {props.onDelete}>
+		<IconButton edge="end" aria-label="delete" onClick={handleDelete}>
 		<DeleteIconRed
 		/>
 	</IconButton>
 	</ListItemSecondaryAction>
 </ListItem>
-)
+	)
+}
+
+/*	<IconButton onClick = {props.onComplete}>
+		<DoneIconGreen />
+	</IconButton>*/
