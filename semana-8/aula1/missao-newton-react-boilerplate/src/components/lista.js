@@ -3,7 +3,7 @@ import List from '@material-ui/core/List';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import {TodoList} from './todoList.js';
-import {completeTodo, deleteTodo, fetchTodos  } from '../actions/todasActions';
+import {completeTodo, deleteTodo, fetchTodos, markAllTodosAsDone  } from '../actions/todasActions';
 import styled from "styled-components";
 import Button from '@material-ui/core/Button';
 
@@ -29,7 +29,7 @@ const StyledButton = styled(Button) `
 					onComplete={this.props.completeTodo}
 				/>
 				))}
-				<StyledButton variant="contained" color="primary">
+				<StyledButton variant="contained" color="primary" onClick={this.props.markAllTodosAsDone}>
 					Marcar todas completas
 				</StyledButton >
 				<StyledButton variant="contained" color="primary" > 
@@ -57,6 +57,7 @@ const mapDispatchToProps = (dispatch) => ({
 	deleteTodo: (id) => dispatch (deleteTodo(id)),
 	completeTodo: (id) => dispatch (completeTodo(id)),
 	fetchAllTodos: () => dispatch(fetchTodos()),
+	markAllTodosAsDone: () => dispatch(markAllTodosAsDone()),
 })
 
 	export default connect (mapStateToProps, mapDispatchToProps) (InteractiveList);

@@ -78,4 +78,10 @@ export const completeTodo = (id) => async (dispatch, getState) => {
 	const AllTodos = getState().todos.AllTodos;
 	const undoneTodos = AllTodos.filter(todo => !todo.done).map(todo => todo.id);
 
+	
+	for(let todoId of undoneTodos) {
+		axios.put(`https://us-central1-missao-newton.cloudfunctions.net/reduxTodo/scaroline/todos/${todoId}/toggle`)
+		dispatch(completeTodoAction(todoId));
+	  }
+
   }
