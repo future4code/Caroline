@@ -18,7 +18,7 @@ export const getProfileAction = (id,name,age,bio,photo) => ({
 	
 })
 
-export const getProfile = () => async (dispatch, getState) => {
+/*export const getProfile = () => async (dispatch, getState) => {
 	const getNewProfile = getState().profiles.name;
 	
 	const response = await axios.get(
@@ -28,22 +28,26 @@ export const getProfile = () => async (dispatch, getState) => {
 	  }
 
 	);
-	const { name } = response.data.todo
-  	  
+	const { name } = response.data.profiles
 	dispatch(getProfileAction ( name, getNewProfile));
-}
+}*/
 
 
-/*export const getProfile = () => async (dispatch, getState) => {
+export const getProfile = () => async (dispatch, getState) => {
 	await axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/caroline/person').then((res) => {
 		dispatch(getProfileAction(
-			res.data.profiles
+			res.data.profiles.photo,
+			res.data.profiles.name,
+			res.data.profiles.age,
+			res.data.profiles.bio,
+			res.data.profiles.id
+
 
 		))
 	}).catch((err) => {
 		console.log(err);
 	})
-};*/
+};
 
 
 

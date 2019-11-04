@@ -30,7 +30,7 @@ class UserSwipeCard extends Component {
     return (
     
       <UserCardWrapper animation={animation}>
-        <BlurredBackground photo={userToSwipe.photo}  onClick={props.getProfile}/>
+        <BlurredBackground photo={userToSwipe.photo}/>
         <ProfilePicture src={userToSwipe.photo}  />
         <InfoWrapper>
           <TitleWrapper>
@@ -49,7 +49,7 @@ const mapStateToProps = (state) => ({
 
 function mapDispatchToProps(dispatch) {
 	return {
-		getProfile: () => dispatch(getProfile()),
+	
 	}
 }
 
