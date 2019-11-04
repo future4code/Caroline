@@ -7,11 +7,9 @@ const AdmPage = props => {
     console.log(props);
     return (
       <div>
-       <ul>
-           <li></li>
-           <li></li>
-           <li></li>
-       </ul>
+        <button onClick={}>Listar Viagens</button>
+        <button onClick={}>Criar Novas Viagens</button>
+        <button onClick={}>Análise de incrições</button>
       </div>
     );
   };
