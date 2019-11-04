@@ -4,6 +4,7 @@ name: " ",
 age: " ",
 bio: " ",
 photo: " ",
+matches: [],
   
 }
 
@@ -20,7 +21,9 @@ const profiles = (state = initialState, action) => {
         
         };
         return { profiles_data};
-
+    case "GET_MATCH_ACTION":
+        const matchesData = {profiles_data}
+       return {...state,matchesData}
     default:
         return state;
   }
