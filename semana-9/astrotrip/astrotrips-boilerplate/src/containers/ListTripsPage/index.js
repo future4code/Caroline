@@ -11,11 +11,13 @@ class ListTrips extends Component {
   
     render() {
       return (
-          <div>
+          <List>
               {
-                 
+                  this.props.trips.map((trip) => {
+                      return(<li>{trip.name}</li>)
+                  })
               }
-          </div>
+          </List>
       );
   }
 }
@@ -32,4 +34,4 @@ class ListTrips extends Component {
   export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(ListTrips);
+  )(ListTrips)
