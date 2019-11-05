@@ -5,6 +5,7 @@ import LoginPage from "../LoginPage";
 import HomePage from "../HomePage";
 import Inscricao from "../Inscricao";
 import AdmPage from "../Adm/index.js";
+import ListTrips from "../ListTripsPage"
 
 
 const routes = {
@@ -23,10 +24,14 @@ function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
+      
        <Route  path={routes.root} component={LoginPage} /> 
        <Route  path={routes.inscricao} component={Inscricao} />
        <Route  path={routes.adm} component={AdmPage} />
+       <Route  path={routes.tripList} component={ListTrips} />
        <Route  path={routes.home} component={HomePage} />
+      
+
       </Switch>
     </ConnectedRouter>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import { getTripsAction } from "../../actions/allActions";
@@ -11,15 +11,13 @@ class ListTrips extends Component {
   
     render() {
       return (
-        <List>
-          
-        </List>
+        <List>LISTA!</List>
       );
     }
   }
   
   const mapStateToProps = state => ({
-    trips: state.todos.trips
+    trips: state.trips.trips
   });
   
   const mapDispatchToProps = dispatch => ({

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const getTripsAction = () => ({
+export const getTripsAction = (trips) => ({
 	type: "GET_TRIPS",
 	payload: {
 		trips:trips,
