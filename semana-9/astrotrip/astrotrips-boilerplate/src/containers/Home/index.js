@@ -7,15 +7,16 @@ const HomePage = props => {
     console.log(props);
     return (
       <div>
-        <button onClick={}>INSCRIÇÕES</button>
-        <button onClick={}>LOGIN</button>
+        <button onClick={props.goToInscricao}>INSCRIÇÕES</button>
+        <button onClick={props.goToLogin}>LOGIN</button>
       </div>
     );
   };
   
   function mapDispatchToProps(dispatch) {
     return {
-      
+      goToInscricao: () => dispatch(push("/inscricao")),
+      goToLogin:  () => dispatch(push("/login"))
     };
   }
   

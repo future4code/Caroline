@@ -1,13 +1,16 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
+
 
 const Inscricao = props => {
     console.log(props);
     return (
       <div>
-        <button onClick={}>INSCRIÇÕES</button>
-        <button onClick={}>LOGIN</button>
+        <form>
+          testee
+        </form>
+       
       </div>
     );
   };
@@ -22,3 +25,4 @@ const Inscricao = props => {
     null,
     mapDispatchToProps
   )(Inscricao);
+  

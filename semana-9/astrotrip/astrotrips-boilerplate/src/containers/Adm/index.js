@@ -7,9 +7,7 @@ const AdmPage = props => {
     console.log(props);
     return (
       <div>
-        <button onClick={}>Listar Viagens</button>
-        <button onClick={}>Criar Novas Viagens</button>
-        <button onClick={}>Análise de incrições</button>
+    
       </div>
     );
   };
@@ -24,3 +22,7 @@ const AdmPage = props => {
     null,
     mapDispatchToProps
   )(AdmPage);
+
+      /*<button onClick={}>Listar Viagens</button>
+        <button onClick={}>Criar Novas Viagens</button>
+        <button onClick={}>Análise de incrições</button>*/
