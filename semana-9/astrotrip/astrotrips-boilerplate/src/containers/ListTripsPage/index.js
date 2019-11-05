@@ -12,10 +12,11 @@ class ListTrips extends Component {
     render() {
       return (
         <List>
-            {this.props.trips.map(trip => (
+            {this.props.trips.map(trips => (
+            
             <div>
-                id={trip.id}
-                name={trip.name}
+                {trips.id}
+                {trips.name}
             </div>
         ))}
 

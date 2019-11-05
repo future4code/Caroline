@@ -1,7 +1,8 @@
 import axios from "axios";
 
+////////////////////////////////////////// Get Trips ///////////////////////////////////////////////////
 
-export const getTripsAction = (trips) => ({
+ const getTripsAction = (trips) => ({
 	type: "GET_TRIPS",
 	payload: {
 		trips:trips,
@@ -14,13 +15,17 @@ export const getTrips = () => async (dispatch) => {
 	dispatch(getTripsAction(response.data.trips))
 }
 
-/*id,name,description,planet,durationIndays,date
+////////////////////////////////////////// Get Trip Detail ///////////////////////////////////////////////////7a5J3xCpkBZdxmh5VU1t
 
- "id": "0aQ9retlt9zxpeo40G2M",
-      "name": "Multi luau em Jupiter",
-      "description": "Noite mágica, com vista para as 69 luas de Jupiter",
-      "planet": "Jupiter",
-      "durationInDays": 540,
-      "date": "21/12/20"
+export const getTripDetailAction = (trip) => ({
+	type: "GET_TRIP_DETAIL",
+	payload: {
+		trip:trip,
+	}
+})
 
-*/
+export const getTripDetail = () => async (dispatch) => {
+	const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trip/${id}')
+
+	dispatch(getTripDetailAction (response.data.trip))
+}
