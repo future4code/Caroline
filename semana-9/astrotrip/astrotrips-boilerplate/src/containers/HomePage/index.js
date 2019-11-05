@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router"
 import logo from './logo.png';
-import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 const Img = styled.img `

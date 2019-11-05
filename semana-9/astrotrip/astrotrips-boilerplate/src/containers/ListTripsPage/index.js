@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-import { getTripsAction } from "../../actions/allActions";
+import { getTrips } from "../../actions/allActions";
 import List from "@material-ui/core/List";
 
 class ListTrips extends Component {
@@ -11,7 +11,15 @@ class ListTrips extends Component {
   
     render() {
       return (
-        <List>LISTA!</List>
+        <List>
+            {this.props.trips.map(trip => (
+            <div>
+                id={trip.id}
+                name={trip.name}
+            </div>
+        ))}
+
+        </List>
       );
     }
   }
@@ -21,7 +29,7 @@ class ListTrips extends Component {
   });
   
   const mapDispatchToProps = dispatch => ({
-    getTripsAction: () => dispatch(getTripsAction()),
+    getTripsAction: () => dispatch(getTrips()),
 
   });
   
