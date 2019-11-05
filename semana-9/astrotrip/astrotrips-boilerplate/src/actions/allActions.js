@@ -25,7 +25,7 @@ export const getTripDetailAction = (trip) => ({
 })
 
 export const getTripDetail = () => async (dispatch) => {
-	const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trip/${id}')
+	const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trip/7a5J3xCpkBZdxmh5VU1t')
 
 	dispatch(getTripDetailAction (response.data.trip))
 }

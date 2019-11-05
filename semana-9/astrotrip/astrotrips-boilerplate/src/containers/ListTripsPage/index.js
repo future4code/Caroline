@@ -11,19 +11,14 @@ class ListTrips extends Component {
   
     render() {
       return (
-        <List>
-            {this.props.trips.map(trips => (
-            
-            <div>
-                {trips.id}
-                {trips.name}
-            </div>
-        ))}
-
-        </List>
+          <div>
+              {
+                 
+              }
+          </div>
       );
-    }
   }
+}
   
   const mapStateToProps = state => ({
     trips: state.trips.trips

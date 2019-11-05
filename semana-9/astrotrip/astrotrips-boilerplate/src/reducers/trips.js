@@ -15,9 +15,8 @@ const initialState = {
       return { ...state, trips: newTrips};
 
       case "GET_TRIP_DETAIL":
-        
-
-      return { ...state, trip: action.payload.trip,;
+    
+      return { ...state, trip: action.payload.trip,};
       default:
         return state;
     }
