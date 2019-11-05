@@ -8,7 +8,7 @@ const Inscricao = props => {
     return (
       <div>
         <form>
-          testee
+          inscricao
         </form>
        
       </div>

@@ -20,6 +20,7 @@ const HomePage = props => {
         <button onClick={props.goToInscricao}>INSCRIÇÕES</button>
         <button onClick={props.goToLogin}>LOGIN</button>
         <button onClick={props.goToList}>Teste,list</button>
+        <button onClick={props. goToTripDetails}>Teste,tripDetals</button>
       </div>
     );
   };
@@ -28,7 +29,8 @@ const HomePage = props => {
     return {
       goToInscricao: () => dispatch(push("/application-form")),
       goToLogin:  () => dispatch(push("/login")),
-      goToList:  () => dispatch(push("/trips/list"))
+      goToList:  () => dispatch(push("/trips/list")),
+      goToTripDetails:  () => dispatch(push("/trips/details"))
     };
   }
   
