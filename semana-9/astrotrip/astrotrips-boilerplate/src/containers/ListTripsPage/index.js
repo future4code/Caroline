@@ -10,6 +10,7 @@ class ListTrips extends Component {
     }
   
     render() {
+      console.log(this.props.trips) 
       return (
           <List>
               {
