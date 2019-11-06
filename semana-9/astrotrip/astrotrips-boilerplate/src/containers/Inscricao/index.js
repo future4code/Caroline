@@ -20,6 +20,8 @@ class Inscricao extends Component {
     };
   }
 
+
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ form: { ...this.state.form, [name]: value } });
@@ -29,10 +31,10 @@ class Inscricao extends Component {
   
     return (
       <div>
-        <Form onSubmit={handleSubmit}>
+        <Form>
           <label>
             <p>Nome:</p>
-              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  value={this.state.nome} />
+              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  value={this.state.nome} onChange={this.handleInputChange} />
           </label>
           <label>
            <p> Idade:</p>
@@ -40,11 +42,11 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
-              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"  value={this.state.pergunta}   />
+              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"  value={this.state.pergunta} onChange={this.handleInputChange}  />
           </label>
           <label>
             <p>Profissão:</p>
-              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  value={this.state.profissao}  />
+              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  value={this.state.profissao} onChange={this.handleInputChange}  />
           </label>
           <label>
             <p>País:</p>
