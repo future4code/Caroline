@@ -32,7 +32,7 @@ class Inscricao extends Component {
         <Form onSubmit={handleSubmit}>
           <label>
             <p>Nome:</p>
-              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"/>
+              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  value={this.state.nome} />
           </label>
           <label>
            <p> Idade:</p>
@@ -40,11 +40,11 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
-              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"   />
+              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"  value={this.state.pergunta}   />
           </label>
           <label>
             <p>Profissão:</p>
-              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text" />
+              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  value={this.state.profissao}  />
           </label>
           <label>
             <p>País:</p>

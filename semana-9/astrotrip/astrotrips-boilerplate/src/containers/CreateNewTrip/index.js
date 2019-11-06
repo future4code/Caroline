@@ -11,7 +11,6 @@ import styled from "styled-components";
               nome: " ",
               data: " ",
               descricao: " ",
-              duracao: " ",
           };
     }    
     
@@ -28,7 +27,7 @@ import styled from "styled-components";
                 <form>
                     <label>
                         <p>Nome:</p>
-                            <input required name="name" pattern="^[a-zA-Z]{5,}" type= "text"/>
+                            <input required name="name" pattern="^[a-zA-Z]{5,}" type= "text" value={this.state.nome}/>
                     </label>
                     <label>
                         <p>Planeta:</p>
@@ -46,11 +45,11 @@ import styled from "styled-components";
                     </label>
                     <label>
                         <p>Data:</p>
-                            <input required name="date" />
+                            <input required name="date" value={this.state.data} />
                     </label>
                     <label>
                         <p>Descrição:</p>
-                            <textarea required name="description" pattern="^[a-zA-Z]{30,}" type= "text"  />
+                            <textarea required name="description" pattern="^[a-zA-Z]{30,}" type= "text" value={this.state.descricao}  />
                     </label>
                     <label>
                         <p> Duração da viagem em dias:</p>
