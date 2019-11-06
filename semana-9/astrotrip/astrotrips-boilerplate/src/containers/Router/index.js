@@ -18,8 +18,6 @@ const routes = {
   tripList: "/trips/list",
   tripDetails:"/trips/details",
   
-  
-
 };
 
 function Router(props) {

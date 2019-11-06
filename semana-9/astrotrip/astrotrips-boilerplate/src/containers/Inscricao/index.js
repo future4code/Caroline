@@ -26,10 +26,14 @@ class Inscricao extends Component {
  };
 
   render() {
+    const handleSubmit = event => {
+      event.preventDefault();
+      alert("TEste");
+    };
   
     return (
       <div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <label>
             <p>Nome:</p>
               <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  
@@ -42,7 +46,7 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
-              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"  
+              <textarea  required name="applicationText" pattern="[a-zA-Z\s\\.,]"  
               value={this.state.applicationText} onChange={this.handleInputChange}  
               />
           </label>

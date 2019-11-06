@@ -19,7 +19,6 @@ import styled from "styled-components";
         this.setState({ [name]: value });
      };
   
-   
       
         render() {
 
@@ -51,7 +50,9 @@ import styled from "styled-components";
                     </label>
                     <label>
                         <p>Data:</p>
-                            <input required name="date" value={this.state.date} onChange={this.handleInputChange} />
+                            <input required name="date" value={this.state.date} onChange={this.handleInputChange} type="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2019-11-06" />
+                      
+                             
                     </label>
                     <label>
                         <p>Descrição:</p>
@@ -76,3 +77,4 @@ import styled from "styled-components";
   //connect(
     //null,
    // mapDispatchToProps
+   //verificar validação "dinÂmica da data"
