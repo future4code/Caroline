@@ -16,19 +16,24 @@ import styled from "styled-components";
     
     handleInputChange = event => {
         const { name, value } = event.target;
-        this.setState({ form: { ...this.state.form, [name]: value } });
-    };
+        this.setState({ [name]: value });
+     };
   
-
+   
       
         render() {
 
+            const handleSubmit = event => {
+                event.preventDefault();
+                alert("TEste");
+              };
           return (
             <div>
-                <form >
+                <form onSubmit={handleSubmit} >
                     <label>
                         <p>Nome:</p>
-                            <input required name="name" pattern="^[a-zA-Z]{5,}" type= "text" value={this.state.nome} onChange={this.handleInputChange}/>
+                            <input required name="name" pattern="^[a-zA-Z]{5,}" 
+                            type="text" value={this.state.name} onChange={this.handleInputChange}/>
                     </label>
                     <label>
                         <p>Planeta:</p>
@@ -46,11 +51,12 @@ import styled from "styled-components";
                     </label>
                     <label>
                         <p>Data:</p>
-                            <input required name="date" value={this.state.data} onChange={this.handleInputChange} />
+                            <input required name="date" value={this.state.date} onChange={this.handleInputChange} />
                     </label>
                     <label>
                         <p>Descrição:</p>
-                            <textarea required name="description" pattern="^[a-zA-Z]{30,}" type= "text" value={this.state.descricao} onChange={this.handleInputChange}  />
+                            <textarea required name="description" pattern="^[a-zA-Z]{30,}" type= "text" 
+                            value={this.state.description} onChange={this.handleInputChange}  />
                     </label>
                     <label>
                         <p> Duração da viagem em dias:</p>

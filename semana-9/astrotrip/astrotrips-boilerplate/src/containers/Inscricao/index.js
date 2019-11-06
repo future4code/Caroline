@@ -8,7 +8,6 @@ const Form = styled.div `
  flex-direction:column; 
 `
 
-
 class Inscricao extends Component {
   constructor(props) {
     super(props);
@@ -21,20 +20,21 @@ class Inscricao extends Component {
   }
 
 
-
   handleInputChange = event => {
     const { name, value } = event.target;
-    this.setState({ form: { ...this.state.form, [name]: value } });
-};
+    this.setState({ [name]: value });
+ };
 
   render() {
   
     return (
       <div>
-        <Form>
+        <form>
           <label>
             <p>Nome:</p>
-              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  value={this.state.nome} onChange={this.handleInputChange} />
+              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  
+               value={this.state.name} onChange={this.handleInputChange} 
+              />
           </label>
           <label>
            <p> Idade:</p>
@@ -42,11 +42,15 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
-              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"  value={this.state.pergunta} onChange={this.handleInputChange}  />
+              <textarea  required name="applicationText" pattern="^[a-zA-Z]{30,}"  
+              value={this.state.applicationText} onChange={this.handleInputChange}  
+              />
           </label>
           <label>
             <p>Profissão:</p>
-              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  value={this.state.profissao} onChange={this.handleInputChange}  />
+              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  
+              value={this.state.profession} onChange={this.handleInputChange}  
+              />
           </label>
           <label>
             <p>País:</p>
@@ -237,7 +241,7 @@ class Inscricao extends Component {
                 </select>
           </label>
           <button type="submit" >Finalizar Inscrição</button>
-        </Form>
+        </form>
       </div>
     );
   };
