@@ -6,7 +6,7 @@ import HomePage from "../HomePage";
 import Inscricao from "../Inscricao";
 import ListTrips from "../ListTripsPage"
 import TripDetails from "../TripDetailsPage"
-
+import CreateNewTrip from "../CreateNewTrip"
 
 const routes = {
   
@@ -18,6 +18,7 @@ const routes = {
   tripList: "/trips/list",
   tripDetails:"/trips/details",
   
+  
 
 };
 
@@ -25,6 +26,7 @@ function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
+        <Route path={routes.createTrip} component={CreateNewTrip}/>
         <Route  path={routes.inscricao} component={Inscricao} />
         <Route exact path={routes.root} component={LoginPage} /> 
         <Route  path={routes.tripList} component={ListTrips} />
