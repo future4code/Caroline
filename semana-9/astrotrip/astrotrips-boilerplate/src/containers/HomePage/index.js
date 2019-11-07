@@ -1,15 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router"
-import logo from './logo.png';
 import styled from "styled-components";
+import Header from "../components/Header.js";
 
-const Header = styled.div `
-  background-color:white;
-`
-const Img = styled.img `
-  width:250px;
-`
 const ButtonsStyledDiv = styled.div `
   display:flex;
   margin-top:15%;
@@ -35,9 +29,7 @@ const HomePage = props => {
     console.log(props);
     return (
       <div>
-        <Header>
-          <Img src={logo}/>
-        </Header>
+        <Header/>
         <ButtonsStyledDiv>
             <ButtonStyled onClick={props.goToInscricao}>INSCRIÇÕES</ButtonStyled>
             <ButtonStyled onClick={props.goToLogin}>LOGIN</ButtonStyled>

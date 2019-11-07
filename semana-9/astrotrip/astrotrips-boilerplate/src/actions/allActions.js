@@ -29,3 +29,49 @@ export const getTripDetail = () => async (dispatch) => {
 
 	dispatch(getTripDetailAction (response.data.trip))
 }
+
+////////////////////////////////////////// POST Create Trip ///////////////////////////////////////////////////
+/*const createTripsAction = (name,planet,date,description,durationInDays) => ({
+	type: "CREATE_TRIPS",
+	payload: {
+		name:name,
+		planet:planet,
+		date:date,
+		description:description,
+		durationInDays: durationInDays,
+	}
+})*/
+
+export const createTrips = (name,planet,date,description,durationInDays) => async (dispatch) => {
+    const dados = {
+		name:name,
+		planet:planet,
+		date:date,
+		description:description,
+		durationInDays: durationInDays,
+	}
+	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trips', dados)
+	dispatch((response.data.data))
+}
+
+
+/*
+\"  name
+    date
+    description
+	durationInDays
+	*/
+
+////////////////////////////////////////// POST Apply to Trip ///////////////////////////////////////////////////
+
+export const applyToTrip= (name,age, applicationText, profession, country) => async (dispatch) => {
+    const dados = {
+		name:name,
+		age:age,
+		applicationText:applicationText,
+		profession:profession,
+		country:country,
+	}
+	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trips/7a5J3xCpkBZdxmh5VU1t/apply', dados)
+	dispatch((response.data.data))
+}

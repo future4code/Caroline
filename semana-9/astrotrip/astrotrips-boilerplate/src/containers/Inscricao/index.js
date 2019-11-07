@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import styled from "styled-components";
+import Header from "../components/Header.js";
+import TextField from '@material-ui/core/TextField';
+import { applyToTrip } from "../../actions/allActions";
 
 const Form = styled.div `
  display:flex;
  flex-direction:column; 
 `
+
 
 class Inscricao extends Component {
   constructor(props) {
@@ -28,11 +32,13 @@ class Inscricao extends Component {
   render() {
     const handleSubmit = event => {
       event.preventDefault();
+      this.props. applyToTripAction(this.state.name,)
       alert("TEste");
     };
   
     return (
       <div>
+        <Header/>
         <form onSubmit={handleSubmit}>
           <label>
             <p>Nome:</p>
@@ -46,9 +52,16 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
-              <textarea  required name="applicationText" pattern="[a-zA-Z\s\\.,]"  
-              value={this.state.applicationText} onChange={this.handleInputChange}  
-              />
+            <TextField
+              multiline
+              rows="4"
+              margin="normal"
+              variant="outlined"
+              inputProps={{  pattern: "[a-zA-Z\s\\.,]", minlength:"30"  }}
+              value={this.state.applicationText} 
+              onChange={this.handleInputChange}  
+            />
+
           </label>
           <label>
             <p>Profissão:</p>
@@ -252,7 +265,7 @@ class Inscricao extends Component {
 }
   function mapDispatchToProps(dispatch) {
     return {
-      
+      applyToTripAction: (name,age, applicationText, profession, country) => dispatch(applyToTrip(name,age, applicationText, profession, country)),
     };
   }
   
@@ -260,4 +273,13 @@ class Inscricao extends Component {
     null,
     mapDispatchToProps
   )(Inscricao);
+
+
+  /*           
   
+  
+  <textarea  required name="applicationText" pattern= "[a-zA-Z\s\\.,]" minlength="30" type="text"
+              value={this.state.applicationText} onChange={this.handleInputChange}  
+              /*/
+
+                  
