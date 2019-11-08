@@ -12,11 +12,12 @@ import { createTrips } from "../../actions/allActions";
         constructor(props) {
           super(props);
           this.state = {
-              nome: " ",
-              data: " ",
-              descricao: " ",
-              duracao: " ",
-              planeta: "",
+              name: " ",
+              planet: "",
+              date: " ",
+              description: " ",
+              durationInDays: " ",
+              
           };
     }    
     
@@ -27,7 +28,11 @@ import { createTrips } from "../../actions/allActions";
 
          handleSubmit = event => {
                 event.preventDefault();
-                this.props.createTripAction(this.state.name, this.state.planet,this.state.date,this.state.description,this.state.durationInDays);
+                this.props.createTripAction(this.state.name, 
+                    this.state.planet,
+                    this.state.date,
+                    this.state.description,
+                    this.state.durationInDays);
                 alert("Enviado!");
               };
   

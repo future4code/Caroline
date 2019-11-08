@@ -2,9 +2,9 @@ import axios from "axios";
 import { push } from "connected-react-router";
 import { routes } from "../containers/Router";
 
-export const login = (email, password) => async dispatch => {
+
+ export const login = (email, password) => async dispatch => {
     try {
-      dispatch(clearErrorMessageAction());
       const response = await axios.post(
         "https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/login",
         {
@@ -12,11 +12,13 @@ export const login = (email, password) => async dispatch => {
           password
         }
       );
-      window.localStorage.setItem("token", response.data.token);
-      dispatch(push(routes.listTrips));
+      console.log(response)
+      window.localStorage.SetItem ("token", response.data.token);
+dispatch(push(routes.tripList));
     } catch (e) {
-      console.log(e.message);
-      dispatch(setErrorMessageAction(e.message));
+      console.log(e.message)
     }
-  };
-  
+ }
+
+
+ 

@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import Header from "../components/Header.js";
+import {login} from "../../actions/auth"
 
 const LoginWrapper = styled.form`
   width: 100%;
@@ -30,32 +31,49 @@ class LoginPage extends Component {
     });
   };
 
-  render() {
+  onClickLogin = () => {
     const { email, password } = this.state;
 
+    this.props.doLogin(email, password);
+
+  };
+
+  render() {
+    const { email, password } = this.state;
+   
+
     return (
-      <div>
-      <Header/>
-        <LoginWrapper>
-          <TextField
-            onChange={this.handleFieldChange}
-            name="email"
-            type="email"
-            label="E-mail"
-            value={email}
-          />
-          <TextField
-            onChange={this.handleFieldChange}
-            name="password"
-            type="password"
-            label="Password"
-            value={password}
-          />
-          <Button>Login</Button>
-        </LoginWrapper>
-      </div>
+      <LoginWrapper>
+        <TextField
+          onChange={this.handleFieldChange}
+          name="email"
+          type="email"
+          label="E-mail"
+          value={email}
+        />
+        <TextField
+          onChange={this.handleFieldChange}
+          name="password"
+          type="password"
+          label="Password"
+          value={password}
+        />
+        <Button onClick={this.onClickLogin}>Login</Button>
+       
+      </LoginWrapper>
     );
   }
 }
 
-export default LoginPage;
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    doLogin: (email, password) => dispatch(login(email, password))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(LoginPage);

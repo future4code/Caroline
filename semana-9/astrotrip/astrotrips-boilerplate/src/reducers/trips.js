@@ -1,7 +1,6 @@
 const initialState = {
     trips: [],
     trip: {},
-    dados:[],
 
   };
   
@@ -13,16 +12,6 @@ const initialState = {
       case "GET_TRIP_DETAIL":
         return { ...state, trip: action.payload.trip,};
 
-      /*case "CREATE_TRIPS":
-          const newCreateTrip = {
-            name: action.payload.name,
-            date: action.payload.date,
-            planet:action.payload.planet,
-            description: action.payload.description,
-            durationInDays: action.payload.durationInDays
-          };
-          const newCreateTrips = [...state.dados, newCreateTrip ];
-          return { ...state, createTrip: newCreateTrips };  */
         
       default:
         return state;
@@ -30,12 +19,4 @@ const initialState = {
   };
   
   export default trips ;
-  /*
-   const newTrip = {
-          trips: action.payload.trips,
-          
-        };
-        const newTrips = [...state.trips, newTrip];
-      return { ...state, trips: newTrips};
-
-  */
+ 

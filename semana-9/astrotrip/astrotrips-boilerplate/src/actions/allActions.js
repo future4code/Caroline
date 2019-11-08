@@ -24,10 +24,20 @@ export const getTripDetailAction = (trip) => ({
 	}
 })
 
+
 export const getTripDetail = () => async (dispatch) => {
-	const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trip/7a5J3xCpkBZdxmh5VU1t')
+	const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkNmbjZPd0YyOVU5TDJSYzV0UWo1IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE1NzMwOTkxNjh9.GNN7SQnv-WqZCnrh6q1UobUcb4jBkugtFpa50cdFQcE"
+
+	const response = await axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trip/7a5J3xCpkBZdxmh5VU1t',
+		{
+			headers: {auth:token}
+		}
+	)
+	console.log (response.data.trip)
+		
 
 	dispatch(getTripDetailAction (response.data.trip))
+	
 }
 
 ////////////////////////////////////////// POST Create Trip ///////////////////////////////////////////////////
@@ -43,6 +53,7 @@ export const getTripDetail = () => async (dispatch) => {
 })*/
 
 export const createTrips = (name,planet,date,description,durationInDays) => async (dispatch) => {
+	const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkNmbjZPd0YyOVU5TDJSYzV0UWo1IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE1NzMwOTkxNjh9.GNN7SQnv-WqZCnrh6q1UobUcb4jBkugtFpa50cdFQcE"
     const dados = {
 		name:name,
 		planet:planet,
@@ -50,8 +61,14 @@ export const createTrips = (name,planet,date,description,durationInDays) => asyn
 		description:description,
 		durationInDays: durationInDays,
 	}
-	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trips', dados)
+	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trips', dados,
+		{
+			headers: {auth:token}
+		}
+	)
 	dispatch((response.data.data))
+	
+	
 }
 
 
@@ -64,14 +81,17 @@ export const createTrips = (name,planet,date,description,durationInDays) => asyn
 
 ////////////////////////////////////////// POST Apply to Trip ///////////////////////////////////////////////////
 
-export const applyToTrip= (name,age, applicationText, profession, country) => async (dispatch) => {
+export const applyToTrip= (id,name,country, applicationText, profession,age) => async (dispatch) => {
+	//console.log( id, name,age, applicationText, profession, country)
     const dados = {
+		id:id,
 		name:name,
-		age:age,
+		country:country,
 		applicationText:applicationText,
 		profession:profession,
-		country:country,
+		age:age,
 	}
 	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/futureX/caroline/trips/7a5J3xCpkBZdxmh5VU1t/apply', dados)
+	
 	dispatch((response.data.data))
 }

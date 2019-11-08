@@ -17,8 +17,10 @@ class Inscricao extends Component {
     super(props);
     this.state = {
       nome: " ",
+      idade:" ",
       pergunta: " ",
       profissao: " ",
+      pais: " ",
       
     };
   }
@@ -32,8 +34,12 @@ class Inscricao extends Component {
   render() {
     const handleSubmit = event => {
       event.preventDefault();
-      this.props. applyToTripAction(this.state.name,)
-      alert("TEste");
+      this.props. applyToTripAction(this.state.name,
+        this.state.age,
+        this.state.applicationText,
+        this.state.profession,
+        this.state.country)
+      alert("Enviado");
     };
   
     return (
@@ -48,7 +54,7 @@ class Inscricao extends Component {
           </label>
           <label>
            <p> Idade:</p>
-              <input required name="age" min="18" type="number" />
+              <input required name="age" min="18" type="number" value={this.state.age} onChange={this.handleInputChange}  />
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
@@ -71,7 +77,7 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>País:</p>
-              <select>
+              <select value={this.state.country} onChange={this.handleInputChange} >
                     <option value="África do Sul">África do Sul</option>
                     <option value="Albânia">Albânia</option>
                     <option value="Alemanha">Alemanha</option>
@@ -251,10 +257,10 @@ class Inscricao extends Component {
           <label>
             <p>TripId:</p>
                 <select>
-                    <option>Festança Marciana - Marte</option>
-                    <option>Multi luau - Jupiter</option>
-                    <option>Surfando - Netuno</option>
-                    <option>Picnic de Inverno - Plutão</option>
+                    <option >Festança Marciana - Marte</option>
+                    <option >Multi luau - Jupiter</option>
+                    <option >Surfando - Netuno</option>
+                    <option >Picnic de Inverno - Plutão</option>
                 </select>
           </label>
           <button type="submit" >Finalizar Inscrição</button>
@@ -265,7 +271,7 @@ class Inscricao extends Component {
 }
   function mapDispatchToProps(dispatch) {
     return {
-      applyToTripAction: (name,age, applicationText, profession, country) => dispatch(applyToTrip(name,age, applicationText, profession, country)),
+      applyToTripAction: (id,name,country, applicationText, profession,age) => dispatch(applyToTrip(id,name,country, applicationText, profession,age)),
     };
   }
   
