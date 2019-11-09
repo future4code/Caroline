@@ -43,7 +43,7 @@ const HomePage = props => {
       goToInscricao: () => dispatch(push("/application-form")),
       goToLogin:  () => dispatch(push("/login")),
       goToList:  () => dispatch(push("/trips/list")),
-      goToTripDetails:  () => dispatch(push("/trips/details"))
+      
     };
   }
   

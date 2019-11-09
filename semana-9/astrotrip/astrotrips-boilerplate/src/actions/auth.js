@@ -12,9 +12,9 @@ import { routes } from "../containers/Router";
           password
         }
       );
-      console.log(response)
-      window.localStorage.SetItem ("token", response.data.token);
-dispatch(push(routes.tripList));
+      console.log("dados:", response)
+      window.localStorage.setItem ("token", response.data.token);
+        dispatch(push(routes.admPage));
     } catch (e) {
       console.log(e.message)
     }

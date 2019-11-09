@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router"
 import styled from "styled-components";
 import { createTrips } from "../../actions/allActions";
+import Header from "../components/Header.js";
 
 
     class CreateNewTrip extends Component {
@@ -12,11 +13,11 @@ import { createTrips } from "../../actions/allActions";
         constructor(props) {
           super(props);
           this.state = {
-              name: " ",
-              planet: "",
-              date: " ",
-              description: " ",
-              durationInDays: " ",
+              nome: " ",
+              planeta: "",
+              data: " ",
+              descricao: " ",
+              duracao: " ",
               
           };
     }    
@@ -41,6 +42,7 @@ import { createTrips } from "../../actions/allActions";
             
           return (
             <div>
+              <Header/>
                 <form onSubmit={this.handleSubmit} >
                     <label>
                         <p>Nome:</p>

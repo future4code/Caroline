@@ -43,24 +43,27 @@ class LoginPage extends Component {
    
 
     return (
-      <LoginWrapper>
-        <TextField
-          onChange={this.handleFieldChange}
-          name="email"
-          type="email"
-          label="E-mail"
-          value={email}
-        />
-        <TextField
-          onChange={this.handleFieldChange}
-          name="password"
-          type="password"
-          label="Password"
-          value={password}
-        />
-        <Button onClick={this.onClickLogin}>Login</Button>
-       
-      </LoginWrapper>
+      <div>
+        <Header/>
+        <LoginWrapper>
+          <TextField
+            onChange={this.handleFieldChange}
+            name="email"
+            type="email"
+            label="E-mail"
+            value={email}
+          />
+          <TextField
+            onChange={this.handleFieldChange}
+            name="password"
+            type="password"
+            label="Password"
+            value={password}
+          />
+          <Button onClick={this.onClickLogin}>Login</Button>
+        
+        </LoginWrapper>
+      </div>
     );
   }
 }
