@@ -17,6 +17,9 @@ const Form = styled.form `
   margin-top:10px;
   margin-bottom:15px;
   color: #3f51b5;
+  background-color:#c5e1a5;
+  font-size: 20px;
+
 `
 
 const InputStyled = styled.input `
