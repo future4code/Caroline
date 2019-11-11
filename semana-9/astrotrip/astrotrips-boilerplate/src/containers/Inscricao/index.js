@@ -6,10 +6,45 @@ import Header from "../components/Header.js";
 import TextField from '@material-ui/core/TextField';
 import { applyToTrip } from "../../actions/allActions";
 
-const Form = styled.div `
- display:flex;
- flex-direction:column; 
+const Form = styled.form `
+  margin-left:70vh
+  border-width:1px;
+  border-style:solid;
+  border-color:black;
+  border-radius: 5px;
+  width:60vh;
+  padding:12px;
+  margin-top:10px;
+  margin-bottom:15px;
+  color: #3f51b5;
 `
+
+const InputStyled = styled.input `
+  width:350px;
+  padding: 5px;
+  border-radius: 5px;
+`
+
+const SelectStyled = styled.select `
+  width:350px;
+  padding: 5px;
+  border-radius: 5px;
+`
+
+const TextFieldStyled = styled.textarea `
+  width:350px;
+  border-radius: 5px;
+`
+const ButtonStyled = styled.button `
+  width: 150px;
+  border-radius: 5px;
+  margin:10px;
+  padding:10px;
+  background-color:#3f51b5;
+  color:white;
+ 
+`
+
 
 
 class Inscricao extends Component {
@@ -45,24 +80,25 @@ class Inscricao extends Component {
     return (
       <div>
         <Header/>
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
           <label>
             <p>Nome:</p>
-              <input required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  
+              <InputStyled required name="name" pattern="^[a-zA-Z]{3,}" type= "text"  
                value={this.state.name} onChange={this.handleInputChange} 
               />
           </label>
           <label>
            <p> Idade:</p>
-              <input required name="age" min="18" type="number" value={this.state.age} onChange={this.handleInputChange}  />
+              <InputStyled required name="age" min="18" type="number" value={this.state.age} onChange={this.handleInputChange}  />
           </label>
           <label>
             <p>Porque sou um bom candidato(a)?</p>
-            <TextField
+            <TextFieldStyled
               multiline
               rows="4"
               margin="normal"
               variant="outlined"
+              name="applicationText"
               inputProps={{  pattern: "[a-zA-Z\s\\.,]", minlength:"30"  }}
               value={this.state.applicationText} 
               onChange={this.handleInputChange}  
@@ -71,13 +107,13 @@ class Inscricao extends Component {
           </label>
           <label>
             <p>Profissão:</p>
-              <input required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  
+              <InputStyled required name="profession" pattern="^[a-zA-Z]{10,}" type= "text"  
               value={this.state.profession} onChange={this.handleInputChange}  
               />
           </label>
           <label>
             <p>País:</p>
-              <select value={this.state.country} onChange={this.handleInputChange} >
+              <SelectStyled value={this.state.country} onChange={this.handleInputChange} >
                     <option value="África do Sul">África do Sul</option>
                     <option value="Albânia">Albânia</option>
                     <option value="Alemanha">Alemanha</option>
@@ -252,19 +288,20 @@ class Inscricao extends Component {
                     <option value="Zaire">Zaire</option>
                     <option value="Zâmbia">Zâmbia</option>
                     <option value="Zimbábue">Zimbábue</option>
-                </select>
+                </SelectStyled>
           </label>
           <label>
             <p>TripId:</p>
-                <select>
+                <SelectStyled>
                     <option >Festança Marciana - Marte</option>
                     <option >Multi luau - Jupiter</option>
                     <option >Surfando - Netuno</option>
                     <option >Picnic de Inverno - Plutão</option>
-                </select>
+                </SelectStyled>
           </label>
-          <button type="submit" >Finalizar Inscrição</button>
-        </form>
+          <ButtonStyled type="submit" >Finalizar Inscrição</ButtonStyled>
+        </Form>
+        
       </div>
     );
   };

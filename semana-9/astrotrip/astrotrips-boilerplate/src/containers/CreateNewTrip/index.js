@@ -4,6 +4,47 @@ import { push } from "connected-react-router"
 import styled from "styled-components";
 import { createTrips } from "../../actions/allActions";
 import Header from "../components/Header.js";
+import TextField from '@material-ui/core/TextField';
+
+const Form = styled.form `
+  margin-left:70vh
+  border-width:1px;
+  border-style:solid;
+  border-color:black;
+  border-radius: 5px;
+  width:60vh;
+  padding:12px;
+  margin-top:10px;
+  margin-bottom:15px;
+  color: #3f51b5;
+`
+
+const InputStyled = styled.input `
+  width:350px;
+  padding: 5px;
+  border-radius: 5px;
+`
+
+const SelectStyled = styled.select `
+  width:350px;
+  padding: 5px;
+  border-radius: 5px;
+`
+const ButtonStyled = styled.button `
+  width: 150px;
+  border-radius: 5px;
+  margin:10px;
+  padding:10px;
+  background-color:#3f51b5;
+  color:white;
+ 
+`
+
+const TextFieldStyled = styled.textarea `
+  width:350px;
+  border-radius: 5px;
+`
+
 
 
     class CreateNewTrip extends Component {
@@ -43,15 +84,15 @@ import Header from "../components/Header.js";
           return (
             <div>
               <Header/>
-                <form onSubmit={this.handleSubmit} >
+                <Form onSubmit={this.handleSubmit} >
                     <label>
                         <p>Nome:</p>
-                            <input required name="name" pattern="^[a-zA-Z]{5,}" 
+                            <InputStyled required name="name" pattern="^[a-zA-Z]{5,}" 
                             type="text" value={this.state.name} onChange={this.handleInputChange}/>
                     </label>
                     <label>
                         <p>Planeta:</p>
-                            <select required name="planet" 
+                            <SelectStyled  required name="planet" 
                             type="text" value={this.state.planet} onChange={this.handleInputChange}>
 
                                 <option value="Mercury">Mercúrio</option>
@@ -63,28 +104,36 @@ import Header from "../components/Header.js";
                                 <option value="Uranus">Urano</option>
                                 <option value="Neptune">Netuno</option>
                                 <option value="Pluto">Plutão</option>
-                            </select>
+                            </SelectStyled >
                     </label>
                     <label>
                         <p>Data:</p>
-                            <input required name="date" value={this.state.date} onChange={this.handleInputChange} 
-                            type="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2019-11-10" />
-                      
-                             
+                            <InputStyled required name="date" value={this.state.date} onChange={this.handleInputChange} 
+                            type="date" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" min="2019-11-30" />
+
                     </label>
                     <label>
                         <p>Descrição:</p>
-                            <textarea required name="description" pattern="^[a-zA-Z]{30,}" type= "text" 
-                            value={this.state.description} onChange={this.handleInputChange}  />
+                            <TextFieldStyled
+                                          multiline
+                                          rows="4"
+                                          margin="normal"
+                                          variant="outlined"
+                                          name="description"
+                                          inputProps={{  pattern: "[a-zA-Z\s\\.,]", minlength:"30"  }}
+                                          value={this.state.description} 
+                                          onChange={this.handleInputChange}  
+                              />
+
                     </label>
                     <label>
                         <p> Duração da viagem em dias:</p>
-                            <input required name="durationInDays" min="50" type="number"
+                            <InputStyled required name="durationInDays" min="50" type="number"
                              value={this.state.durationInDays} onChange={this.handleInputChange}/>
                     </label>
 
-                <button type="submit">Enviar</button>
-                </form>
+                <ButtonStyled type="submit">Enviar</ButtonStyled>
+                </Form>
      
             </div>
           );
@@ -102,8 +151,4 @@ import Header from "../components/Header.js";
       )(CreateNewTrip)
   
 
-
-  //connect(
-    //null,
-   // mapDispatchToProps
    //verificar validação "dinÂmica da data"
