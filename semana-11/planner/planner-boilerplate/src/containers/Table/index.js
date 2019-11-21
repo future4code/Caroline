@@ -7,15 +7,52 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+
+/*
+class WeekDays extends React.Component {
+  constructor(props) {
+      super(props)
+      this.state = {      
+    }
+  }
+  
+
+
+render(props) {
+
+return (
+      <div>
+
+        <List component="nav">
+        <ListItem button>
+            <ListItemText primary="Trash" />
+        </ListItem>
+      </List>
+    
+  
+      </div>
+  )
+}
+}
+
+export default (WeekDays);
+*/
+
+
 const CustomTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.common.black,
   },
   body: {
     fontSize: 14,
   },
 }))(TableCell);
+
 
 function CustomizedTable(props) {
   const { classes } = props;
@@ -25,22 +62,50 @@ function CustomizedTable(props) {
       <Table >
         <TableHead>
           <TableRow>
-            <CustomTableCell align="center">SEGUNDA</CustomTableCell>
-            <CustomTableCell align="center">TERÇA</CustomTableCell>
-            <CustomTableCell align="center">QUARTA</CustomTableCell>
-            <CustomTableCell align="center">QUINTA</CustomTableCell>
-            <CustomTableCell align="center">SEXTA</CustomTableCell>
+            <CustomTableCell align="center">
+                      <h2>  SEGUNDA </h2>
+                     <List component="nav">
+                      <ListItem button>
+                         <ListItemText primary="task" />
+                      </ListItem>
+                  </List>
+                  </CustomTableCell>
+            <CustomTableCell align="center">
+                      <h2>  TERÇA </h2>
+                     <List component="nav">
+                      <ListItem button>
+                         <ListItemText primary="task" />
+                      </ListItem>
+                  </List>
+            </CustomTableCell>
+             
+            <CustomTableCell align="center">
+                    <h2>  QUARTA </h2>
+                     <List component="nav">
+                      <ListItem button>
+                         <ListItemText primary="task" />
+                      </ListItem>
+                  </List>
+            </CustomTableCell>
+            <CustomTableCell align="center">
+                      <h2>  QUINTA </h2>
+                     <List component="nav">
+                      <ListItem button>
+                         <ListItemText primary="task" />
+                      </ListItem>
+                  </List>
+            </CustomTableCell>
+            <CustomTableCell align="center">
+                    <h2>  SEXTA </h2>
+                     <List component="nav">
+                      <ListItem button>
+                         <ListItemText primary="task" />
+                      </ListItem>
+                  </List>
+            </CustomTableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          <TableRow>
-              <CustomTableCell align="center">T1</CustomTableCell>
-              <CustomTableCell align="center">T2</CustomTableCell>
-              <CustomTableCell align="center"></CustomTableCell>
-              <CustomTableCell align="center"></CustomTableCell>
-              <CustomTableCell align="center"></CustomTableCell>
-            </TableRow>
-        </TableBody>
+
       </Table>
     </Paper>
   );
@@ -51,3 +116,12 @@ CustomizedTable.propTypes = {
 };
 
 export default (CustomizedTable);
+        /*<TableBody>
+          <TableRow>
+              <CustomTableCell align="center">T1</CustomTableCell>
+              <CustomTableCell align="center">T2</CustomTableCell>
+              <CustomTableCell align="center"></CustomTableCell>
+              <CustomTableCell align="center"></CustomTableCell>
+              <CustomTableCell align="center"></CustomTableCell>
+            </TableRow>
+        </TableBody>*/
