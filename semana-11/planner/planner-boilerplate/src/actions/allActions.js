@@ -16,14 +16,14 @@ export const getTasks = () => async (dispatch, getState) => {
   };
 
 
-export const createTasks = (text,day) => async () => {
+export const createTasks = (text,day) => async (dispatch) => {
 
     const data = {
         text:text,
         day:day,
     }
 
-	await axios.post('https://us-central1-missao-newton.cloudfunctions.net/generic/planner-caroline', data,
+	const response = await axios.post('https://us-central1-missao-newton.cloudfunctions.net/generic/planner-caroline', data,
     )
     
     if (response.status === 200){
