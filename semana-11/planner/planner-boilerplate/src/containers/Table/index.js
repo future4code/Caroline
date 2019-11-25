@@ -39,10 +39,10 @@ class CustomizedTable extends React.Component {
 render (props) {
   console.log(this.props.tasks)
   //verificando como filtrar ainda
-  if (this.state.weekDay === Seg) {
+ /* if (this.state.weekDay === Seg) {
     return
     { this.props.tasks.map((task) => { return(<p>{task.text}</p>) }) }
-}
+}*/
 
   return (
       <Paper >
@@ -52,7 +52,6 @@ render (props) {
               <CustomTableCell align="center">
               <h2>  SEGUNDA </h2>
                     <List >
-                      
                         { this.props.tasks.map((task) => { return(<p>{task.text}</p>) }) }
                     </List>
                     </CustomTableCell>
