@@ -1,0 +1,15 @@
+{
+  "name": "lista-de-tarefas",
+  "version": "0.0.1",
+  "description": "lista de tarefas do dia a dia",
+  "main": "tasks.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "organizar",
+    "atividades"
+  ],
+  "author": "Carol",
+  "license": "ISC"
+}
