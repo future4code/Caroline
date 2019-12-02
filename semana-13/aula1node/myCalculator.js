@@ -18,3 +18,4 @@ else if (op === "div"){
 	console.log( `Resposta: ${value1 / value2}`));
 } 
 
+
