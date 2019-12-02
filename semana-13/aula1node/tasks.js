@@ -4,8 +4,8 @@ const newTask = process.argv[4];
 
 
 try {
-fs.writeFileSync (taskName , newTask );
-console.log("apenas teste", taskName , newTask )
+fs.appendFileSync (taskName , newTask, 'utf8' );
+console.log("Tarefa add" )
 } catch (err){
 	console.error(err)
 }
