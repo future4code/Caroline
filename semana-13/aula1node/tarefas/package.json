@@ -4,7 +4,9 @@
   "description": "lista de tarefas do dia a dia",
   "main": "tasks.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node tasks",
+
   },
   "keywords": [
     "organizar",

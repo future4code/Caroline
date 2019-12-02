@@ -1,10 +1,13 @@
+
+
 {
   "name": "calculadora-carol",
   "version": "0.0.1",
   "description": "calculadora simples",
   "main": "myCalculator.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node myCalculator",
   },
   "keywords": [
     "calcular",
