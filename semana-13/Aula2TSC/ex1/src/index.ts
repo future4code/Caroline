@@ -59,16 +59,22 @@ type tipo = {
     ];
 
     //b)
-    function textoPorAutor(posts: post[], autor: string): post {  
-                
 
+    const autor : string = "Ching"
+    function textoPorAutor(posts: post[], autor: string): post[] {  
 
-         return  
+        const autorSelecionado: post[] = posts.filter((el: post) => {
+            return el.autor === autor;
+          });
+    
+          return autorSelecionado
+          
         }
-        console.log(textoPorAutor(postsArray)) 
+        console.log(textoPorAutor(postsArray, autor)) 
     
     
 
+    //exercício 3
 
 
 
