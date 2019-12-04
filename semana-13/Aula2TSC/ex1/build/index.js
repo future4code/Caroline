@@ -1,5 +1,5 @@
 console.log("oi");
-const arrayDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const arrayDeNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 25, 35, 45, 55, 65];
 function separarNumeros(numeros) {
     const impar = numeros.filter((number) => {
         return number % 2 !== 0;

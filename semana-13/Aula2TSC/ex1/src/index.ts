@@ -6,7 +6,7 @@ type tipo = {
     soma: Number;
   };
   
-  const arrayDeNumeros: number[] = [1,2,3,4,5,6,7,8,9,10]
+  const arrayDeNumeros: number[] = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,25,35,45,55,65]
 
   function separarNumeros(numeros: number[]): tipo {
 
@@ -76,7 +76,62 @@ type tipo = {
 
     //exercício 3
 
+type epoca1 = {
+    ano: Number;
+    epoca: String;
+  };
 
-
-
-
+  function descobrirEpoca(
+    type: epoca,
+    ano: number,
+  ): { ano: number} {
+  
+    let result: { ano: number};
+    if (ano <= 100000 && ano >= 4000 && type === "AC") {
+      switch (type) {
+        case epoca.AntesDeCristo:
+          return 
+            console.log("Pré-história")
+          break;
+      }
+    }
+    if (ano <= 4000 && ano && type === "AC") {
+        switch (type) {
+          case epoca.AntesDeCristo:
+            return 
+              console.log("Idade Antiga")
+            break;
+        }
+      }
+      if (ano >= 476 && ano <= 1453 && type === "DC") {
+        switch (type) {
+          case epoca.DepoisDeCristo:
+            return 
+            console.log("Idade Média")     
+            break;
+        }
+      }
+      if (ano >= 1473 && ano <= 1789 && type === "DC") {
+        switch (type) {
+          case epoca.DepoisDeCristo:
+            return 
+              console.log("Idade Moderna")
+            break;
+        }
+      }
+      if (ano >= 1789 && type === "DC") {
+        switch (type) {
+          case epoca.DepoisDeCristo:
+            return 
+              console.log("Idade Contemporânea")
+            break;
+        }
+      }
+      return result
+  }
+  
+  enum epoca {
+    DepoisDeCristo = "DC",
+    AntesDeCristo = "AC",
+  }
+  
