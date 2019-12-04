@@ -1,21 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs_1 = require("fs");
+const fs = require('fs');
 const fileName = '1.txt';
-const readFilePromise = new Promise((resolve, reject) => {
-    fs_1.readFile(fileName, (err, data) => {
-        if (err) {
-            reject(err);
-            return;
-        }
-        const fileContent = data.toString();
-        resolve(fileContent);
+const fileName2 = '2.txt';
+const allPromises = [fileName, fileName2].map(eachFile => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(eachFile, () => {
+        });
     });
 });
-readFilePromise.then((content) => {
-    console.log("Este é o conteúdo do arquivo", content);
-}).catch(e => {
-    console.error("Opa! Deu erro na Promise", e);
+Promise.all(allPromises).then((values) => {
+    console.log(values);
+    console.log('Done');
 });
-console.log("fileName");
 //# sourceMappingURL=index.js.map
