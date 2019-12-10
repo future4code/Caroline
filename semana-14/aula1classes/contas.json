@@ -1,0 +1,16 @@
+{
+  "accounts": [
+    {
+      "balance": 10,
+      "cpf": "44488899951",
+      "name": "Ching",
+      "age": 18
+    },
+    {
+      "balance": 500,
+      "cpf": "8888888888",
+      "name": "Leela",
+      "age": 22
+    }
+  ]
+}
