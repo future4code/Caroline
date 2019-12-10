@@ -1,4 +1,6 @@
 import {Dish} from "./dish"
+import { boboDePalmito, feijoada} from './saltydish';
+import {boloDeLimao,brigadeiro} from './dessert'
 
 
 /*export class DishList extends Dish {
@@ -11,6 +13,6 @@ import {Dish} from "./dish"
 
   //ou
 
-  const DishList1 : Dish[]= []
+  const DishList1 : Dish[]= [boboDePalmito, feijoada, boloDeLimao,brigadeiro]
   console.log(DishList1)
  

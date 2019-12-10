@@ -14,11 +14,11 @@ class Dessert extends dish_1.Dish {
     }
 }
 exports.Dessert = Dessert;
-const boloDeLimao = new Dessert(30, 10, ["trigo", "açucar", "leite de coco", "óleo", "água", "limão"], 30, 10);
-const brigadeiro = new Dessert(100, 20, ["leite condensado"], 100, 10);
-console.log(brigadeiro.getSlicePrice());
-console.log(brigadeiro.getProfit());
-console.log(boloDeLimao.getSlicePrice());
-console.log(boloDeLimao.getProfit());
-console.log(boloDeLimao);
+exports.boloDeLimao = new Dessert(30, 10, ["trigo", "açucar", "leite de coco", "óleo", "água", "limão"], 30, 10);
+exports.brigadeiro = new Dessert(100, 20, ["leite condensado"], 100, 10);
+console.log(exports.brigadeiro.getSlicePrice());
+console.log(exports.brigadeiro.getProfit());
+console.log(exports.boloDeLimao.getSlicePrice());
+console.log(exports.boloDeLimao.getProfit());
+console.log(exports.boloDeLimao);
 //# sourceMappingURL=dessert.js.map

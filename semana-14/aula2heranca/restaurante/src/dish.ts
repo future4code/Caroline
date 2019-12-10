@@ -1,3 +1,5 @@
+
+
 export abstract class Dish {
   protected price: number;
   protected cost: number;
