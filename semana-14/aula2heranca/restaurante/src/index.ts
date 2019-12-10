@@ -1,14 +1,16 @@
- class SaltyDish extends Dish {
+import {Dish} from "./dish"
+
+
+/*export class DishList extends Dish {
     constructor(
-      price: number,
-      cost: number,
-      ingredients: string[],
-      timeToCook: number
+      list: string[],
     ) {
-      super(price, cost, ingredients, timeToCook);
+      super(price,cost,ingredients,timeToCook);
     }
-  
-    public cook(): void {
-      console.log("Starting Salty Dish")
-    }
-  }
+  }*/
+
+  //ou
+
+  const DishList1 : Dish[]= []
+  console.log(DishList1)
+ 
