@@ -11,4 +11,6 @@ class ResidentialCliente extends residence_1.Residence {
         return 100;
     }
 }
+const client1 = new ResidentialCliente("Carol", "111155522222", "1230000");
+console.log(client1);
 //# sourceMappingURL=ResidentialClient.js.map
