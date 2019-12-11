@@ -10,4 +10,8 @@ export interface Client {
 
   calculateBill(): number;
   // Retorna o valor da conta em reais
+
+  //public abstract calculateBill (): void 
 }
+
+

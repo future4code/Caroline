@@ -1,0 +1,1 @@
+{"version":3,"file":"ResidentialClient.js","sourceRoot":"","sources":["../src/ResidentialClient.ts"],"names":[],"mappings":";;AAAA,2CAAqC;AAIrC,MAAM,kBAAmB,SAAQ,qBAAS;IAE1C,YAAoB,IAAY,EAAS,GAAW,EAAE,GAAW;QACzD,KAAK,CAAC,GAAG,EAAC,IAAI,EAAC,GAAG,CAAC,CAAC;QADR,SAAI,GAAJ,IAAI,CAAQ;QAAS,QAAG,GAAH,GAAG,CAAQ;IAE9C,CAAC;IAKP,aAAa;IAEb,CAAC;CAGA"}
