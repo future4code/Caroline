@@ -1,6 +1,6 @@
 import {Client} from "./client"
 
-class Zoo {
+class ClientManager {
     clients: Client[]
     constructor() {
         this.clients = []
@@ -10,3 +10,6 @@ class Zoo {
         this.clients.push(client)
     }
 }
+
+const teste1 = new ClientManager ()
+console.log(teste1)
