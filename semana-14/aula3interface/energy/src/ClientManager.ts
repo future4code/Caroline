@@ -4,21 +4,21 @@ class ClientManager {
     clients: Client[]
     constructor() {
         this.clients = []
+        console.log(this.clients.length)
     }
-
+    
     addClient(client: Client) {
         this.clients.push(client)
     }
 
     getClientsQuantity(){
-        this.clients.forEach(client =>{
-            return this.clients.length
-        })
-        console.log(this.getClientsQuantity)
+        return this.clients.length
     }
- 
+    printClientBills(client: Client) {
+        this.clients.push(client)
+    }    
+    
 }
 
 const teste1 = new ClientManager ()
 console.log(teste1)
-

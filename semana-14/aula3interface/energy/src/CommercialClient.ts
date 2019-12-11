@@ -12,7 +12,7 @@ class ComertialClient extends Trade implements Client {
           consumedEnergy: number;
     
     calculateBill(): number {
-       return 100
+       return this.consumedEnergy * 0.53
     }
     
 } 

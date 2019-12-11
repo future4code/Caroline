@@ -12,7 +12,7 @@ constructor( public name: string, public cpf: string, cep: string) {
       consumedEnergy: number;
 
 calculateBill(): number {
-   return 100
+   return this.consumedEnergy * 0.75
 }
 
 } 
