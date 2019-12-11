@@ -8,6 +8,7 @@ class ResidentialCliente extends residence_1.Residence {
         this.cpf = cpf;
     }
     calculateBill() {
+        return 100;
     }
 }
 //# sourceMappingURL=ResidentialClient.js.map
