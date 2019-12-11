@@ -1,9 +1,11 @@
 import {Client} from "./client"
 import {Trade}  from "./trade"
+
+
 class ComertialClient extends Trade implements Client {
     
-    constructor( public industryName: string,public industryNumber: string, cep: string) {
-            super(industryName,industryNumber,cep);  
+    constructor(  public name: string,public cnpj: string, cep: string) {
+            super(name,cnpj,cep);  
           }
           clientName: string;
           clientNumber: number;
@@ -13,4 +15,8 @@ class ComertialClient extends Trade implements Client {
        return 100
     }
     
-    } 
+} 
+
+const client1= new ComertialClient("f4", "111155522222", "1230000");
+
+console.log(client1)
