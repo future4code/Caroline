@@ -1,0 +1,8 @@
+CLASSES X INTERFACES
+Client : Interface.
+
+Industry:Classe filha da classe Place.
+Place: Classe.
+Residence: Classe filha da classe Place.
+Trade: Classe filha da claase Place.
+
