@@ -5,7 +5,7 @@ import { Teacher } from './teacher';
 
 export  class MobileMission extends Mission {
         turma: number
-        constructor (dataInicio:string, dataFim:string, profs:Teacher[], alunos:Student[], patrono:string,turma: number){
+        constructor (dataInicio:string, dataFim:string, profs:Teacher[], alunos:Student[],turma: number){
             super(dataInicio,dataFim, profs,alunos)
             this.turma = turma
         }

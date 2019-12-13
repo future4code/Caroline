@@ -13,3 +13,14 @@ export class Teacher implements User {
         this.nascimento = nascimento
     }    
 }
+export class SaveTeacher {
+    professores: Teacher[];
+   // fileManager: JSONFileManager;
+
+    constructor() {
+        this.professores = []
+    }
+    createTeacher(professores:Teacher): void{
+        this.professores.push(professores)
+    };
+}

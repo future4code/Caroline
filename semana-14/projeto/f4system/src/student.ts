@@ -12,6 +12,18 @@ export class Student implements User {
         this.email = email
         this.nascimento = nascimento
     }    
+
 }
 
 
+export class SaveStudent {
+    alunos: Student[];
+   // fileManager: JSONFileManager;
+
+    constructor() {
+        this.alunos = []
+    }
+    createStudent(alunos:Student): void{
+        this.alunos.push(alunos)
+    };
+}
