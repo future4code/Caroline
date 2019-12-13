@@ -14,3 +14,15 @@ export  class MobileMission extends Mission {
             return alunos
         }
   }
+
+  export class SaveMobileStudent {
+    mobileAlunos: MobileMission[];
+   // fileManager: JSONFileManager;
+
+    constructor() {
+        this.mobileAlunos = []
+    }
+    createStudent(mobileAlunos:MobileMission): void{
+        this.mobileAlunos.push(mobileAlunos)
+    };
+}

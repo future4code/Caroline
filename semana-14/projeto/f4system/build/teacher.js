@@ -8,4 +8,14 @@ class Teacher {
     }
 }
 exports.Teacher = Teacher;
+class SaveTeacher {
+    constructor() {
+        this.professores = [];
+    }
+    createTeacher(professores) {
+        this.professores.push(professores);
+    }
+    ;
+}
+exports.SaveTeacher = SaveTeacher;
 //# sourceMappingURL=teacher.js.map

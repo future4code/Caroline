@@ -7,10 +7,10 @@ export class JSONFileManager {
    /// }
 
     static saveToJSON(objectToSave: object) {
-        fs.writeFileSync( "contas.json", JSON.stringify(objectToSave, null, 2))
+        fs.writeFileSync( "DadosGeraisF4.json", JSON.stringify(objectToSave, null, 2))
     }
 
    getJSONContent() {
-       return JSON.parse(fs.readFileSync("contas.json").toString())
+       return JSON.parse(fs.readFileSync("DadosGeraisF4.json").toString())
     }
 } 

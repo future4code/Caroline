@@ -8,4 +8,14 @@ class WebMission extends mission_1.Mission {
     }
 }
 exports.WebMission = WebMission;
+class SaveWebStudent {
+    constructor() {
+        this.webalunos = [];
+    }
+    createStudent(webalunos) {
+        this.webalunos.push(webalunos);
+    }
+    ;
+}
+exports.SaveWebStudent = SaveWebStudent;
 //# sourceMappingURL=webmission.js.map

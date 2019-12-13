@@ -10,7 +10,16 @@ export  class WebMission extends Mission {
             this.patrono = patrono
         }
     
-        creatNewStudent(alunos:Student[]) {
-            return alunos
-        }
   }
+
+  export class SaveWebStudent {
+    webalunos: WebMission[];
+   // fileManager: JSONFileManager;
+
+    constructor() {
+        this.webalunos = []
+    }
+    createStudent(webalunos:WebMission): void{
+        this.webalunos.push(webalunos)
+    };
+}

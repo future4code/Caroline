@@ -8,4 +8,14 @@ class Student {
     }
 }
 exports.Student = Student;
+class SaveStudent {
+    constructor() {
+        this.alunos = [];
+    }
+    createStudent(alunos) {
+        this.alunos.push(alunos);
+    }
+    ;
+}
+exports.SaveStudent = SaveStudent;
 //# sourceMappingURL=student.js.map

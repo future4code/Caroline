@@ -3,10 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 class JSONFileManager {
     static saveToJSON(objectToSave) {
-        fs.writeFileSync("contas.json", JSON.stringify(objectToSave, null, 2));
+        fs.writeFileSync("DadosGeraisF4.json", JSON.stringify(objectToSave, null, 2));
     }
     getJSONContent() {
-        return JSON.parse(fs.readFileSync("contas.json").toString());
+        return JSON.parse(fs.readFileSync("DadosGeraisF4.json").toString());
     }
 }
 exports.JSONFileManager = JSONFileManager;
