@@ -1,0 +1,29 @@
+
+
+SELECT nome, salario
+FROM funcionarios 
+WHERE sexo = "F" AND salario > 2000;
+
+SELECT nome, data_contratacao
+FROM funcionarios 
+WHERE local_de_trabalho = "salao" AND data_contratacao > '2004-01-01';
+
+SELECT nome, data_nascimento
+FROM funcionarios 
+WHERE nome LIKE "%ei%" 
+
+SELECT nome, salario, data_nascimento
+FROM funcionarios 
+WHERE data_nascimento < '1998-01-01' AND salario > 1300
+
+CREATE TABLE Funcionarios_Teste (
+nome varchar (255),
+salario double,
+local_de_trabalho varchar (255),
+sexo varchar (255),
+data_nascimento date,
+data_contratacao date
+);
+
+INSERT INTO Funcionarios_Teste (nome, salario, local_de_trabalho)
+VALUES ("ching", 2100, "salao");
