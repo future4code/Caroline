@@ -29,6 +29,35 @@ INSERT INTO Funcionarios_Teste (nome, salario, local_de_trabalho)
 VALUES ("ching", 2100, "salao");
 
 EXERCÍCIO 2:
-SELECT primeiro_nome, email
+SELECT primeiro_nome, ultimo_nome, email
 FROM correntistas  
 WHERE pais = "Brazil" AND conta_corrente < 0;
+
+SELECT primeiro_nome, ultimo_nome, genero
+FROM correntistas  
+WHERE pais = "Peru" OR aniversario >= '1990-01-01'
+
+SELECT ultimo_nome
+FROM correntistas   
+WHERE RIGHT('primeiro_nome', 1);
+-- WHERE SUBSTRING('primeiro_nome', 1,1) AS "A"
+
+
+SELECT primeiro_nome, ultimo_nome, aniversario
+FROM correntistas  
+WHERE  aniversario >= '2000-01-01' AND conta_corrente > 1000;
+
+
+
+CREATE TABLE Banco_Teste (
+primeiro_nome varchar (255),
+ultimo_nome varchar (255),
+email varchar (255),
+sexo varchar (255),
+conta_corrente double,
+pais varchar (255),
+aniversario date
+);
+
+INSERT INTO Banco_Teste (primeiro_nome, ultimo_nome, email )
+VALUES ("ching", "ling", "ching@gmail.com");
