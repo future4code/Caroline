@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "nome": "Me",
+      "texto": "blablabla",
+      "data": "12/12/12"
+    },
+    {
+      "nome": "Carol",
+      "texto": "blablabla",
+      "data": "12/12/12"
+    },
+    {
+      "nome": "B",
+      "texto": "blablabla",
+      "data": "12/12/12"
+    }
+  ]
+}
