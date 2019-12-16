@@ -39,8 +39,7 @@ WHERE pais = "Peru" OR aniversario >= '1990-01-01'
 
 SELECT ultimo_nome
 FROM correntistas   
-WHERE RIGHT('primeiro_nome', 1);
--- WHERE SUBSTRING('primeiro_nome', 1,1) AS "A"
+WHERE primeiro_nome LIKE "A%" 
 
 
 SELECT primeiro_nome, ultimo_nome, aniversario
@@ -59,5 +58,5 @@ pais varchar (255),
 aniversario date
 );
 
-INSERT INTO Banco_Teste (primeiro_nome, ultimo_nome, email )
-VALUES ("ching", "ling", "ching@gmail.com");
+INSERT INTO Banco_Teste (primeiro_nome, ultimo_nome, email,sexo,conta_corrente, pais, aniversario)
+VALUES ("ching", "ling", "ching@gmail.com", "F", 2000, "Brasil", '2000-01-01');
