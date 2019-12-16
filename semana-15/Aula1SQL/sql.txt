@@ -1,5 +1,5 @@
 
-
+EXERCÍCIO 1:
 SELECT nome, salario
 FROM funcionarios 
 WHERE sexo = "F" AND salario > 2000;
@@ -27,3 +27,8 @@ data_contratacao date
 
 INSERT INTO Funcionarios_Teste (nome, salario, local_de_trabalho)
 VALUES ("ching", 2100, "salao");
+
+EXERCÍCIO 2:
+SELECT primeiro_nome, email
+FROM correntistas  
+WHERE pais = "Brazil" AND conta_corrente < 0;
