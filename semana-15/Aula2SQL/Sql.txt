@@ -46,4 +46,47 @@ SELECT * FROM funcionarios
 ORDER BY data_contratacao
 ASC LIMIT 10
 
+---
+
+## 2. Banco
+
+1. Os 100 primeiros correntistas brasileiros com mais do que 3000 reais na conta corrente.
+SELECT * FROM correntistas 
+WHERE conta_corrente > 3000
+LIMIT 100
+
+2. A quantidade de mulheres com mais do que 32 anos.
+SELECT COUNT(*)
+FROM correntistas 
+WHERE aniversario < '1987-01-01'  AND genero = "F"
+
+3. A soma do valor de todas as contas correntes do Peru cujo dono tenha mais do que 25 anos.
+SELECT SUM(conta_corrente)
+FROM correntistas;
+WHERE pais ="Peru" AND aniversario < '1994-01-01'
+
+4. A quantidade de Homens e Mulheres por país.
+SELECT COUNT(*)
+FROM correntistas 
+WHERE genero = "F" AND pais = "Brazil"
+
+SELECT COUNT(*)
+FROM correntistas 
+WHERE genero = "M" AND pais = "Brazil"
+
+5. A data de aniversário que mais se repete e a quantidade de vezes que aparece.
+SELECT count(*) as Repeticao, aniversario 
+FROM correntistas  
+GROUP BY aniversario  
+ORDER BY Repeticao DESC
+
+
+6. A média de **idade** (o número de anos entre hoje e a data dd nascimento) de cada país.
+
+7. Os aniversariantes do mês atual.
+
+8. A média do valor da conta corrente por país. Importante: o nome dos países deve ser exibido em caixa baixa (letras minúsculas).
+
+9. Os 3 nomes que mais se repetem e quantas vezes cada um apareceu.
+
 
