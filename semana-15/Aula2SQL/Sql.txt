@@ -1,1 +1,49 @@
+## 1. Restaurante
+1. Os 5 funcionários com maior salário.
+SELECT * FROM funcionarios 
+ORDER BY salario
+DESC LIMIT 5
+
+2. A média salarial para cada local de trabalho.
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "salao"
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "escritorio"
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "estacionamento"
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "cozinha"
+
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "deposito"
+
+3. A quantidade de funcionários de cada gênero por local de trabalho.
+SELECT COUNT(*)
+FROM funcionarios
+WHERE genero = "F" AND local_de_trabalho = "salao"
+
+SELECT COUNT(*)
+FROM funcionarios
+WHERE genero = "M" AND local_de_trabalho = "salao"
+
+SELECT COUNT(*)
+FROM funcionarios
+WHERE genero = "F" AND local_de_trabalho = "escritorio"
+
+etc.
+
+4. Os 10 funcionários mais antigos (contratados há mais tempo).
+SELECT * FROM funcionarios 
+ORDER BY data_contratacao
+ASC LIMIT 10
+
 
