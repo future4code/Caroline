@@ -82,11 +82,24 @@ ORDER BY Repeticao DESC
 
 
 6. A média de **idade** (o número de anos entre hoje e a data dd nascimento) de cada país.
+SELECT AVG(aniversario)
+FROM correntistas
+WHERE  pais = "Brazil"
+
 
 7. Os aniversariantes do mês atual.
+SELECT * from correntistas 
+where extract(month from aniversario)='12';
 
 8. A média do valor da conta corrente por país. Importante: o nome dos países deve ser exibido em caixa baixa (letras minúsculas).
+SELECT AVG(conta_corrente) as "Média CC BR"
+FROM correntistas
+WHERE  pais = "Brazil"
 
 9. Os 3 nomes que mais se repetem e quantas vezes cada um apareceu.
-
+SELECT count(*) as NOMES_REP, primeiro_nome 
+FROM correntistas  
+GROUP BY primeiro_nome   
+ORDER BY NOMES_REP DESC
+LIMIT 3;
 
