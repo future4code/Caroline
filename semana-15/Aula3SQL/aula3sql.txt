@@ -1,0 +1,58 @@
+1. Crie as tabelas das entidades.
+
+CREATE TABLE Livros (
+id int,
+titulo varchar (255),
+autor varchar (255),
+editora varchar (255),
+ano date
+);
+
+CREATE TABLE Autores (
+id int,
+primeiro_nome varchar (255),
+ultimo_nome varchar (255),
+nacionalidade varchar (255)
+);
+
+CREATE TABLE Editoras(
+id int,
+nome varchar (255),
+cidade varchar (255),
+editora varchar (255),
+data_de_fundacao date
+);
+
+CREATE TABLE Usuarios(
+id int,
+primeiro_nome varchar (255),
+ultimo_nome varchar (255),
+nacionalidade varchar (255),
+data_de_nascimento date
+);
+
+ALTER TABLE Usuarios
+ADD PRIMARY KEY (id)
+(em todas tables)
+
+ALTER TABLE Livros
+ADD FOREIGN KEY (id) REFERENCES Editoras(id),
+ADD FOREIGN KEY (id) REFERENCES Autores(id),
+ADD FOREIGN KEY (id) REFERENCES Usuarios(id)
+
+ALTER TABLE Usuarios
+ADD FOREIGN KEY (id) REFERENCES Livros(id)
+
+
+ALTER TABLE Editoras
+ADD FOREIGN KEY (id) REFERENCES Livros(id),
+ADD FOREIGN KEY (id) REFERENCES Autores(id),
+ADD FOREIGN KEY (id) REFERENCES Usuarios(id)
+
+ALTER TABLE Autores
+ADD FOREIGN KEY (id) REFERENCES Livros(id),
+ADD FOREIGN KEY (id) REFERENCES Editoras(id)
+
+INSERT INTO Editoras (id, nome, cidade, editora, data_de_fundacao) VALUES
+(1,'Black Swan','Illinois','LivrosBR','1964-02-11 00:00:00')
+
