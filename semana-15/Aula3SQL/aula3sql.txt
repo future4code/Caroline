@@ -1,18 +1,13 @@
-1. Crie as tabelas das entidades.
+Apaguei e refiz tudo! rs seguindo o diagrama exemplo e com mais atenção aos slides.
 
-CREATE TABLE Livros (
-id int,
-titulo varchar (255),
-autor varchar (255),
-editora varchar (255),
-ano date
-);
+1. Crie as tabelas das entidades.
 
 CREATE TABLE Autores (
 id int,
 primeiro_nome varchar (255),
 ultimo_nome varchar (255),
-nacionalidade varchar (255)
+nacionalidade varchar (255),
+PRIMARY KEY (id)
 );
 
 CREATE TABLE Editoras(
@@ -20,7 +15,21 @@ id int,
 nome varchar (255),
 cidade varchar (255),
 editora varchar (255),
-data_de_fundacao date
+data_de_fundacao date,
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE Livros (
+autores_id INT,
+editoras_id INT,
+titulo varchar (255),
+autor varchar (255),
+editora varchar (255),
+ano date,
+PRIMARY KEY (autores_id, editoras_id ),
+FOREIGN KEY (autores_id) REFERENCES Autores(id),
+FOREIGN KEY (editoras_id ) REFERENCES Editoras(id)
 );
 
 CREATE TABLE Usuarios(
@@ -28,31 +37,26 @@ id int,
 primeiro_nome varchar (255),
 ultimo_nome varchar (255),
 nacionalidade varchar (255),
-data_de_nascimento date
+data_de_nascimento date,
+PRIMARY KEY (id)
 );
 
-ALTER TABLE Usuarios
-ADD PRIMARY KEY (id)
-(em todas tables)
+CREATE TABLE Usuarios_Livros(
+usuarios_id INT,
+autores_id INT,
+PRIMARY KEY (usuarios_id, autores_id ),
+FOREIGN KEY (usuarios_id) REFERENCES Usuarios(id),
+FOREIGN KEY (autores_id) REFERENCES Autores(id)
+);
 
-ALTER TABLE Livros
-ADD FOREIGN KEY (id) REFERENCES Editoras(id),
-ADD FOREIGN KEY (id) REFERENCES Autores(id),
-ADD FOREIGN KEY (id) REFERENCES Usuarios(id)
+INSERT INTO Editoras (id, nome, cidade, editora, data_de_fundacao)
 
-ALTER TABLE Usuarios
-ADD FOREIGN KEY (id) REFERENCES Livros(id)
-
-
-ALTER TABLE Editoras
-ADD FOREIGN KEY (id) REFERENCES Livros(id),
-ADD FOREIGN KEY (id) REFERENCES Autores(id),
-ADD FOREIGN KEY (id) REFERENCES Usuarios(id)
-
-ALTER TABLE Autores
-ADD FOREIGN KEY (id) REFERENCES Livros(id),
-ADD FOREIGN KEY (id) REFERENCES Editoras(id)
-
-INSERT INTO Editoras (id, nome, cidade, editora, data_de_fundacao) VALUES
-(1,'Black Swan','Illinois','LivrosBR','1964-02-11 00:00:00')
-
+VALUES (1,'Black Swan','Illinois', 'LivrosBR','1964-02-11'), 
+(2,'Vermilion','New York','LivrosBR','1971-03-01'),
+(3,'Orion (an Imprint of The Orion','California','LivrosBR','1989-12-05'),
+(4,'Definitions','Alabama','LivrosFloresta','1973-10-28'),
+(5,'Corgi Books','Indiana','LivrosFloresta','1981-12-10'),
+(6,'Bantam Press','Texas','LivrosFloresta','1968-06-25'),
+(7,'Puffin Books','Indiana','LivrosTerra','1961-12-10'),
+(8,'Penguin Books','California','LivrosTerra','1977-03-03'),
+(9,'Thorsons','California','LivrosTerra','2000-04-01')
