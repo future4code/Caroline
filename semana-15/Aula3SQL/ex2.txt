@@ -45,6 +45,8 @@ INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (15, 'World Accord
 
 
 RENAME TABLE Usuarios TO usuarios
+ALTER TABLE usuarios
+CHANGE data_de_nascimento data_nascimento VARCHAR(255) NOT NULL;
 insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (1, 'Brod', 'Tutill', 'South Africa', '1999/06/29');
 insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (2, 'Brunhilda', 'Mayhow', 'France', '1986/08/22');
 insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (3, 'Annis', 'Pughsley', 'Ukraine', '2000/12/10');
