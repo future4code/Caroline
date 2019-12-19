@@ -1,0 +1,44 @@
+[Na tabela tem mais VALUES do que aqui, adicionei mais values por causa do ex3]
+POPULAR: 
+
+INSERT INTO Editoras (id, nome, cidade, editora, data_de_fundacao)
+VALUES (1,'Black Swan','Illinois', 'LivrosBR','1964-02-11'), 
+(2,'Vermilion','New York','LivrosBR','1971-03-01'),
+(3,'Orion (an Imprint of The Orion','California','LivrosBR','1989-12-05'),
+(4,'Definitions','Alabama','LivrosFloresta','1973-10-28'),
+(5,'Corgi Books','Indiana','LivrosFloresta','1981-12-10'),
+(6,'Bantam Press','Texas','LivrosFloresta','1968-06-25'),
+(7,'Puffin Books','Indiana','LivrosTerra','1961-12-10'),
+(8,'Penguin Books','California','LivrosTerra','1977-03-03'),
+(9,'Thorsons','California','LivrosTerra','2000-04-01'),
+(10,'Minerva','Texas','livrosPlanet','1993-09-15')
+
+INSERT INTO Autores (id, primeiro_nome, ultimo_nome, nacionalidade)
+VALUES (1,'Monica','Ali','Brasil'),
+(2,'Robert C.','Atkins', 'Russia'),
+(3,'Linwood','Barclay', 'Lithuania'),
+(4,'John','Boyne', 'Siria'),
+(5,'Dan','Brown', 'Chile'),
+(6,'Bill','Bryson', 'Mexico'),
+(7,'Eric','Carle', 'Argentina'),
+(8,'Jeremy','Clarkson', 'Tailandia'),
+(9,'Paulo','Coelho','India'),
+(10,'Louis','De Bernieres', 'EUA')
+
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (1, 'Brick Lane',1,1,'2004-05-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (2, 'Dr. Atkins'' New Diet Revolution:The No-hunger, Luxurious Weight Loss P',2,2,'2003-01-02');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (3, 'No Time for Goodbye',3,3,'2008-06-12');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (4, 'Boy in the Striped Pyjamas,The',4,4,'2007-02-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (5, 'Da Vinci Code,The',5,5,'2004-03-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (6, 'Angels and Demons',5,5,'2003-07-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (7, 'Deception Point',5,5,'2004-05-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (8, 'Digital Fortress',5,5,'2004-03-05');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (9, 'Lost Symbol,The',5,6,'2009-09-15');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (10, 'Lost Symbol,The',5,5,'2010-07-22');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (11, 'Short History of Nearly Everything,A',6,1,'2004-06-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (12, 'Notes from a Small Island',6,1,'1996-08-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (13, 'Down Under',6,1,'2001-08-06');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (14, 'Very Hungry Caterpillar,The:The Very Hungry Caterpillar',7,7,'1994-09-29');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (15, 'World According to Clarkson,The',8,8,'2005-05-26');
+
+[alguns livros foram deletados por causa de erro!]

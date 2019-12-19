@@ -1,0 +1,60 @@
+Apaguei e refiz tudo! rs seguindo o diagrama exemplo e com mais atenção aos slides. Foi dado drop em colunas que coloquei sem necessidade tb. Pretendo dividir os exercícios em arquivos separados p/ organizar melhor.
+
+1. Crie as tabelas das entidades.
+
+CREATE TABLE Autores (
+id int,
+primeiro_nome varchar (255),
+ultimo_nome varchar (255),
+nacionalidade varchar (255),
+PRIMARY KEY (id)
+);
+RENAME TABLE Autores TO autores
+
+CREATE TABLE Editoras(
+id int,
+nome varchar (255),
+cidade varchar (255),
+data_de_fundacao date,
+PRIMARY KEY (id)
+);
+[ALTER TABLE Editoras DROP editora]
+
+
+CREATE TABLE Livros (
+autores_id INT,
+editoras_id INT,
+titulo varchar (255),
+ano date,
+PRIMARY KEY (autores_id, editoras_id ),
+FOREIGN KEY (autores_id) REFERENCES Autores(id),
+FOREIGN KEY (editoras_id ) REFERENCES Editoras(id)
+);
+RENAME TABLE Livros TO livros
+ALTER TABLE livros
+CHANGE autores_id autor_id INT;
+ALTER TABLE livros
+CHANGE editoras_id editora_id INT;
+ALTER TABLE livros MODIFY titulo VARCHAR(255);
+
+[ALTER TABLE Livros DROP editora e ALTER TABLE Livros DROP autor]
+
+CREATE TABLE Usuarios(
+id int,
+primeiro_nome varchar (255),
+ultimo_nome varchar (255),
+nacionalidade varchar (255),
+data_de_nascimento date,
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE Usuarios_Livros(
+usuarios_id INT,
+autores_id INT,
+PRIMARY KEY (usuarios_id, autores_id ),
+FOREIGN KEY (usuarios_id) REFERENCES Usuarios(id),
+FOREIGN KEY (autores_id) REFERENCES Autores(id)
+);
+
+
