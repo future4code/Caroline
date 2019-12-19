@@ -42,3 +42,19 @@ INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (14, 'Very Hungry 
 INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (15, 'World According to Clarkson,The',8,8,'2005-05-26');
 
 [alguns livros foram deletados por causa de erro!]
+
+
+RENAME TABLE Usuarios TO usuarios
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (1, 'Brod', 'Tutill', 'South Africa', '1999/06/29');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (2, 'Brunhilda', 'Mayhow', 'France', '1986/08/22');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (3, 'Annis', 'Pughsley', 'Ukraine', '2000/12/10');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (4, 'Willem', 'Millthorpe', 'Hong Kong', '1990/12/17');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (5, 'Violet', 'Bairstow', 'Poland', '1988/11/22');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (6, 'Rita', 'Simison', 'South Africa', '2000/02/24');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (7, 'Antonie', 'Magne', 'Russia', '1982/09/18');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (8, 'Nikaniki', 'Kiljan', 'Indonesia', '1982/09/17');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (9, 'Eal', 'Le Surf', 'Japan', '1996/05/30');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (10, 'Gayle', 'Binner', 'Russia', '1999/01/02');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (11, 'Lana', 'Yarrow', 'Brazil', '1984/08/31');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (12, 'Linda', 'Cardenosa', 'Sweden', '1981/01/27');
+insert into usuarios (id, primeiro_nome, ultimo_nome, nacionalidade, data_nascimento) values (13, 'Paquito', 'Gregore', 'Ecuador', '1996/04/16');
