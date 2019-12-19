@@ -1,4 +1,4 @@
-Apaguei e refiz tudo! rs seguindo o diagrama exemplo e com mais atenção aos slides.
+Apaguei e refiz tudo! rs seguindo o diagrama exemplo e com mais atenção aos slides. Foi dado drop em colunas que coloquei sem necessidade tb. Pretendo dividir os exercícios em arquivos separados p/ organizar melhor.
 
 1. Crie as tabelas das entidades.
 
@@ -9,28 +9,35 @@ ultimo_nome varchar (255),
 nacionalidade varchar (255),
 PRIMARY KEY (id)
 );
+RENAME TABLE Autores TO autores
 
 CREATE TABLE Editoras(
 id int,
 nome varchar (255),
 cidade varchar (255),
-editora varchar (255),
 data_de_fundacao date,
 PRIMARY KEY (id)
 );
+[ALTER TABLE Editoras DROP editora]
 
 
 CREATE TABLE Livros (
 autores_id INT,
 editoras_id INT,
 titulo varchar (255),
-autor varchar (255),
-editora varchar (255),
 ano date,
 PRIMARY KEY (autores_id, editoras_id ),
 FOREIGN KEY (autores_id) REFERENCES Autores(id),
 FOREIGN KEY (editoras_id ) REFERENCES Editoras(id)
 );
+RENAME TABLE Livros TO livros
+ALTER TABLE livros
+CHANGE autores_id autor_id INT;
+ALTER TABLE livros
+CHANGE editoras_id editora_id INT;
+ALTER TABLE livros MODIFY titulo VARCHAR(255);
+
+[ALTER TABLE Livros DROP editora e ALTER TABLE Livros DROP autor]
 
 CREATE TABLE Usuarios(
 id int,
@@ -41,6 +48,7 @@ data_de_nascimento date,
 PRIMARY KEY (id)
 );
 
+
 CREATE TABLE Usuarios_Livros(
 usuarios_id INT,
 autores_id INT,
@@ -49,8 +57,9 @@ FOREIGN KEY (usuarios_id) REFERENCES Usuarios(id),
 FOREIGN KEY (autores_id) REFERENCES Autores(id)
 );
 
-INSERT INTO Editoras (id, nome, cidade, editora, data_de_fundacao)
+POPULAR: 
 
+INSERT INTO Editoras (id, nome, cidade, editora, data_de_fundacao)
 VALUES (1,'Black Swan','Illinois', 'LivrosBR','1964-02-11'), 
 (2,'Vermilion','New York','LivrosBR','1971-03-01'),
 (3,'Orion (an Imprint of The Orion','California','LivrosBR','1989-12-05'),
@@ -59,4 +68,70 @@ VALUES (1,'Black Swan','Illinois', 'LivrosBR','1964-02-11'),
 (6,'Bantam Press','Texas','LivrosFloresta','1968-06-25'),
 (7,'Puffin Books','Indiana','LivrosTerra','1961-12-10'),
 (8,'Penguin Books','California','LivrosTerra','1977-03-03'),
-(9,'Thorsons','California','LivrosTerra','2000-04-01')
+(9,'Thorsons','California','LivrosTerra','2000-04-01'),
+(10,'Minerva','Texas','livrosPlanet','1993-09-15')
+
+INSERT INTO Autores (id, primeiro_nome, ultimo_nome, nacionalidade)
+VALUES (1,'Monica','Ali','Brasil'),
+(2,'Robert C.','Atkins', 'Russia'),
+(3,'Linwood','Barclay', 'Lithuania'),
+(4,'John','Boyne', 'Siria'),
+(5,'Dan','Brown', 'Chile'),
+(6,'Bill','Bryson', 'Mexico'),
+(7,'Eric','Carle', 'Argentina'),
+(8,'Jeremy','Clarkson', 'Tailandia'),
+(9,'Paulo','Coelho','India'),
+(10,'Louis','De Bernieres', 'EUA')
+
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (1, 'Brick Lane',1,1,'2004-05-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (2, 'Dr. Atkins'' New Diet Revolution:The No-hunger, Luxurious Weight Loss P',2,2,'2003-01-02');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (3, 'No Time for Goodbye',3,3,'2008-06-12');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (4, 'Boy in the Striped Pyjamas,The',4,4,'2007-02-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (5, 'Da Vinci Code,The',5,5,'2004-03-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (6, 'Angels and Demons',5,5,'2003-07-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (7, 'Deception Point',5,5,'2004-05-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (8, 'Digital Fortress',5,5,'2004-03-05');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (9, 'Lost Symbol,The',5,6,'2009-09-15');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (10, 'Lost Symbol,The',5,5,'2010-07-22');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (11, 'Short History of Nearly Everything,A',6,1,'2004-06-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (12, 'Notes from a Small Island',6,1,'1996-08-01');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (13, 'Down Under',6,1,'2001-08-06');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (14, 'Very Hungry Caterpillar,The:The Very Hungry Caterpillar',7,7,'1994-09-29');
+INSERT INTO livros(id, titulo,autor_id,editora_id,ano) VALUES (15, 'World According to Clarkson,The',8,8,'2005-05-26');
+
+[alguns livros foram deletados por causa de erro!]
+
+3.   Execute queries.
+1. Todos os livros de um autor específico a sua escolha, mostrando pelo menos o nome do autor e o nome do livro
+SELECT autores.primeiro_nome, autores.ultimo_nome, livros.titulo
+FROM autores
+JOIN livros ON autores.id = livros.autor_id
+where autores.primeiro_nome = "Helen"
+
+
+2. Todos os livros cujo primeiro nome do autor começa com A, mostrando o nome completo do autor e do livro
+
+SELECT autores.primeiro_nome, autores.ultimo_nome, livros.titulo
+FROM livros
+JOIN autores ON autores.id = livros.autor_id
+WHERE autores.primeiro_nome LIKE "A%" 
+
+3. Quantos livros cada autor possui na biblioteca, mostrando pelo menos o nome do autor e o número de livros
+SELECT COUNT(*) as quantidade_livros, primeiro_nome
+FROM livros
+JOIN autores ON autores.id = livros.autor_id
+GROUP BY primeiro_nome
+ORDER BY quantidade_livros DESC
+
+4. O livro mais alugado de todos, mostrando pelo menos o nome do livro
+
+5. Quantos livros cada usuário alugou, mostrando pelo menos o nome do usuário e o número de livros
+
+6. Todos os livros de editoras fundadas antes de 1990, mostrando pelo menos o nome do livro, o nome da editora e a data de fundação
+
+7. O usuário mais velho que alugou um livro específico a sua escolha
+
+8. Qual foi o país que alugou mais livros na biblioteca (olhar pra nacionalidade dos usuários)
+9. As duas editoras que possuem mais livros alugados por pessoas com mais de 20 anos
+10. Livros alugados que foram lançados antes da data de nascimento do usuário que o alugou
+
