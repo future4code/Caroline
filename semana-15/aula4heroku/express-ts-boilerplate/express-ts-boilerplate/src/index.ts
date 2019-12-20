@@ -2,30 +2,20 @@ import express, { Request, Response } from "express";
 import { AddressInfo } from 'net'
 import knex from 'knex';
 
+
 const connection = knex ({
 	client: 'mysql',
 	connection: {
 	host: "ec2-18-229-236-15.sa-east-1.compute.amazonaws.com",
 	user: "caroline",
-	password: "process.env.SENHA_BANCO",
+	password: "cb1764d745d86007cf0b9bdf1f8b0008",
 	database:"caroline",
 }
 });
 
+console.log(process.env.SENHA_BANCO)
 const app = express();
 app.use(express.json())
-
-
-// Trecho do código responsável por inicializar todas as APIs
-const server = app.listen(process.env.PORT || 3000, () => {
-  if(server){
-    const address = server.address() as AddressInfo;
-    console.log(`Server is running in http://localhost:${address.port}`);
-  } else {
-    console.error(`Failure upon starting server.`);
-  }
-});
-
 
 app.post('/createUser', (req: Request, res: Response) => {
   const newUser = {
@@ -40,8 +30,18 @@ app.post('/createUser', (req: Request, res: Response) => {
 });
 
 
-/*
+// Trecho do código responsável por inicializar todas as APIs
+const server = app.listen(process.env.PORT || 3000, () => {
+  if(server){
+    const address = server.address() as AddressInfo;
+    console.log(`Server is running in http://localhost:${address.port}`);
+  } else {
+    console.error(`Failure upon starting server.`);
+  }
+});
 
+
+/*
 const users = [
   {id :1},
   {nome: "J.K.Rowling"},
@@ -61,3 +61,4 @@ app.post('/createUser', (req: Request, res: Response) => {
   users.push(newUser)
 });
 */
+
