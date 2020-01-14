@@ -1,6 +1,6 @@
 import {Request, Response} from 'express'
 import {CreateSignUpUseCase, CreateSignUpInput} from "../business/usecases/createSignUpUseCase"
-import { SignUpDatabase } from './../data/SignUpDatabase';
+import { SignUpDatabase } from '../data/SignUpDatabase';
 import { generateRandomId } from '../services/V4IdGenerator'
 
 export async function createUsersEndPoint(req: Request, res: Response) {

@@ -14,4 +14,24 @@ const server = app.listen(process.env.PORT || 3000, () => {
 import * as bcrypt from "bcrypt"
 import * as jwt from "jsonwebtoken";
 
-console.log("oiii")
+
+const teste = async () => {
+const jwtKey = process.env.JWT_SECRET || ""
+console.log(process.env.JWT_SECRET)
+const userId = "abcdef"
+const token = jwt.sign (
+    {
+      userId
+    }, 
+    jwtKey, 
+    {
+      expiresIn: "1h"
+    }
+  )
+  const jwtData = jwt.verify ( token, jwtKey)
+
+  console.log (token)
+  console.log (token)
+
+}
+teste(); 
