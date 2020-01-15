@@ -3,16 +3,20 @@ import {SignUpGateway} from "../business/gateways/signUpGateway"
 import knex from 'knex'
 
 interface SignUpModel {
-    id:string;
-    email: string;
-    password: string; 
+  id:string,
+  name: string,
+  email: string,
+  age: number,
+  password: string,
   }
 
   class SignUpEntityMapper {
     entityToModel(entity: SignUp): SignUpModel {
         return {
             id: entity.getId(),
+            name: entity.getName(),
             email: entity.getEmail(),
+            age: entity. getAge(),
             password: entity.getPassword(),
         };
    }

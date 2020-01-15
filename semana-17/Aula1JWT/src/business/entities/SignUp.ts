@@ -1,7 +1,9 @@
 export class SignUp {
     constructor(
         private id: string,
+        private name: string,
         private email: string,
+        private age: number,
         private password: string,
     ) {
         if (password.length < 6) {
@@ -11,8 +13,14 @@ export class SignUp {
     public getId(){
         return this.id;
     }
+    public getName(){
+        return this.name;
+    }
     public getEmail(){
         return this.email;
+    }
+    public getAge(){
+        return this.age;
     }
     public getPassword() {
         return this.password;

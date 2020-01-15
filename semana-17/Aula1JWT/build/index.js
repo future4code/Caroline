@@ -43,5 +43,6 @@ const teste = () => __awaiter(void 0, void 0, void 0, function* () {
     const jwtData = jwt.verify(token, jwtKey);
     console.log(token);
     console.log(token);
+    console.log(jwtData.userId);
 });
 teste();

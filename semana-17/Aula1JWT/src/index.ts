@@ -28,10 +28,15 @@ const token = jwt.sign (
       expiresIn: "1h"
     }
   )
-  const jwtData = jwt.verify ( token, jwtKey)
+  const jwtData = jwt.verify ( token, jwtKey) as CustomJwtObject
 
   console.log (token)
-  console.log (token)
+  console.log (token) 
+  console.log(jwtData.userId);
 
 }
 teste(); 
+interface CustomJwtObject {
+  userId: string;
+  iat:number
+}

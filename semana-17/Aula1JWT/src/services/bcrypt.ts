@@ -1,16 +1,17 @@
 import * as bcrypt from "bcrypt"
+import {CryptoGateway} from "../business/gateways/cryptoGateway"
 
-const encripto = async () => {
-    const generateSalt = await bcrypt.genSalt(10);
-    console.log(generateSalt)
-    const password = "123456"
-    const result = await bcrypt.hash(password,generateSalt );
-    console.log("Senha codificada: ", result)
-    
-    const isPasswordRight = await bcrypt.compare("123456", "string imprimida criptografada");
-    console.log(isPasswordRight)
+export class  BcryptImplementation implements CryptoGateway  {
+    private static BCRYPT_SALT_ROUNDS = 10
 
-    const isPasswordWrong = await bcrypt.compare("1AAAA234H56", "string imprimida criptografada");
-    console.log(isPasswordWrong)
+    async encrypt(word: string): Promise <string> {
+        const salt = await bcrypt.genSalt( BcryptImplementation.BCRYPT_SALT_ROUNDS);
+        const encryptWord = await bcrypt.hash(word,salt )
+        return encryptWord;
+    }
+
+    async compare (word: string, hash: string): Promise <boolean> {
+        return await bcrypt.compare(word, hash)
+    }
 }
 
