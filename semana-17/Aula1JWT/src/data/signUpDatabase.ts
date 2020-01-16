@@ -48,4 +48,14 @@ interface SignUpModel {
           return false;
       }
   }
+  public async getUserByEmail(email: string): Promise<SignUp> {
+    const query= await this.connection.raw( ` value: SELECT * FROM SignUp WHERE email = "${email}";`
+    );
+    const returnedUser = query[0][0];
+  if(!returnedUser) {
+  throw new Error ("Not found")
+  }
+    return new SignUp (returnedUser.id,returnedUser.name, returnedUser.email, returnedUser.age, returnedUser.password);
+  }
 }
+

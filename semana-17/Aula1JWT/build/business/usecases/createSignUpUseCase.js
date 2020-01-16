@@ -16,8 +16,13 @@ class CreateSignUpUseCase {
     }
     execute(signup) {
         return __awaiter(this, void 0, void 0, function* () {
-            const newUsers = new SignUp_1.SignUp(signup.id, signup.email, signup.password);
-            const result = yield this.databaseGateway.saveUser(newUsers);
+            const encryptedPassword = yield this.cryptoGateway.encrypt(signup.password);
+            yield this.databaseGateway.saveUser(new SignUp_1.SignUp(signup.id, signup.name, signup.email, signup.age, encryptedPassword));
+            return {
+                message: "Usuário criado com sucesso!"
+            };
+            const newUsers = new SignUp_1.SignUp(signup.id, signup.name, signup.email, signup.age, signup.password);
+            const result = yield this.databaseGateway.getUserByEmail(newUsers);
             return result;
         });
     }

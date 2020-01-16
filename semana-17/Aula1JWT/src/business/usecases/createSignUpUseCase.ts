@@ -2,6 +2,7 @@ import {SignUp} from '../entities/SignUp'
 import {SignUpGateway} from "../gateways/signUpGateway"
 import  {CryptoGateway} from "../gateways/cryptoGateway"
 
+
 export class CreateSignUpUseCase {
     private databaseGateway: SignUpGateway;
     private cryptoGateway: CryptoGateway;
@@ -19,11 +20,11 @@ export class CreateSignUpUseCase {
         return {
             message: "Usuário criado com sucesso!"
         }
-        //const newUsers = new SignUp (signup.name, signup.email,signup.age, signup.password, );
+        const newUsers = new SignUp (signup.id,signup.name, signup.email,signup.age, signup.password);
 
-        //const result = await this.databaseGateway.saveUser(newUsers);
+        const result = await this.databaseGateway.getUserByEmail(newUsers);
 
-        //return result;
+        return result;
 
     }
 }

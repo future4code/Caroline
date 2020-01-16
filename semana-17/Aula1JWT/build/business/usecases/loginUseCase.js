@@ -1,7 +1,5 @@
-import {SignUpGateway} from "../gateways/signUpGateway"
-import {CryptoGateway} from "../gateways/cryptoGateway"
-import {AuthGateway} from "../gateways/authGateway"
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /*export class LoginUpUseCase {
  constructor(
      private SignUpGateway: SignUpGateway,
@@ -22,4 +20,4 @@ import {AuthGateway} from "../gateways/authGateway"
 
 export interface LoginOutput {
    token:string;
-}*/
+}*/ 

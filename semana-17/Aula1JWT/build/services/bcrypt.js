@@ -17,14 +17,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const bcrypt = __importStar(require("bcrypt"));
-const encripto = () => __awaiter(void 0, void 0, void 0, function* () {
-    const generateSalt = yield bcrypt.genSalt(10);
-    console.log(generateSalt);
-    const password = "123456";
-    const result = yield bcrypt.hash(password, generateSalt);
-    console.log("Senha codificada: ", result);
-    const isPasswordRight = yield bcrypt.compare("123456", "string imprimida criptografada");
-    console.log(isPasswordRight);
-    const isPasswordWrong = yield bcrypt.compare("1AAAA234H56", "string imprimida criptografada");
-    console.log(isPasswordWrong);
-});
+class BcryptImplementation {
+    encrypt(word) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const salt = yield bcrypt.genSalt(BcryptImplementation.BCRYPT_SALT_ROUNDS);
+            const encryptWord = yield bcrypt.hash(word, salt);
+            return encryptWord;
+        });
+    }
+    compare(word, hash) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield bcrypt.compare(word, hash);
+        });
+    }
+}
+exports.BcryptImplementation = BcryptImplementation;
+BcryptImplementation.BCRYPT_SALT_ROUNDS = 10;
