@@ -22,7 +22,7 @@ class CreateSignUpUseCase {
                 message: "Usuário criado com sucesso!"
             };
             const newUsers = new SignUp_1.SignUp(signup.id, signup.name, signup.email, signup.age, signup.password);
-            const result = yield this.databaseGateway.getUserByEmail(newUsers);
+            const result = yield this.databaseGateway.getUserByEmail(signup.email);
             return result;
         });
     }

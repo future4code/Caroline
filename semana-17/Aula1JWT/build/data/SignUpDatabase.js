@@ -50,6 +50,10 @@ class SignUpDatabase {
             }
         });
     }
+    saveUser2(user) {
+        return __awaiter(this, void 0, void 0, function* () {
+        });
+    }
     getUserByEmail(email) {
         return __awaiter(this, void 0, void 0, function* () {
             const query = yield this.connection.raw(` value: SELECT * FROM SignUp WHERE email = "${email}";`);
@@ -60,5 +64,29 @@ class SignUpDatabase {
             return new SignUp_1.SignUp(returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.age, returnedUser.password);
         });
     }
+    getUserById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const query = yield this.connection.raw(` value: SELECT * FROM SignUp WHERE id = "${id}";`);
+            const returnedUser = query[0][0];
+            if (!returnedUser) {
+                throw new Error("Not found");
+            }
+            return new SignUp_1.SignUp(returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.age, returnedUser.password);
+        });
+    }
 }
 exports.SignUpDatabase = SignUpDatabase;
+/*
+ public async geAllUsers(): Promise<SignUp> {
+    const query= await this.connection.raw( ` value: SELECT * FROM SignUp; `);
+    const returnedUserDB = await query;
+    return returnedUserDB[0].map ((user: any) =>
+    new SignUp (user.id, user.name,  user.email, user.age, user.password)
+   );
+}
+
+   public async updatePassword(id: string, newPassword: string): Promise<void> {
+    await this.connection.raw( ` value: UPDATE SignUp SET password = "${newPassword} "WHERE id = "${id}";`
+    );
+   }
+*/

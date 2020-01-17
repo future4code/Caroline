@@ -2,7 +2,6 @@ import {SignUp} from '../entities/SignUp'
 import {SignUpGateway} from "../gateways/signUpGateway"
 import  {CryptoGateway} from "../gateways/cryptoGateway"
 
-
 export class CreateSignUpUseCase {
     private databaseGateway: SignUpGateway;
     private cryptoGateway: CryptoGateway;
@@ -14,7 +13,7 @@ export class CreateSignUpUseCase {
      async execute(signup: CreateSignUpInput ): Promise<CreateSignUpOutput> {
         const encryptedPassword = await this.cryptoGateway.encrypt(signup.password)
         await this.databaseGateway.saveUser(new SignUp(signup.id,
-            signup.name, signup.email,signup.age, encryptedPassword
+            signup.name, signup.email,signup.age, encryptedPassword, )
             )
         )
         return {
@@ -22,9 +21,9 @@ export class CreateSignUpUseCase {
         }
         const newUsers = new SignUp (signup.id,signup.name, signup.email,signup.age, signup.password);
 
-        const result = await this.databaseGateway.getUserByEmail(newUsers);
+        const result = await this.databaseGateway.getUserByEmail(signup.email );
 
-        return result;
+        return  result
 
     }
 }
@@ -38,5 +37,5 @@ export interface CreateSignUpInput {
 }
 
 export interface CreateSignUpOutput {
-    message:string;
+    message: string;
 }

@@ -48,6 +48,10 @@ interface SignUpModel {
           return false;
       }
   }
+
+  public async saveUser2(user: SignUp): Promise<void> {
+    
+  }
   public async getUserByEmail(email: string): Promise<SignUp> {
     const query= await this.connection.raw( ` value: SELECT * FROM SignUp WHERE email = "${email}";`
     );
@@ -57,5 +61,29 @@ interface SignUpModel {
   }
     return new SignUp (returnedUser.id,returnedUser.name, returnedUser.email, returnedUser.age, returnedUser.password);
   }
+
+  public async getUserById(id: string): Promise<SignUp> {
+    const query= await this.connection.raw( ` value: SELECT * FROM SignUp WHERE id = "${id}";`
+    );
+    const returnedUser = query[0][0];
+  if(!returnedUser) {
+  throw new Error ("Not found")
+  }
+    return new SignUp (returnedUser.id,returnedUser.name, returnedUser.email, returnedUser.age, returnedUser.password);
+  }
 }
 
+/*
+ public async geAllUsers(): Promise<SignUp> {
+    const query= await this.connection.raw( ` value: SELECT * FROM SignUp; `);
+    const returnedUserDB = await query;
+    return returnedUserDB[0].map ((user: any) =>
+    new SignUp (user.id, user.name,  user.email, user.age, user.password)
+   );
+}
+
+   public async updatePassword(id: string, newPassword: string): Promise<void> {
+    await this.connection.raw( ` value: UPDATE SignUp SET password = "${newPassword} "WHERE id = "${id}";`
+    );
+   }
+*/
