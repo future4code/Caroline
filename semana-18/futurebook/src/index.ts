@@ -10,3 +10,23 @@ const server = app.listen(process.env.PORT || 3000, () => {
     console.error(`Failure upon starting server.`);
   }
 });
+
+
+
+
+
+
+
+
+/*import * as bcrypt from "bcryptjs"
+const BCRYPT_SALT_ROUNDS = 10
+const testess = async () => {
+    const salt = await bcrypt.genSalt(BCRYPT_SALT_ROUNDS);
+    console.log(salt)
+    const password ="123teste"
+    const encryptWord = await bcrypt.hash(password,salt )
+    console.log(encryptWord)
+    return encryptWord;  
+}
+testess()
+*/

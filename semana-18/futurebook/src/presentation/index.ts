@@ -1,48 +1,30 @@
 import express, {Request, Response} from 'express'
-
+import {SignUpDatabase} from "../data/signUpDatabase"
+import {CreateSignUpUseCase} from "../business/usecases/signupUsecase"
+import {JwtImplementation} from "../services/jwt"
+import {BcryptImplementation} from "../services/bcrypto"
+import  {generateRandomId} from "../services/generateRandomId"
 
 const app = express()
 app.use(express.json()) // Linha mágica (middleware)
 
-import * as bcrypt from "bcrypt"
-import {CryptoGateway} from "../business/gateways/cryptoGateway"
-
-export class  BcryptImplementation implements CryptoGateway  {
-    private static BCRYPT_SALT_ROUNDS = 10
-
-    async encrypt(word: string): Promise <string> {
-        const salt = await bcrypt.genSalt( BcryptImplementation.BCRYPT_SALT_ROUNDS);
-        const encryptWord = await bcrypt.hash(word,salt )
-        return encryptWord;
-    }
-
-    async compare (word: string, hash: string): Promise <boolean> {
-        return await bcrypt.compare(word, hash)
-    }
-}
-
-export default app
-
-
-/*import * as jwt from "jsonwebtoken"
-import  {AuthGateway} from "../business/gateways/authGateway"
-
-
-export class  JwtImplementation implements AuthGateway  {
-    private static EXPIRES_IN = "1h"
-private getJwtSecretKey (): string {
-    if (!process.env.JWT_SECRET){
-        throw new Error ("Missin JWT secret key")
-    }
-    return process.env.JWT_SECRET
-}
-generateToken(userId: string): string {
-    const token = jwt.sign(
-        { userId },
-        this.getJwtSecretKey(),
-        { expiresIn: JwtImplementation.EXPIRES_IN }
+app.post('/signup', async (req: Request, res: Response)=> {
+    try {
+        const createSignUpUseCase = new CreateSignUpUseCase (
+            new BcryptImplementation(),
+            new  JwtImplementation (),
+            new SignUpDatabase(),
+            new generateRandomId ()
         )
-        return   token
-     } 
+        const result = await createSignUpUseCase.execute ({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
+       })
+       res.status(200).send(result)
+    } catch (err) {
+       res.status(400).send({errorMessage: err.message});
+    }
+   } 
+   )
 
-}*/
