@@ -27,6 +27,7 @@ export class CreateSignUpUseCase {
             throw new Error("Um erro ocorreu, tente novamente")
         }
         return {
+            token: this.authGateway.generateToken(newUsers.getId()),
             message: "Usuário criado com sucesso!"
         }
 
@@ -40,5 +41,6 @@ export interface CreateSignUpInput {
 }
 
 export interface CreateSignUpOutput {
+    token: string,
     message: string
 }
