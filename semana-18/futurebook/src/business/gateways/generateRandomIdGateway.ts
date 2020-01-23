@@ -1,3 +1,5 @@
+
 export interface GenerateRandomIdGateway {
-    generateId(): string
+    generateId() : string;
+
 }

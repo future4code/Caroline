@@ -8,8 +8,9 @@ export class CreateSignUpUseCase {
     constructor(
         private signUpGateway: SignUpGateway,
         private cryptoGateway: CryptoGateway,
-        private authGateway: AuthGateway,
         private generateRandomIdGateway: GenerateRandomIdGateway,
+        private authGateway: AuthGateway,
+
     ) {}
 
      async execute(signup: CreateSignUpInput ): Promise<CreateSignUpOutput> {

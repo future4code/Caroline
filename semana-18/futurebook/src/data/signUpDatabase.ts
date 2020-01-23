@@ -23,8 +23,20 @@ export class SignUpDatabase implements SignUpGateway {
                 id: signup.getId(),
                 name: signup.getName(),
                 email: signup.getEmail(),
-                password: signup.getPassword()
+                password_: signup.getPassword()
             })
-            .into("signup_FB");
+            .into("signup_FB2");
         }
+   
+
+    public async getUserByEmail(email: string): Promise<SignUp> {
+      const query= await this.connection.raw( ` value: SELECT * FROM signup_FB2 WHERE email = "${email}";`
+      );
+      const returnedUser = query[0][0];
+    if(!returnedUser) {
+    throw new Error ("Not found")
     }
+      return new SignUp (returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.password);
+    }
+
+  }
