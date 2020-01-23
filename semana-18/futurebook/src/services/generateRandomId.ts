@@ -6,4 +6,4 @@ export class  generateRandomId implements GenerateRandomIdGateway{
     generateId(): string {
         return v4()
     }
-}
+} 

@@ -18,6 +18,7 @@ const signupUsecase_1 = require("../business/usecases/signupUsecase");
 const jwt_1 = require("../services/jwt");
 const bcrypto_1 = require("../services/bcrypto");
 const generateRandomId_1 = require("../services/generateRandomId");
+const loginUsecase_1 = require("../business/usecases/loginUsecase");
 const app = express_1.default();
 app.use(express_1.default.json()); // Linha mágica (middleware)
 app.post('/signup', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -31,6 +32,20 @@ app.post('/signup', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         res.status(200).send(result);
     }
     catch (err) {
+        res.status(400).send({ errorMessage: err.message });
+    }
+}));
+app.post('/login', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const createLoginUseCase = new loginUsecase_1.LoginUpUseCase(new signUpDatabase_1.SignUpDatabase(), new bcrypto_1.BcryptImplementation(), new jwt_1.JwtImplementation());
+        const result = yield createLoginUseCase.execute({
+            email: req.body.email,
+            password: req.body.password
+        });
+        res.status(200).send(result);
+    }
+    catch (err) {
+        console.log(err);
         res.status(400).send({ errorMessage: err.message });
     }
 }));

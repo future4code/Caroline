@@ -18,7 +18,7 @@ app.post('/signup', async (req: Request, res: Response)=> {
             new BcryptImplementation(),
             new generateRandomId (),
             new JwtImplementation()
-            
+
         )
 
         const result = await createSignUpUseCase.execute ({
@@ -32,7 +32,7 @@ app.post('/signup', async (req: Request, res: Response)=> {
     }
    } 
 )
-   
+
 app.post('/login', async (req: Request, res: Response)=> {
    try {
        const createLoginUseCase = new LoginUpUseCase (
@@ -47,7 +47,9 @@ app.post('/login', async (req: Request, res: Response)=> {
 
       res.status(200).send(result)
    } catch (err) {
+      console.log(err)
       res.status(400).send({errorMessage: err.message});
+
    }
   } 
 )

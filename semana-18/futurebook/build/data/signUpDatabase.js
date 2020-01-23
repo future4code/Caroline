@@ -40,12 +40,12 @@ class SignUpDatabase {
     }
     getUserByEmail(email) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = yield this.connection.raw(` value: SELECT * FROM SignUp WHERE email = "${email}";`);
+            const query = yield this.connection.raw(`SELECT * FROM signup_FB2 WHERE email = "${email}";`);
             const returnedUser = query[0][0];
             if (!returnedUser) {
                 throw new Error("Not found");
             }
-            return new signup_1.SignUp(returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.password);
+            return new signup_1.SignUp(returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.password_);
         });
     }
 }

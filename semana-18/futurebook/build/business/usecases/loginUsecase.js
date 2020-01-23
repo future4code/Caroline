@@ -15,14 +15,15 @@ class LoginUpUseCase {
         this.CryptoGateway = CryptoGateway;
         this.AuthGateway = AuthGateway;
     }
-    execute(email, password) {
+    execute(login) {
         return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.SignUpGateway.getUserByEmail(email);
-            const isPassWordRight = yield this.CryptoGateway.compare(password, user.getPassword());
-            if (isPassWordRight) {
+            const user = yield this.SignUpGateway.getUserByEmail(login.email);
+            const isPassWordRight = yield this.CryptoGateway.compare(login.password, user.getPassword());
+            if (!isPassWordRight) {
                 throw new Error("Email ou password inválidos!");
             }
             const token = this.AuthGateway.generateToken(user.getId());
+            console.log('token: ', token);
             return {
                 token
             };

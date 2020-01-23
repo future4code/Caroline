@@ -15,21 +15,23 @@ export class CreateSignUpUseCase {
 
      async execute(signup: CreateSignUpInput ): Promise<CreateSignUpOutput> {
         const encryptedPassword = await this.cryptoGateway.encrypt(signup.password)
-      
-        
+
+
         const newUsers = new SignUp ( this.generateRandomIdGateway.generateId(),signup.name, signup.email, encryptedPassword);
-    
+
         try {
             await this.signUpGateway.saveUser(newUsers)
 
         } catch (err) {
             console.log(err)
             throw new Error("Um erro ocorreu, tente novamente")
+            
         }
         return {
-            token: this.authGateway.generateToken(newUsers.getId()),
+          // token: this.authGateway.generateToken(newUsers.getId()),
             message: "Usuário criado com sucesso!"
         }
+        
 
     }
 }
@@ -41,6 +43,6 @@ export interface CreateSignUpInput {
 }
 
 export interface CreateSignUpOutput {
-    token: string,
+    //token: string,
     message: string
 }

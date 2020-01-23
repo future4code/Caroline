@@ -19,4 +19,3 @@ generateToken(userId: string): string {
         return   token
      } 
 }
-

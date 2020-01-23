@@ -5,4 +5,4 @@ export interface SignUpGateway {
   saveUser (signup: SignUp) : Promise<void>;
   getUserByEmail(email: string): Promise<SignUp>;
 
-} 
+}

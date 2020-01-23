@@ -11,15 +11,15 @@ export class LoginUpUseCase {
     async execute(login: LoginInput): Promise <LoginOutput>{
         const user = await this.SignUpGateway.getUserByEmail(login.email);
         const isPassWordRight = await this.CryptoGateway.compare(login.password, user.getPassword())
-        if (isPassWordRight){
+        if (!isPassWordRight){
             throw new Error ("Email ou password inválidos!")
         }
         const token = this.AuthGateway.generateToken(user.getId())
+        console.log('token: ', token)
         return {
             token
         }
     }
-    
 }
 
 export interface LoginInput {
@@ -28,4 +28,4 @@ export interface LoginInput {
 }
 export interface LoginOutput {
    token:string;
-}
+} 

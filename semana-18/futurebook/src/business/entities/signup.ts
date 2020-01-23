@@ -5,7 +5,7 @@ export class SignUp {
         private email: string,
         private password: string,
     ) {
-        
+
     }
     public getId(){
         return this.id;
