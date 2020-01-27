@@ -18,4 +18,16 @@ generateToken(userId: string): string {
         )
         return   token
      } 
+
+     getUserIdFromToken (token: string) : string {
+        const jwtData = jwt.verify(token, this.getJwtSecretKey()) as JwtData
+        return jwtData.userId
+    } 
+
+}
+
+interface JwtData {
+userId: string  
+iat: number
+exp: number
 }

@@ -5,6 +5,7 @@ import {JwtImplementation} from "../services/jwt"
 import {BcryptImplementation} from "../services/bcrypto"
 import  {generateRandomId} from "../services/generateRandomId"
 import {LoginUpUseCase} from "../business/usecases/loginUsecase"
+import { MakeFriendsUC } from './../business/usecases/makefriendshipUC';
 
 const app = express()
 app.use(express.json()) // Linha mágica (middleware)
@@ -44,6 +45,28 @@ app.post('/login', async (req: Request, res: Response)=> {
            email: req.body.email,
            password: req.body.password
       })
+
+      res.status(200).send(result)
+   } catch (err) {
+      console.log(err)
+      res.status(400).send({errorMessage: err.message});
+
+   }
+  } 
+)
+const getTokenFromHeaders = (headers: any) : string => {
+   return (headers["auth"] as string) || "";
+ }
+
+ app.post('/makefriend', async (req: Request, res: Response)=> {
+   try {
+       const makeFriendsUC = new MakeFriendsUC (
+            new JwtImplementation (),
+            new SignUpDatabase()
+       )
+
+       //const token =req.headers['auth']
+       const result = await makeFriendsUC.execute(getTokenFromHeaders(req.headers))
 
       res.status(200).send(result)
    } catch (err) {

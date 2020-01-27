@@ -39,4 +39,16 @@ export class SignUpDatabase implements SignUpGateway {
       return new SignUp (returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.password_);
     }
 
+  
+    public async getUserById(id: string): Promise<SignUp> {
+      const query= await this.connection.raw( `SELECT * FROM signup_FB2 WHERE id = "${id}";`
+      );
+      const returnedUser = query[0][0];
+    if(!returnedUser) {
+    throw new Error ("Not found")
+    }
+      return new SignUp (returnedUser.id, returnedUser.name, returnedUser.email, returnedUser.password_);
+    }
   }
+
+ 

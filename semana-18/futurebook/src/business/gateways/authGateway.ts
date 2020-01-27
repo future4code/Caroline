@@ -1,3 +1,4 @@
 export interface AuthGateway {
-    generateToken (userId: string): string
+    generateToken (userId: string): string;
+    getUserIdFromToken(token: string): string
     } 

@@ -4,5 +4,6 @@ import {BcryptImplementation} from "../../services/bcrypto"
 export interface SignUpGateway {
   saveUser (signup: SignUp) : Promise<void>;
   getUserByEmail(email: string): Promise<SignUp>;
+  getUserById(id: string): Promise<SignUp>;
 
 }
