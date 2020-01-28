@@ -1,0 +1,37 @@
+3.   Execute queries.
+
+1. Todos os livros de um autor específico a sua escolha, mostrando pelo menos o nome do autor e o nome do livro
+
+SELECT autores.primeiro_nome, autores.ultimo_nome, livros.titulo
+FROM autores
+JOIN livros ON autores.id = livros.autor_id
+where autores.primeiro_nome = "Helen"
+
+
+2. Todos os livros cujo primeiro nome do autor começa com A, mostrando o nome completo do autor e do livro
+
+SELECT autores.primeiro_nome, autores.ultimo_nome, livros.titulo
+FROM livros
+JOIN autores ON autores.id = livros.autor_id
+WHERE autores.primeiro_nome LIKE "A%" 
+
+
+3. Quantos livros cada autor possui na biblioteca, mostrando pelo menos o nome do autor e o número de livros
+
+SELECT COUNT(*) as quantidade_livros, primeiro_nome
+FROM livros
+JOIN autores ON autores.id = livros.autor_id
+GROUP BY primeiro_nome
+ORDER BY quantidade_livros DESC
+
+4. O livro mais alugado de todos, mostrando pelo menos o nome do livro
+
+5. Quantos livros cada usuário alugou, mostrando pelo menos o nome do usuário e o número de livros
+
+6. Todos os livros de editoras fundadas antes de 1990, mostrando pelo menos o nome do livro, o nome da editora e a data de fundação
+
+7. O usuário mais velho que alugou um livro específico a sua escolha
+
+8. Qual foi o país que alugou mais livros na biblioteca (olhar pra nacionalidade dos usuários)
+9. As duas editoras que possuem mais livros alugados por pessoas com mais de 20 anos
+10. Livros alugados que foram lançados antes da data de nascimento do usuário que o alugou
