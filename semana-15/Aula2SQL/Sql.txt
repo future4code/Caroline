@@ -1,0 +1,133 @@
+## 1. Restaurante
+1. Os 5 funcionários com maior salário.
+SELECT * FROM funcionarios 
+ORDER BY salario
+DESC LIMIT 5
+
+2. A média salarial para cada local de trabalho.
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "salao"
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "escritorio"
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "estacionamento"
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "cozinha"
+
+
+SELECT AVG(salario)
+FROM funcionarios
+WHERE  local_de_trabalho = "deposito"
+
+3. A quantidade de funcionários de cada gênero por local de trabalho.
+SELECT COUNT(*)
+FROM funcionarios
+WHERE genero = "F" AND local_de_trabalho = "salao"
+
+SELECT COUNT(*)
+FROM funcionarios
+WHERE genero = "M" AND local_de_trabalho = "salao"
+
+SELECT COUNT(*)
+FROM funcionarios
+WHERE genero = "F" AND local_de_trabalho = "escritorio"
+
+etc.
+
+4. Os 10 funcionários mais antigos (contratados há mais tempo).
+SELECT * FROM funcionarios 
+ORDER BY data_contratacao
+ASC LIMIT 10
+
+---
+
+## 2. Banco
+
+1. Os 100 primeiros correntistas brasileiros com mais do que 3000 reais na conta corrente.
+SELECT * FROM correntistas 
+WHERE conta_corrente > 3000
+LIMIT 100
+
+2. A quantidade de mulheres com mais do que 32 anos.
+SELECT COUNT(*)
+FROM correntistas 
+WHERE aniversario < '1987-01-01'  AND genero = "F"
+
+3. A soma do valor de todas as contas correntes do Peru cujo dono tenha mais do que 25 anos.
+SELECT SUM(conta_corrente)
+FROM correntistas;
+WHERE pais ="Peru" AND aniversario < '1994-01-01'
+
+4. A quantidade de Homens e Mulheres por país.
+SELECT COUNT(*)
+FROM correntistas 
+WHERE genero = "F" AND pais = "Brazil"
+
+SELECT COUNT(*)
+FROM correntistas 
+WHERE genero = "M" AND pais = "Brazil"
+
+5. A data de aniversário que mais se repete e a quantidade de vezes que aparece.
+SELECT count(*) as Repeticao, aniversario 
+FROM correntistas  
+GROUP BY aniversario  
+ORDER BY Repeticao DESC
+
+
+6. A média de **idade** (o número de anos entre hoje e a data dd nascimento) de cada país.
+SELECT AVG(aniversario)
+FROM correntistas
+WHERE  pais = "Brazil"
+
+
+7. Os aniversariantes do mês atual.
+SELECT * from correntistas 
+where extract(month from aniversario)='12';
+
+8. A média do valor da conta corrente por país. Importante: o nome dos países deve ser exibido em caixa baixa (letras minúsculas).
+SELECT AVG(conta_corrente) as "Média CC BR"
+FROM correntistas
+WHERE  pais = "Brazil"
+
+9. Os 3 nomes que mais se repetem e quantas vezes cada um apareceu.
+SELECT count(*) as NOMES_REP, primeiro_nome 
+FROM correntistas  
+GROUP BY primeiro_nome   
+ORDER BY NOMES_REP DESC
+LIMIT 3;
+
+
+## Escrita
+
+1. Adicione uma nova coluna chamada "estado_civil", não nula, com o valor padrão de "Solteiro(a)"
+ALTER TABLE Banco_Teste
+ADD estado_civil 
+VARCHAR(255) 
+NOT NULL DEFAULT "Solteiro";
+
+2. Atualize todas as entradas no banco seguindo a regra: para maiores de 30 anos o estado civil deve ser "Casado(a)".
+UPDATE Banco_Teste
+SET estado_civil  = "Casado"
+WHERE aniversario > '1989-01-01' ;
+
+3. Adicione uma nova coluna chamada "numero_da_sorte", não nula, com valor padrão de 0
+ALTER TABLE Banco_Teste
+ADD numero_da_sorte
+int
+NOT NULL DEFAULT 0;
+
+
+4. Atualize todas as entradas do banco atribuindo um número aleatório entre 1-1000 (incluindo os extremos) para a coluna "numero_da_sorte" de cada um dos correntistas, **atenção: este número deve ser inteiro, sem casas decimais.**
+
+UPDATE Banco_Teste
+SET numero_da_sorte =  FLOOR(RAND() * 401) + 100
+
+
+
