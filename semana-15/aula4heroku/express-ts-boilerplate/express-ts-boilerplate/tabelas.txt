@@ -1,0 +1,18 @@
+
+CREATE TABLE usuarios_lista (
+	id int,
+	nome varchar (255),
+	nickname varchar (255),
+	email varchar (255),
+	data_de_nascimento date
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE tarefas_lista (
+	usuario_responsavel_id INT,
+	usario_pedinte_id INT,
+	descricao varchar (255),
+	data_limite date,
+	PRIMARY KEY (users_id),
+	FOREIGN KEY (users_id) REFERENCES usuarios_lista(id)
+);

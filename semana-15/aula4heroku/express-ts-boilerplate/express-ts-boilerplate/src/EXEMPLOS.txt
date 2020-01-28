@@ -1,0 +1,23 @@
+app.get('/', (req: Request, res: Response) => {
+  const resposta = {
+    endpoints: {
+      '/': 'retorna lista com todos os endpoints',
+      '/ping': 'retorna o texto pong',
+      '/hello/:NAME': 'utiliza o parâmetro passado no PATH para retornar um HTML contendo o parâmetro.'
+    }
+  };
+
+  // Exemplo de retorno de um JSON
+  res.send(JSON.stringify(resposta))
+});
+
+app.get('/ping', (req: Request, res: Response) => {
+  // Exemplo de retorno de texto "puro"
+  res.send('pong');
+});
+
+app.get('/hello/:name', (req: Request, res: Response) => {
+  const resposta = `<h1>Olá ${req.params.name}, seja bem-vindo(a) à Future4.</h1>`;
+  // Exemplo de retorno de HTML
+  res.send(resposta)
+});
