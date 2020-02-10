@@ -5,14 +5,16 @@ import SignUp from "../SignUp";
 import Login from "../Login";
 import NewPassword from "../PassWord";
 import AddVideo from "../AddVideo";
+import Home from "../Home"
 
 
 export const routes = {
-signup: "/signup",
-login: "/login",
-newpassword: "/newpassword",
-addvideo:  "/addvideo",
-delvideo:  "/delvideo",
+	signup: "/signup",
+	login: "/login",
+	newpassword: "/newpassword",
+	addvideo:  "/addvideo",
+	delvideo:  "/delvideo",
+	home:  "/home",
 };
 
 function Router(props) {
@@ -23,6 +25,7 @@ function Router(props) {
 		<Route exact path={routes.login} component={Login} />
 		<Route exact path={routes.newpassword} component={NewPassword} />
 		<Route exact path={routes.addvideo} component={AddVideo} />
+		<Route exact path={routes.home} component={Home} />
         </Switch>
       </ConnectedRouter>
     );
