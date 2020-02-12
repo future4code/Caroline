@@ -5,6 +5,8 @@ import { MuiThemeProvider, createGenerateClassName, jssPreset } from '@material-
 import { createMuiTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { AppContainer } from './components/AppContainer'
+import { render } from 'react-dom'
+import * as firebase from "firebase/app";
 
 const generateClassName = createGenerateClassName()
 const jss = create({
@@ -13,9 +15,30 @@ const jss = create({
 	insertionPoint: document.getElementById('jss-insertion-point'),
 })
 
-const theme = createMuiTheme()
+const theme = createMuiTheme();
 
-function App() {
+
+class App extends React.Component {
+constructor(props){
+	super(props)
+
+	this.state ={
+		cadastros: []
+	}
+}
+
+componentDidMount(){
+	this.getSignUp()
+};
+
+async getSignUp() {
+const signups = await firebase.firestore().collection(collectionPath, "cadastro").get()
+
+const cadastros = signups.docs.map(doc => doc.data())
+this.setState(status, {cadastros})
+console.log(cadastros)
+}
+render()	{
 	return (
 		<JssProvider jss={jss} generateClassName={generateClassName}>
 			<MuiThemeProvider theme={theme}>
@@ -23,7 +46,8 @@ function App() {
 				<AppContainer />
 			</MuiThemeProvider>
 		</JssProvider>
-	)
+		)
+	}
 }
 
 export default App

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import ApBar from './../../components/topo';
 
 
+
 const PageWrapper = styled.div``
 
 const Form = styled.form`
@@ -45,10 +46,15 @@ class SignUp extends Component {
   };
 
   handleOnSubmit = event => {
+      
+  };
+
+  /*
     const { email, password, username } = this.state
     event.preventDefault();
     this.props.createNewUser(email, password, username);
-  };
+
+  */
 
   onClickSignUp= () => {
     const { username, email, password } = this.state;
