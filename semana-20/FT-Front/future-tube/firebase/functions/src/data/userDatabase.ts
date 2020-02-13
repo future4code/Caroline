@@ -2,7 +2,7 @@ import * as admin from "firebase-admin"
 import { UserGateway } from './../business/gateways/UserGateway';
 import { Users } from './../business/entities/users';
 
-export class UserDatabase implements UserGateway {
+ class UserDatabase implements UserGateway {
     async saveUser(signup: Users): Promise<void> {
    const newUser = {
        name: signup.getName,
@@ -13,14 +13,6 @@ export class UserDatabase implements UserGateway {
   }
 }
 
-/*public async saveUser(users: Users): Promise<void> {
-    await this.connection
-    .insert({
-        id: users.getId(),
-        name: users.getName(),
-        password_: users.getPassword(),
-    })
-    .into("users");
-}*/
+export default UserDatabase
 
 

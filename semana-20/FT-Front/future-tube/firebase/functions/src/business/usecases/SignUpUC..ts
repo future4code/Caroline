@@ -3,7 +3,7 @@ import {UserGateway} from "../gateways/UserGateway"
 import {GenerateRandomIdGateway} from "../gateways/generateRandomIdGateway"
 
 
-export class CreateSignUpUseCase {
+ class CreateSignUpUseCase {
     constructor(
         private userGateway: UserGateway,
         private generateRandomIdGateway: GenerateRandomIdGateway,
@@ -37,3 +37,5 @@ export interface CreateSignUpInput {
 export interface CreateSignUpOutput {
     message: string
 }
+
+export default CreateSignUpUseCase 
