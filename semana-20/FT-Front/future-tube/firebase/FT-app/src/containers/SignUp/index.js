@@ -4,7 +4,8 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from '@material-ui/core/Typography'
 import ApBar from './../../components/topo';
-
+import {createSignUp} from "../../actions/allActions";
+import {connect} from "react-redux";
 
 
 const PageWrapper = styled.div``
@@ -21,15 +22,15 @@ class SignUp extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: "",
+      name: "",
       email: "",
-      password: "",
+      password_: "",
     }
   }
 
   handleNameChange = (event) => {
     this.setState({
-      username: event.target.value
+      name: event.target.value
     });
   };
 
@@ -41,24 +42,20 @@ class SignUp extends Component {
 
   handlePasswordChange = (event) => {
     this.setState({
-      password: event.target.value
+      password_: event.target.value
     });
   };
 
   handleOnSubmit = event => {
-      
+	const { name, email, password_ } = this.state;
+	this.props.createNewUser(name, email, password_);
+	console.log("subimitt")
   };
 
-  /*
-    const { email, password, username } = this.state
-    event.preventDefault();
-    this.props.createNewUser(email, password, username);
-
-  */
-
   onClickSignUp= () => {
-    const { username, email, password } = this.state;
-    this.props.createNewUser(username, email, password);
+    const { name, email, password_ } = this.state;
+	this.props.createNewUser(name, email, password_);
+	console.log("enviado")
   };
 
   
@@ -72,7 +69,7 @@ class SignUp extends Component {
             id="outlined-name"
             type="text"
             label="Nome"
-            value={this.state.username}
+            value={this.state.name}
             onChange={this.handleNameChange}
             margin="normal"
             variant="outlined"
@@ -94,7 +91,7 @@ class SignUp extends Component {
             id="outlined-name"
             type="password"
             label="Senha"
-            value={this.state.password}
+            value={this.state.password_}
             onChange={this.handlePasswordChange}
             margin="normal"
             variant="outlined"
@@ -117,5 +114,13 @@ class SignUp extends Component {
 }
 
 
-export default SignUp
+function mapDispatchToProps(dispatch){
+	return {
+	  createNewUser: (name, email, password_) => dispatch(createSignUp(name, email, password_)),
+	 }
+   };
+  
+  export default connect(null, mapDispatchToProps)(SignUp);
+	  
+
     

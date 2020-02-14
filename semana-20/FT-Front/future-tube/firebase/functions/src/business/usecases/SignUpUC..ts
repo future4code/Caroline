@@ -1,18 +1,21 @@
 import {Users} from '../entities/users'
 import {UserGateway} from "../gateways/UserGateway"
 import {GenerateRandomIdGateway} from "../gateways/generateRandomIdGateway"
+import {CryptoGateway} from "../gateways/cryptoGateway"
 
 
  class CreateSignUpUseCase {
     constructor(
         private userGateway: UserGateway,
         private generateRandomIdGateway: GenerateRandomIdGateway,
+        private cryptoGateway: CryptoGateway,
+
 
     ) {}
 
      async execute(signup: CreateSignUpInput ): Promise<CreateSignUpOutput> {
-
-        const newUsers = new Users ( this.generateRandomIdGateway.generateId(), signup.name, signup.email,  signup.password_);
+        const encryptedPassword = await this.cryptoGateway.encrypt(signup.password_)
+        const newUsers = new Users ( this.generateRandomIdGateway.generateId(), signup.name, signup.email, encryptedPassword);
         try {
             await this.userGateway.saveUser(newUsers)
 
